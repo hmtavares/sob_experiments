@@ -10,6 +10,14 @@ black = 0, 0, 0
 ball = pygame.image.load("world_default_medium.jpg")
 ballrect = ball.get_rect()
 ballsize = ballrect.size
+print ("size = {}".format(ballsize))
+
+w, h = ballsize
+ball = pygame.transform.scale(ball, (int(w * 1.30), int(h * 1.30)))
+ballrect = ball.get_rect()
+ballsize = ballrect.size
+print ("size = {}".format(ballsize))
+
 screen = pygame.display.set_mode(ballsize)
 screen.fill(black)
 screen.blit(ball, ballrect)
@@ -41,10 +49,10 @@ def hex_to_point(hex_x, hex_y):
 def is_odd(num):
     return bool(num & 1)
 
-for hex_x in range(28):
-    for hex_y in range(21):
-        (x, y) = hex_to_point(hex_x, hex_y)
-        pygame.draw.circle(screen, BLACK, (x, y), 10, 0)
+#for hex_x in range(28):
+#    for hex_y in range(21):
+#        (x, y) = hex_to_point(hex_x, hex_y)
+#        pygame.draw.circle(screen, BLACK, (x, y), 10, 0)
 
 
 pygame.display.flip()
