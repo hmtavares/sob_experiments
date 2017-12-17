@@ -11,34 +11,78 @@ import copy
 #from random import choice
 
 #import charts
-#import dice
+import dice
 
+#("Brimstone" (19, 4)),
 
+TOWNS = [
+        ("Masthead", (11, 1)),
+        ("Fort Burk", (11, 4)),
+        ("West Witold", (-4,9)),
+        ("Hill Town", (1, 6)),
+        ("Serafin", (7, 7)),
+        ("Fringe", (10, 6)),
+        ("Wood's End", (-8, 17)),
+        ("Larberg's Landing", (-4, 20)),
+        ("Stone's Crossing", (-1, 18)),
+        ("Lestina", (0, 14)),
+        ("Last Chance", (15, 1)),
+        ("Fort Lopez", (10, 8)),
+        ("Adlerville", (6, 14)),
+        ("Flamme's Folly", (14, 7)),
+        ("Fort Landy", (12, 11)),
+        ("Conradt's Claim - fort", (17, 9)),
+        ("Wilshin's Lodge", (13, 14)),
+        ("Seto's Mill", (19, 3)),
+        ("San Miguel Mission", (19, 10)),
+    ]
+
+def town_factory(name, coord):
+        """Create a random town
+
+        Args:
+            name - The name of the town
+            coord - the q,r coordinates of the town
+        """
+
+        #
+        # Town Size and how many buildings
+        #
+        town_size, size_low, size_high  = random.choice(Town.TOWN_SIZES)
+
+        num_buildings = random.randint(size_low, size_high)
+
+        #
+        #  Generate town kind
+        #
+        roll = dice.roll('2d6')
+        town_type = Town.TOWN_TYPES[sum(roll)]
+
+        #
+        # Generate Town Trait
+        #
+        roll = dice.roll('2d6')
+        trait_roll = roll[0] * 10 + roll[1]
+        town_trait = Town.TOWN_TRAITS[trait_roll]
+        #print ("trait({}) - {}".format(trait_roll, town_trait['name']))
+
+        #
+        # Generate buildings
+        #
+        # Copy the building list
+        draw_buildings = Town.TOWN_BUILDINGS[:]
+
+        random.shuffle(draw_buildings)
+
+        town_buildings = []
+        for i in range(num_buildings):
+            town_buildings.append(draw_buildings.pop())
+
+        return Town(name, coord, town_type, town_trait, town_buildings)
 
 class Town():
 
-    TOWN_NAMES = [
-        "Brimstone",
-        "Masthead",
-        "Fort Burk",
-        "West Witold",
-        "Hill Town",
-        "Serafin",
-        "Fringe",
-        "Wood's End",
-        "Larberg's Landing",
-        "Stone's Crossing",
-        "Lestina",
-        "Last Chance",
-        "Fort Lopez",
-        "Adlerville",
-        "Flamme's Folly",
-        "Fort Landy",
-        "Conradt's Claim",
-        "Wilshin's Lodge",
-        "Seto's Mill",
-        "San Miguel Mission",
-    ]
+    
 
     TOWN_SIZES = [
         ("Small", 1, 4),
@@ -228,13 +272,26 @@ class Town():
             "description": ""
         }
     }
-    def __init__(self, size, town_type, trait, locations):
+    def __init__(self, name, coord, town_type, trait, locations):
 
         #TODO: Add validation
-        self.size = size
+        self.name = name
         self.type = town_type
         self.trait = trait
         self.locations = locations
+        self.coord = coord
 
+    def get_size():
+        num_buildings = len(locations)
+
+        if num_buildings < 1:
+            return "Ruins"
+        if num_buildings >= 1 and num_buildings <= 4:
+            return "Small"
+        if num_buildings >= 5 and num_buildings <= 6:
+            return "Medium"
+        if num_buildings >= 7 and num_buildings <= 8:
+            return "Large"
+        raise Exception("Invalid town size: {}".format(num_buildings))
 
 

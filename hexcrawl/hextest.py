@@ -8,6 +8,7 @@ import copy
 import argparse
 import cmd
 import dice
+import town
 from town import Town
 #from dod_game import *
 
@@ -75,7 +76,7 @@ class HexcrawlCommands(cmd.Cmd):
 
         """
 
-
+        self.map_towns = [];
         self.log = logging.getLogger(self.__class__.__name__)
 
         cmd.Cmd.__init__(self)
@@ -181,6 +182,14 @@ Town:
             
         my_town = Town("this", "that", "other", ['stuff'])
 
+    def do_map(self, line):
+
+        for tn in town.TOWNS:
+            self.map_towns.append(town.town_factory(tn[0], tn[1]))
+
+    def do_showtowns(self, line):
+        for tn in self.map_towns:
+            print ("{} - {} - {}".format(tn.name, tn.coord, tn.type))
 
     def do_reveal(self, line):
         """Show the evidence cards and the hands of all players"""
