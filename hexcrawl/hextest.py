@@ -11,6 +11,7 @@ import dice
 import town
 from town import Town
 #from dod_game import *
+import json
 
 # Test Hexcrawl module components
 
@@ -138,7 +139,7 @@ class HexcrawlCommands(cmd.Cmd):
         #
         # Town Size and how many buildings
         #
-        town_size, size_low, size_high  = random.choice(Town.TOWN_SIZES)
+        town_size, size_low, size_high  = random.choice(town.TOWN_SIZES)
 
         num_buildings = random.randint(size_low, size_high)
 
@@ -146,21 +147,21 @@ class HexcrawlCommands(cmd.Cmd):
         #  Generate town kind
         #
         roll = dice.roll('2d6')
-        town_type = Town.TOWN_TYPES[sum(roll)]
+        town_type = town.TOWN_TYPES[sum(roll)]
 
         #
         # Generate Town Trait
         #
         roll = dice.roll('2d6')
         trait_roll = roll[0] * 10 + roll[1]
-        town_trait = Town.TOWN_TRAITS[trait_roll]
+        town_trait = town.TOWN_TRAITS[trait_roll]
         print ("trait({}) - {}".format(trait_roll, town_trait['name']))
 
         #
         # Generate buildings
         #
         # Copy the building list
-        draw_buildings = Town.TOWN_BUILDINGS[:]
+        draw_buildings = town.TOWN_BUILDINGS[:]
 
         random.shuffle(draw_buildings)
 
@@ -180,10 +181,10 @@ Town:
         for bld in town_buildings:
             print ("  {}".format(bld))
             
-        my_town = Town("this", "that", "other", ['stuff'])
+#        my_town = Town("this", "that", "other", ['stuff'])
 
     def do_map(self, line):
-
+        self.map_towns = []
         for tn in town.TOWNS:
             self.map_towns.append(town.town_factory(tn[0], tn[1]))
 
@@ -191,26 +192,97 @@ Town:
         for tn in self.map_towns:
             print ("{} - {} - {}".format(tn.name, tn.coord, tn.type))
 
-    def do_reveal(self, line):
-        """Show the evidence cards and the hands of all players"""
+    def do_show(self, line):
+        for tn in self.map_towns:
+            if line in tn.name:
+                print (tn)
 
-        print ("Evidence: {}".format(self.dod.evidence))
-        print ("Exposed: {}".format(self.dod.exposed))
+    def do_save(self, line):
+       
+        towns_save = []
+        save_data = {'towns' : towns_save}
+        for tn in self.map_towns:
+            towns_save.append(tn.__dict__)
 
-        idx = 1
-        for h in self.dod.hands:
-            print ("Player {}: {}".format(h.player, h))
 
-    def do_hand(self, line):
-        """Show the player hand and other starting known information"""
+        with open('hexcrawl_save.json', 'w') as outfile:
+            json.dump(save_data, outfile, sort_keys=True, indent=4)
 
-        print (self.intro)
+    def do_load(self, line):
+        with open('hexcrawl_save.json', 'r') as infile:
+            load_data = json.load(infile)
 
-    def do_report(self, line):
-        """Show all asked questions and answers"""
+        towns = load_data['towns']
+        load_towns = []
+        for tn in towns:
+            load_towns.append(town.town_json_factory(tn))
 
-        for q in self.questions:
-            print (q)
+        self.map_towns = load_towns
+
+
+    def do_stats(self, line):
+        sizes = {}
+        types = {}
+        traits = {}
+        for tn in self.map_towns:
+            tsize = tn.get_size()
+            if sizes.get(tsize) is None:
+                sizes[tsize] = 1
+            else:
+                sizes[tsize] += 1
+
+            if types.get(tn.type) is None:
+                types[tn.type] = 1
+            else:
+                types[tn.type] += 1
+
+
+        print('''
+Small:  {}
+Medium: {}
+Large:  {}'''.format(sizes['Small'], sizes['Medium'], sizes['Large']))
+
+        frontier = types.get('Standard Frontier Town')
+        ruins = types.get('Town Ruins')
+        haunted = types.get('Haunted Town')
+        plague = types.get('Plague Town')
+        rail = types.get('Rail Town')
+        mining = types.get('Mining Town')
+        river = types.get('River Town')
+        mutant = types.get('Mutant Town')
+        outlaw = types.get('Outlaw Town')
+
+        if frontier is None: frontier = 0
+        if ruins is None: ruins = 0
+        if haunted is None: haunted = 0
+        if plague is None: plague = 0
+        if rail is None: rail = 0
+        if mining is None: mining = 0
+        if river is None: river = 0
+        if mutant is None: mutant = 0
+        if outlaw is None: outlaw = 0
+
+
+
+        print('''
+Frontier: {}
+Ruins:    {}
+Haunted:  {}
+Plague:   {}
+Rail:     {}
+Mining:   {}
+River:    {}
+Mutant:   {}
+Outlaw:   {}'''.format( frontier,
+                        ruins,
+                        haunted,
+                        plague,
+                        rail,
+                        mining,
+                        river,
+                        mutant,
+                        outlaw))
+
 
     def do_EOF(self, line):
         return True
