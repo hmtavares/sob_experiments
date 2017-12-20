@@ -6,6 +6,7 @@ import math
 import pygame
 from pygame.locals import *
 import pygame_textinput
+import json
 
 pygame.init()
 
@@ -17,6 +18,8 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+
+
 
 hex_size = HEX_HEIGHT / 2
 
@@ -47,6 +50,26 @@ hex_org = redhex.Hex(0, 0, 0)
 gf = pygame.font.Font('C:/WINDOWS/Fonts/arial.TTF', 14)
 gf.set_bold(1)
 
+class TerrainHex():
+
+    def __init__(self):
+        self.terrain = None
+        self.town = None
+        self.mine = None
+        self.river = False
+        self.rail = False
+        self.road = False
+
+class TerrainMap():
+
+    def __init__(self):
+        self.hexes = {}
+
+    def get_hex(self, coord):
+        return self.hexes.get(coord)
+
+    def put_hex(self, coord, hex):
+        self.hexes[coord] = hex
 
 class Button:
     def __init__(self, name=None, button_rect=None, extra=None):
@@ -99,8 +122,18 @@ class DrawMenu:
                         if b.rect.collidepoint(x, y):
                             for b2 in self.buttons:
                                 b2.state = 0
-                            b.state = 1
-                            self.state = b.extra
+                            if b.extra != self.state:
+                                #
+                                # Change the state to this button
+                                #
+                                b.state = 1
+                                self.state = b.extra
+                            else:
+                                #
+                                # Selecting an active button.
+                                # Clear the state of this button
+                                #
+                                self.state = None
         self.render()
         return self.state
 
@@ -158,6 +191,47 @@ def list_fonts():
         d[font] = pygame.font.match_font(font)
     return d
 
+
+def save_map(tmap):
+       
+    tmap_save = []
+    save_data = {'terrain_map' : tmap_save}
+    for hcoord, mhex in tmap.hexes.items():
+        coord = (hcoord.q, hcoord.r, hcoord.s)
+        mhex.save_coord = coord
+        tmap_save.append(mhex.__dict__)
+
+    with open('terrain_map_save.json', 'w') as outfile:
+        json.dump(save_data, outfile, sort_keys=True, indent=4)
+
+
+def terrain_hex_json_factory(hex_json):
+    thex = TerrainHex()
+    print (hex_json)
+    thex.terrain = hex_json['terrain']
+    thex.rail = hex_json['rail']
+    thex.river = hex_json['river']
+    thex.road = hex_json['road']
+    thex.town = hex_json['town']
+    thex.mine = hex_json['mine']
+
+    return thex
+
+def load_map():
+    with open('terrain_map_save.json', 'r') as infile:
+        load_data = json.load(infile)
+    print(load_data)
+    hexes = load_data['terrain_map']
+    load_map = TerrainMap()
+    for h in hexes:
+        thex = terrain_hex_json_factory(h)
+        (q, r, s) = h['save_coord']
+        coord = redhex.Hex(q, r, s)
+        load_map.put_hex(coord, thex)
+
+    return load_map
+
+
 print( "Default: {}".format(pygame.font.get_default_font()))
 for font, path in list_fonts().items():
         print ("{} - {}".format(font, path))
@@ -169,15 +243,31 @@ pygame.display.flip()
 
 # Initialise clock
 clock = pygame.time.Clock()
+
+#Setup the map
+land_map = TerrainMap()
+
+
 mouse_hex = None
+color_to_terrain = {
+    GREEN : 1,
+    BLUE : 2,
+    RED : 3
+}
+terrain_to_color = {v: k for k, v in color_to_terrain.items()}
+
 dm = DrawMenu(choices=[RED, BLUE, GREEN])
+oldstate = None
 while 1:
     # Make sure game doesn't run at more than 60 frames per second
     clock.tick(60)
     events = pygame.event.get()
     screen.blit(world_map, map_rect)
 
-    dm.update(events)
+    state = dm.update(events)
+    if state != oldstate:
+        print (state)
+        oldstate = state
     screen.blit(dm.surface, menu_rect)
 
 #    textinput.update(events)        
@@ -189,10 +279,40 @@ while 1:
         
         if event.type == QUIT:
             sys.exit()
+        if event.type == KEYDOWN:
+            print (event)
+            if event.key == K_s:
+                save_map(land_map)
+            if event.key == K_l:
+                land_map = load_map()
+        elif event.type == MOUSEBUTTONDOWN:
+            (x, y) = event.pos
+            if map_rect.collidepoint(x, y):
+                click_pos = redhex.Point(x, y)
+                mouse_hex = redhex.pixel_to_hex(screen_layout, click_pos)
+                mouse_hex = redhex.hex_round(mouse_hex)
+                map_hex = TerrainHex()
+                print (state)
+                if state:
+                    #
+                    #  Save the terrain selection to the hex
+                    #
+                    map_hex.terrain = color_to_terrain[state]
+                    land_map.put_hex(mouse_hex, map_hex)
+                    print ("added")
+                else:
+                    #
+                    #  Print the hex
+                    #
+                    thex = land_map.hexes.get(mouse_hex)
+                    if thex:
+                        print(thex.__dict__)
+                    else:
+                        print("No Hex")
 
         elif event.type == MOUSEMOTION:
             if event.buttons:
-                print("Buttons: {}".format(event.buttons))
+                #print("Buttons: {}".format(event.buttons))
                 
                 (x, y) = event.pos
                 if map_rect.collidepoint(x, y):
@@ -208,4 +328,11 @@ while 1:
 #                pygame.display.flip()
 #            move_and_draw_all_game_objects()
     draw_coord(mouse_hex, screen)
+    for coord, mhex in land_map.hexes.items():
+        (x, y) = redhex.hex_to_pixel(screen_layout, coord)
+        (x, y) = (int(x), int(y))
+        #print ("yep {}".format(mhex.__dict__))
+        hcolor = terrain_to_color[mhex.terrain]
+        pygame.draw.circle(screen, hcolor, (x, y), 10, 0)
+        #print ('{} - {}'.format(coord, mhex.__dict__))
     pygame.display.flip()
