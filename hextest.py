@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """A UI session for a game of Deduce or DIe
 """
+import sys
 import datetime
 import logging
 import random
@@ -8,8 +9,8 @@ import copy
 import argparse
 import cmd
 import dice
-import town
-from town import Town
+import sob.town as town
+from sob.town import Town
 #from dod_game import *
 import json
 
@@ -184,18 +185,24 @@ Town:
 #        my_town = Town("this", "that", "other", ['stuff'])
 
     def do_map(self, line):
-        self.map_towns = []
-        for tn in town.TOWNS:
-            self.map_towns.append(town.town_factory(tn[0], tn[1]))
+        self.map_towns = {}
+        for tn_id, tn in town.TOWNS.items():
+            self.map_towns[tn_id] = town.town_random_factory(tn[0], tn[1])
 
     def do_showtowns(self, line):
-        for tn in self.map_towns:
+        for tn in self.map_towns.values:
             print ("{} - {} - {}".format(tn.name, tn.coord, tn.type))
 
     def do_show(self, line):
-        for tn in self.map_towns:
-            if line in tn.name:
-                print (tn)
+        try:
+            tn_id = int(line)
+            tn = self.map_towns[tn_id]
+            print (tn)
+        except ValueError:
+            for tn in self.map_towns.values():
+                if line in tn.name:
+                    print(tn)
+                    break
 
     def do_save(self, line):
        
@@ -283,6 +290,12 @@ Outlaw:   {}'''.format( frontier,
                         mutant,
                         outlaw))
 
+
+    def do_exit(self, line):
+        self.do_quit(line)
+
+    def do_quit(self, line):
+        sys.exit(0)
 
     def do_EOF(self, line):
         return True

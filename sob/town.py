@@ -13,30 +13,52 @@ import copy
 #import charts
 import dice
 
-#("Brimstone" (19, 4)),
+#
+#  Lookup towns by die roll.
+#  Note that these rolls also work as
+#  an 'id' for the town
+#
+TOWNS = {
+        2  : ("Masthead", (11, 1)),
+        3  : ("Fort Burk", (11, 4)),
+        4  : ("West Witold", (-4,9)),
+        5  : ("Hill Town", (1, 6)),
+        6  : ("Serafin", (7, 7)),
+        7  : ("Fringe", (10, 6)),
+        8  : ("Wood's End", (-8, 17)),
+        9  : ("Larberg's Landing", (-4, 20)),
+        10 : ("Stone's Crossing", (-1, 18)),
+        11 : ("Lestina", (0, 14)),
+        12 : ("Last Chance", (15, 1)),
+        13 : ("Fort Lopez", (10, 8)),
+        14 : ("Adlerville", (6, 14)),
+        15 : ("Flamme's Folly", (14, 7)),
+        16 : ("Fort Landy", (12, 11)),
+        17 : ("Conradt's Claim - fort", (17, 9)),
+        18 : ("Wilshin's Lodge", (13, 14)),
+        19 : ("Seto's Mill", (19, 3)),
+        20 : ("San Miguel Mission", (19, 10)),
+    }
 
-TOWNS = [
-        ("Masthead", (11, 1)),
-        ("Fort Burk", (11, 4)),
-        ("West Witold", (-4,9)),
-        ("Hill Town", (1, 6)),
-        ("Serafin", (7, 7)),
-        ("Fringe", (10, 6)),
-        ("Wood's End", (-8, 17)),
-        ("Larberg's Landing", (-4, 20)),
-        ("Stone's Crossing", (-1, 18)),
-        ("Lestina", (0, 14)),
-        ("Last Chance", (15, 1)),
-        ("Fort Lopez", (10, 8)),
-        ("Adlerville", (6, 14)),
-        ("Flamme's Folly", (14, 7)),
-        ("Fort Landy", (12, 11)),
-        ("Conradt's Claim - fort", (17, 9)),
-        ("Wilshin's Lodge", (13, 14)),
-        ("Seto's Mill", (19, 3)),
-        ("San Miguel Mission", (19, 10)),
-    ]
-
+MINES = {
+        4  : ("The Badlands", (1, 2)),
+        5  : ("Gregor’s Gulch", (7, 0)),
+        6  : ("Mt. La Terra", (5, 6)),
+        7  : ("Hell Mouth", (19, 0)),
+        8  : ("Glory’s Anthem", (26, 1)),
+        9  : ("Cake’s Cave", (-1, 10)),
+        10 : ("Clayton Ravine", (-4, 17)),
+        11 : ("Mt. La Pointe", (5, 11)),
+        12 : ("Ranae Pointe", (2, 20)),
+        13 : ("The Tombs", (8, 20)),
+        14 : ("Arzhakov’s Gate", (8, 17)),
+        15 : ("Phillip’s Hill", (10, 13)),
+        16 : ("Scrogg’s Bog", (18, 17)),
+        17 : ("Old Ed’s Mine", (18, 12)),
+        18 : ("Conradt’s Claim", (18, 8)),
+        19 : ("Sierra Magallanes", (24, 5)),
+        20 : ("Ruins of Brimstone", (18, 4)),
+    }
 
 def town_json_factory(town_json):
     return Town(
@@ -47,7 +69,7 @@ def town_json_factory(town_json):
         town_json['locations'])
 
 
-def town_factory(name, coord):
+def town_random_factory(tn_id, name, coord):
         """Create a random town
 
         Args:
@@ -87,7 +109,7 @@ def town_factory(name, coord):
         for i in range(num_buildings):
             town_buildings.append(draw_buildings.pop())
 
-        return Town(name, coord, town_type, town_trait, town_buildings)
+        return Town(tn_id, name, coord, town_type, town_trait, town_buildings)
 
 TOWN_SIZES = [
         ("Small", 1, 4),
@@ -278,9 +300,14 @@ TOWN_TRAITS = {
 
 class Town():
 
-    def __init__(self, name, coord, town_type, trait, locations):
+    def __init__(self, tn_id, name, coord, town_type, trait, locations):
 
         #TODO: Add validation
+        #
+        # I don't like storing the id in the Town
+        # but it's too useful when saving
+        #
+        self.id = tn_id
         self.name = name
         self.type = town_type
         self.trait = trait
@@ -303,11 +330,11 @@ class Town():
 
     def __str__(self):
                 return '''
-Town: {}
+Town: {} - {}
  Size: {}
  Kind: {}
  Trait: {}
- Buildings ({}):'''.format(self.coord,
+ Buildings ({}):'''.format(self.name, self.coord,
                            self.get_size(), 
                            self.type,
                            TOWN_TRAITS[self.trait]['name'],

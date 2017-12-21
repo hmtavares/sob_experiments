@@ -5,7 +5,10 @@ import math
 
 import pygame
 from pygame.locals import *
-import pygame_textinput
+#import pygame_textinput
+from sob.hexmap import HexMap
+from sob.hexmap import Hex as SobHex
+
 import json
 
 pygame.init()
@@ -35,8 +38,8 @@ map_rect.move_ip(0, 100)
 print (map_rect)
 
 menu_rect = Rect(0, 0, screen.get_width(), 100)
-screen.fill(BLACK)
-screen.blit(world_map, map_rect)
+#screen.fill(BLACK)
+#screen.blit(world_map, map_rect)
 
 origin = redhex.Point(map_rect.x + HEX_WIDTH / 2, map_rect.y + HEX_HEIGHT / 2)
 size = redhex.Point(hex_size, hex_size)
@@ -50,26 +53,6 @@ hex_org = redhex.Hex(0, 0, 0)
 gf = pygame.font.Font('C:/WINDOWS/Fonts/arial.TTF', 14)
 gf.set_bold(1)
 
-class TerrainHex():
-
-    def __init__(self):
-        self.terrain = None
-        self.town = None
-        self.mine = None
-        self.river = False
-        self.rail = False
-        self.road = False
-
-class TerrainMap():
-
-    def __init__(self):
-        self.hexes = {}
-
-    def get_hex(self, coord):
-        return self.hexes.get(coord)
-
-    def put_hex(self, coord, hex):
-        self.hexes[coord] = hex
 
 class Button:
     def __init__(self, name=None, button_rect=None, extra=None):
@@ -206,7 +189,7 @@ def save_map(tmap):
 
 
 def terrain_hex_json_factory(hex_json):
-    thex = TerrainHex()
+    thex = SobHex()
     print (hex_json)
     thex.terrain = hex_json['terrain']
     thex.rail = hex_json['rail']
@@ -222,7 +205,7 @@ def load_map():
         load_data = json.load(infile)
     print(load_data)
     hexes = load_data['terrain_map']
-    load_map = TerrainMap()
+    load_map = HexMap()
     for h in hexes:
         thex = terrain_hex_json_factory(h)
         (q, r, s) = h['save_coord']
@@ -236,7 +219,7 @@ print( "Default: {}".format(pygame.font.get_default_font()))
 for font, path in list_fonts().items():
         print ("{} - {}".format(font, path))
 
-pygame.display.flip()
+#pygame.display.flip()
 
 
 #textinput = pygame_textinput.TextInput()
@@ -245,7 +228,7 @@ pygame.display.flip()
 clock = pygame.time.Clock()
 
 #Setup the map
-land_map = TerrainMap()
+land_map = HexMap()
 
 
 mouse_hex = None
@@ -291,7 +274,7 @@ while 1:
                 click_pos = redhex.Point(x, y)
                 mouse_hex = redhex.pixel_to_hex(screen_layout, click_pos)
                 mouse_hex = redhex.hex_round(mouse_hex)
-                map_hex = TerrainHex()
+                map_hex = SobHex()
                 print (state)
                 if state:
                     #
