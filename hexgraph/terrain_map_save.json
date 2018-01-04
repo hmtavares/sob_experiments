@@ -1,0 +1,1317 @@
+{
+    "terrain_map": [
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                13,
+                1,
+                -14
+            ],
+            "terrain": 1,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                15,
+                2,
+                -17
+            ],
+            "terrain": 1,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                17,
+                4,
+                -21
+            ],
+            "terrain": 1,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                18,
+                5,
+                -23
+            ],
+            "terrain": 1,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                11,
+                6,
+                -17
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                12,
+                6,
+                -18
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                13,
+                8,
+                -21
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                7,
+                1,
+                -8
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                6,
+                1,
+                -7
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                5,
+                2,
+                -7
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                6,
+                2,
+                -8
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                6,
+                3,
+                -9
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                5,
+                4,
+                -9
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                4,
+                4,
+                -8
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                3,
+                4,
+                -7
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                3,
+                5,
+                -8
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                2,
+                4,
+                -6
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                2,
+                5,
+                -7
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                1,
+                5,
+                -6
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                0,
+                5,
+                -5
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -1,
+                5,
+                -4
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -2,
+                6,
+                -4
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -2,
+                5,
+                -3
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -3,
+                5,
+                -2
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                2,
+                6,
+                -8
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                2,
+                7,
+                -9
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                2,
+                8,
+                -10
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                1,
+                9,
+                -10
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                0,
+                10,
+                -10
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -1,
+                11,
+                -10
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -1,
+                12,
+                -11
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -2,
+                13,
+                -11
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -3,
+                14,
+                -11
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -4,
+                15,
+                -11
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -4,
+                16,
+                -12
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -4,
+                17,
+                -13
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -5,
+                17,
+                -12
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -5,
+                18,
+                -13
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -3,
+                17,
+                -14
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -3,
+                18,
+                -15
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -4,
+                19,
+                -15
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -5,
+                20,
+                -15
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -4,
+                20,
+                -16
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -6,
+                19,
+                -13
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                -7,
+                20,
+                -13
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                25,
+                0,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                24,
+                1,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                23,
+                2,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                22,
+                2,
+                -24
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                22,
+                3,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                21,
+                3,
+                -24
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                4,
+                -24
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                5,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                5,
+                -24
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                6,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                7,
+                -26
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                7,
+                -27
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                8,
+                -27
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                8,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                9,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                18,
+                10,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                18,
+                11,
+                -29
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                17,
+                11,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                11,
+                -30
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                11,
+                -31
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                12,
+                -31
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                13,
+                -32
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                19,
+                14,
+                -33
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                18,
+                14,
+                -32
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                18,
+                15,
+                -33
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                17,
+                15,
+                -32
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                16,
+                16,
+                -32
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                17,
+                16,
+                -33
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                16,
+                17,
+                -33
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                16,
+                18,
+                -34
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                17,
+                18,
+                -35
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                16,
+                19,
+                -35
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                17,
+                19,
+                -36
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                17,
+                20,
+                -37
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                16,
+                20,
+                -36
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                14,
+                -34
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                13,
+                -33
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                20,
+                15,
+                -35
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                16,
+                12,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                15,
+                13,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                14,
+                13,
+                -27
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                13,
+                13,
+                -26
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                12,
+                14,
+                -26
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                12,
+                15,
+                -27
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                12,
+                16,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                11,
+                17,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                10,
+                18,
+                -28
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                10,
+                17,
+                -27
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                9,
+                18,
+                -27
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                9,
+                17,
+                -26
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                8,
+                18,
+                -26
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                7,
+                18,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                6,
+                19,
+                -25
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                5,
+                19,
+                -24
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                4,
+                20,
+                -24
+            ],
+            "terrain": 2,
+            "town": null
+        },
+        {
+            "mine": null,
+            "rail": false,
+            "river": false,
+            "road": false,
+            "save_coord": [
+                10,
+                6,
+                -16
+            ],
+            "terrain": 2,
+            "town": null
+        }
+    ]
+}

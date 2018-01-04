@@ -18,27 +18,89 @@ import dice
 #  Note that these rolls also work as
 #  an 'id' for the town
 #
+#TOWNS = {
+#        2  : ("Masthead", (11, 1)),
+#        3  : ("Fort Burk", (11, 4)),
+#        4  : ("West Witold", (-4,9)),
+#        5  : ("Hill Town", (1, 6)),
+#        6  : ("Serafin", (7, 7)),
+#        7  : ("Fringe", (10, 6)),
+#        8  : ("Wood's End", (-8, 17)),
+#        9  : ("Larberg's Landing", (-4, 20)),
+#        10 : ("Stone's Crossing", (-1, 18)),
+#        11 : ("Lestina", (0, 14)),
+#        12 : ("Last Chance", (15, 1)),
+#        13 : ("Fort Lopez", (10, 8)),
+#        14 : ("Adlerville", (6, 14)),
+#        15 : ("Flamme's Folly", (14, 7)),
+#        16 : ("Fort Landy", (12, 11)),
+#        17 : ("Conradt's Claim - fort", (17, 9)),
+#        18 : ("Wilshin's Lodge", (13, 14)),
+#        19 : ("Seto's Mill", (19, 3)),
+#        20 : ("San Miguel Mission", (19, 10)),
+#    }
+
+
 TOWNS = {
-        2  : ("Masthead", (11, 1)),
-        3  : ("Fort Burk", (11, 4)),
-        4  : ("West Witold", (-4,9)),
-        5  : ("Hill Town", (1, 6)),
-        6  : ("Serafin", (7, 7)),
-        7  : ("Fringe", (10, 6)),
-        8  : ("Wood's End", (-8, 17)),
-        9  : ("Larberg's Landing", (-4, 20)),
-        10 : ("Stone's Crossing", (-1, 18)),
-        11 : ("Lestina", (0, 14)),
-        12 : ("Last Chance", (15, 1)),
-        13 : ("Fort Lopez", (10, 8)),
-        14 : ("Adlerville", (6, 14)),
-        15 : ("Flamme's Folly", (14, 7)),
-        16 : ("Fort Landy", (12, 11)),
-        17 : ("Conradt's Claim - fort", (17, 9)),
-        18 : ("Wilshin's Lodge", (13, 14)),
-        19 : ("Seto's Mill", (19, 3)),
-        20 : ("San Miguel Mission", (19, 10)),
+        2  : {'name':"Masthead",
+              'coord': (11, 1),
+              'disallowed': ['Mining', 'River', 'Rail']},
+        3  : {'name':"Fort Burk",
+              'coord': (11, 4),
+              'disallowed': ['Mining', 'River', 'Rail']},
+        4  : {'name':"West Witold",
+              'coord': (-4, 9),
+              'disallowed': ['River', 'Rail']},
+        5  : {'name':"Hill Town",
+              'coord': (1, 6),
+              'disallowed': ['Rail']},
+        6  : {'name':"Serafin",
+              'coord': (7, 7),
+              'disallowed': ['River']},
+        7  :  {'name':"Fringe",
+              'coord': (10, 6),
+              'disallowed': ['River', 'Mine']},
+        8  : {'name':"Wood's End",
+              'coord': (-8, 17),
+              'disallowed': ['River']},
+        9  : {'name':"Larberg's Landing",
+              'coord': (-4, 20),
+              'disallowed': ['Rail']},
+        10 : {'name':"Stone's Crossing",
+              'coord': (-1, 18),
+              'disallowed': ['River']},
+        11 : {'name':"Lestina",
+              'coord': (0, 14),
+              'disallowed': ['River']},
+        12 : {'name':"Last Chance",
+              'coord': (15, 1),
+              'disallowed': ['River']},
+        13 : {'name':"Fort Lopez",
+              'coord': (10, 8),
+              'disallowed': ['River']},
+        14 : {'name':"Adlerville",
+              'coord': (6, 14),
+              'disallowed': ['River', 'Rail']},
+        15 : {'name':"Flamme's Folly",
+              'coord':  (14, 7),
+              'disallowed': ['River', 'Rail']},
+        16 : {'name':"Fort Landy",
+              'coord': (12, 11),
+              'disallowed': ['River', 'Rail']},
+        17 : {'name':"Conradt's Claim",
+              'coord': (17, 9),
+              'disallowed': ['Rail']},
+        18 : {'name':"Wilshin's Lodge",
+              'coord': (13, 14),
+              'disallowed': ['Rail']},
+        19 : {'name':"Seto's Mill",
+              'coord': (19, 3),
+              'disallowed': ['Rail']},
+        20 : {'name':"San Miguel Mission",
+              'coord': (19, 10),
+              'disallowed': ['Rail']},
     }
+
 
 MINES = {
         4  : ("The Badlands", (1, 2)),
@@ -60,12 +122,15 @@ MINES = {
         20 : ("Ruins of Brimstone", (18, 4)),
     }
 
+#def __init__(self, tn_id, name, coord, town_type, trait, locations):
+
 def town_json_factory(town_json):
     return Town(
+        town_json['id'],
         town_json['name'],
         town_json['coord'],
         town_json['type'],
-        town_json['trait'],
+        town_json['trait_id'],
         town_json['locations'])
 
 
@@ -111,6 +176,105 @@ def town_random_factory(tn_id, name, coord):
 
         return Town(tn_id, name, coord, town_type, town_trait, town_buildings)
 
+
+def town_random_factory_2(tn_id, tn):
+        """Create a random town
+
+        Args:
+            name - The name of the town
+            coord - the q,r coordinates of the town
+        """
+
+        #
+        # Town Size and how many buildings
+        #
+        town_size, size_low, size_high  = random.choice(TOWN_SIZES)
+
+        num_buildings = random.randint(size_low, size_high)
+
+        #
+        #  Generate town kind.
+        #  Keep trying until a valid type is generated
+        # 
+        while(True):
+            roll = dice.roll('2d6')
+            town_type = TOWN_TYPES[sum(roll)]
+            #print( "{} - {} - {}".format(tn['name'], town_type, tn['disallowed']))
+            if town_type not in tn['disallowed']:
+                break
+
+        #
+        # Generate Town Trait
+        # Keep trying until a valid trait is generated
+        #
+        while(True):
+            roll = dice.roll('2d6')
+            trait_roll = roll[0] * 10 + roll[1]
+            town_trait = TOWN_TRAITS[trait_roll]
+
+            #
+            # Check for special trait considerations
+            #
+            disallowed = town_trait.get('disallowed')
+            if not disallowed:
+                #
+                # No special considerations.
+                # Keep the trait
+                #
+                break
+            if town_type not in disallowed:
+                #
+                # No special consideration violations
+                # Keep the trait.
+                #
+                break
+        #
+        # Generate buildings
+        #
+        # Copy the building list so we can 'draw' from it
+        # without modifying the reference list.
+        draw_buildings = TOWN_BUILDINGS[:]
+        town_buildings = []
+
+        #
+        # Check if the town has special building considerations
+        #
+        special_tn = TOWN_TYPE_BLDGS.get(town_type)
+        if special_tn:
+            #
+            # Get manditory buildings then remove
+            # them from the available buildings
+            #
+            for bldg in special_tn['include']:
+                draw_buildings.remove(bldg)
+                town_buildings.append(bldg)
+                num_buildings -= 1
+
+            #
+            # Get excluded buildings and take them out of the
+            # available buildings                
+            #
+            for bldg in special_tn['exclude']:
+                draw_buildings.remove(bldg)
+
+        #
+        # Randomize the remaining buildings
+        # and draw enough to fill the town
+        #                
+        random.shuffle(draw_buildings)
+        for i in range(num_buildings):
+            town_buildings.append(draw_buildings.pop())
+
+        #
+        # Fix town coordinates to be normalized 3-tuple coordinates
+        # 
+        (q, r) = tn['coord']
+        coord = (q, r, 0 - (q + r))
+        return Town(tn_id, tn['name'], coord, town_type, trait_roll, town_buildings)
+
+
+
+
 TOWN_SIZES = [
         ("Small", 1, 4),
         ("Small", 1, 4),
@@ -123,18 +287,35 @@ TOWN_SIZES = [
     ]
 
 TOWN_TYPES = {
-    2: 'Town Ruins',
-    3: 'Haunted Town',
-    4: 'Plague Town',
-    5: 'Rail Town',
-    6: 'Standard Frontier Town',
-    7: 'Standard Frontier Town',
-    8: 'Standard Frontier Town',
-    9: 'Mining Town',
-    10: 'River Town',
-    11: 'Mutant Town',
-    12: 'Outlaw Town',
+    2: 'Ruins',
+    3: 'Haunted',
+    4: 'Plague',
+    5: 'Rail',
+    6: 'Standard Frontier',
+    7: 'Standard Frontier',
+    8: 'Standard Frontier',
+    9: 'Mining',
+    10: 'River',
+    11: 'Mutant',
+    12: 'Outlaw',
 }
+
+
+TOWN_TYPE_BLDGS = {
+    'Mutant': {'include': ["Mutant Quarter"],
+               'exclude': ["Frontier Outpost"]},
+    'Mining': {'include': ["General Store"],
+               'exclude': []},
+    'Outlaw': {'include': ["Smuggler’s Den"],
+               'exclude': ["Sheriff’s Office"]},
+    'Plague': {'include': ["Doc’s Office", "Church"],
+               'exclude': ["Sheriff’s Office"]},
+    'River':  {'include': ["Street Market"],
+               'exclude': []}
+}
+
+
+
 
 TOWN_BUILDINGS = [
     "General Store",
@@ -162,7 +343,8 @@ TOWN_TRAITS = {
     },
     13: {
         "name": "No Stones Allowed",
-        "description": ""
+        "description": "",
+        "disallowed" : ['Mining']
     },
     14: {
         "name": "Dark Stone Infused",
@@ -170,7 +352,8 @@ TOWN_TRAITS = {
     },
     15: {
         "name": "Shortages",
-        "description": ""
+        "description": "",
+        "disallowed" : ['Mining', 'Rail']
     },
     16: {
         "name": "Obligation",
@@ -190,7 +373,9 @@ TOWN_TRAITS = {
     },
     24: {
         "name": "Xenophobic",
-        "description": ""
+        "description": "",
+        "disallowed" : ['Mutant'],
+        "exclude_bldg": ['Mutant Quarter']
     },
     25: {
         "name": "Unstable Gate",
@@ -202,7 +387,9 @@ TOWN_TRAITS = {
     },
     31: {
         "name": "Heathens",
-        "description": ""
+        "description": "",
+        "disallowed" : ['Plague'],
+        "exclude_bldg": ['Church']
     },
     32: {
         "name": "Cannibals",
@@ -210,7 +397,8 @@ TOWN_TRAITS = {
     },
     33: {
         "name": "Religious Cult",
-        "description": ""
+        "description": "",
+        "include_bldg": ['Church']
     },
     34: {
         "name": "Boring",
@@ -238,7 +426,8 @@ TOWN_TRAITS = {
     },
     44: {
         "name": "Peaceful",
-        "description": ""
+        "description": "",
+        "disallowed" : ['Outlaw'],
     },
     45: {
         "name": "Addicted",
@@ -274,7 +463,9 @@ TOWN_TRAITS = {
     },
     61: {
         "name": "Law Abiding",
-        "description": ""
+        "description": "",
+        "disallowed" : ['Outlaw'],
+        "exclude_bldg": ["Smuggler's Den"]
     },
     62: {
         "name": "Fancy House",
@@ -300,7 +491,7 @@ TOWN_TRAITS = {
 
 class Town():
 
-    def __init__(self, tn_id, name, coord, town_type, trait, locations):
+    def __init__(self, tn_id, name, coord, town_type, trait_id, locations):
 
         #TODO: Add validation
         #
@@ -310,11 +501,21 @@ class Town():
         self.id = tn_id
         self.name = name
         self.type = town_type
-        self.trait = trait
+        self.trait_id = trait_id
+        #
+        # Quickly validate the trait_id
+        #
+        trait_test = self.trait
+
         self.locations = locations
         self.coord = coord
 
-    def get_size(self):
+    @property
+    def trait(self):
+        return TOWN_TRAITS[self.trait_id]
+
+    @property
+    def size(self):
         num_buildings = len(self.locations)
 
         if num_buildings < 1:
@@ -335,7 +536,8 @@ Town: {} - {}
  Kind: {}
  Trait: {}
  Buildings ({}):'''.format(self.name, self.coord,
-                           self.get_size(), 
+                           self.size, 
                            self.type,
-                           TOWN_TRAITS[self.trait]['name'],
+                           self.trait['name'],
+#                           TOWN_TRAITS[self.trait]['name'],
                            self.locations)

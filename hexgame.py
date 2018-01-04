@@ -59,7 +59,7 @@ parser.add_argument('--level', dest='log_level', default=DEFAULT_LOG_LEVEL,
 args = parser.parse_args()
 
 time_now = datetime.datetime.now()
-full_log_file = setup_logging(time_now, args.log_level, '.', args.log_file)
+full_log_file = setup_logging(time_now, args.log_level, 'logs', args.log_file)
 
 
 log.info("Game Start")
@@ -67,7 +67,7 @@ log.info("Game Start")
 class HexcrawlCommands(cmd.Cmd):
     """Command processor for Deduce or Die"""
 
-    def __init__(self, game):
+    def __init__(self, game, the_map):
         """Create a command processor for testing Hexcrawl
 
 
@@ -82,17 +82,43 @@ class HexcrawlCommands(cmd.Cmd):
         self.log = logging.getLogger(self.__class__.__name__)
 
         self.game = game
+        self.display = the_map
+        self.posse = None
 
         cmd.Cmd.__init__(self)
 
     def do_newgame(self, line):
         self.game.new_game()
+        if not self.posse:
+            #
+            # Create a posse marker the old posse from the display
+            #
+            self.posse = map_display.PosseMarker(self.game.posse.location)
+            self.display.add_artifact(self.posse)
+
+        else:
+            #
+            # Move the posse marker
+            #
+            loc = self.game.posse.location
+            self.posse.set_coord(loc)
+
+        print (self.posse.__dict__)
+        self.display.event_update()
+
+    def do_jumpposse(self, line):
+        desthex = self.display.get_click()
+        self.posse._loc = desthex
+        self.display.event_update()
 
     def do_show(self, line):
+        if not self.game.started:
+            print ("Start or load a game")
+            return
         if not line:
             print ("ID or town name required")
             return
-        towns = self.game.get_towns()
+        towns = self.game.towns
         try:
             tn_id = int(line)
             tn = towns[tn_id]
@@ -103,14 +129,30 @@ class HexcrawlCommands(cmd.Cmd):
                     print(tn)
                     break
 
-    def do_quit(self, line):
-        do_EOF()
+    def do_save(self, line):
+        parms = line.split()
+        if len(parms) != 1:
+            print("Invalid filename")
+            return
+        self.game.save_game(line)
 
-    def do_exit(self, line):
-        do_EOF()
+    def do_load(self, line):
+        parms = line.split()
+        if len(parms) != 1:
+            print("Invalid filename")
+            return
+        
+        self.game.load_game(line)
 
     def do_EOF(self, line):
         return True
+
+    def do_quit(self, line):
+        return True
+
+    def do_exit(self, line):
+        return True
+
 
 #
 # Create game
@@ -123,10 +165,11 @@ game = HexCrawl()
 display  = map_display.MapDisplay()
 display.update()
 
+
 #
 # Start the CLI
 #  pygame won't be happy about not getting
 #  any CPU as the cmdloop waits for input.
 #  We'll live with it for now.
 #
-HexcrawlCommands(game).cmdloop()
+HexcrawlCommands(game, display).cmdloop()
