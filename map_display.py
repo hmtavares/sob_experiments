@@ -140,7 +140,7 @@ class MapDisplay():
         self.screen_layout = redhex.Layout(redhex.layout_pointy, size, origin)
 
         #Setup font
-        self.font = pygame.font.Font('C:/WINDOWS/Fonts/arial.TTF', 14)
+        self.font = pygame.font.SysFont("Arial", 14)
         self.font.set_bold(1)
 
         #

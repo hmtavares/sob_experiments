@@ -49,8 +49,7 @@ map_height = 21
 map_width = 28
 hex_org = redhex.Hex(0, 0, 0)
 
-#gf = pygame.font.Font('C:\WINDOWS\Fonts\ARIALN.TTF', 14)
-gf = pygame.font.Font('C:/WINDOWS/Fonts/arial.TTF', 14)
+gf = pygame.font.SysFont("Arial", 14)
 gf.set_bold(1)
 
 
