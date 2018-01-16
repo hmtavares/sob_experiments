@@ -81,8 +81,8 @@ class HexCrawl():
         
         # Generate the towns
         self.map_towns = {}
-        for tn_id, tn in TOWNS.items():
-            self.map_towns[tn_id] = town_random_factory_2(tn_id, tn)
+        for tn_id in TOWNS:
+            self.map_towns[tn_id] = town_random_factory_2(tn_id)
 
         #
         # Pick a random town for the Posse

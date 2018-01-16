@@ -6,9 +6,9 @@ Shadows of Brimstone is a cooperative, dungeon-crawl board game. You should chec
 
 * [Shadows of Brimstone at Boardgame Geek]( https://boardgamegeek.com/boardgame/146791/shadows-brimstone-city-ancients)
 
-The game primarily take place in underground 'mines' with each session loosely tied together to form a 'campaign'.
+The game primarily takes place in underground 'mines' with each session loosely tied together to form a 'campaign'.
 
-A fan, Sid Rain AKA paddirn on BGG, created created an expansion called "Hexcrawl".
+A fan, Sid Rain AKA paddirn on BGG, created an expansion called "Hexcrawl".
 
 * [Hexcrawl](https://boardgamegeek.com/thread/1239257/shadows-brimstone-hexcrawl)
 
@@ -43,9 +43,9 @@ It will save and load the game data. At this point this is just the generated to
 It's actually a little useful even in it's current very raw form. I use it in our games to view the map (in color!) as well as the town attributes for each town we visit.
 
 # Installation
-The application should work for the major Operating Systems (WIndows, OS X, Linux).
+The application should work for the major Operating Systems (Windows, OS X, Linux).
 
-As I'm writing this I realize I need to figure out a way for the application so get this stuff for you. Sorry.
+As I'm writing this I realize I need to figure out a way for the application to get this stuff for you. Sorry.
 
 ## Python 3
 [Install Python 3 for your system.](https://www.python.org/downloads/)
