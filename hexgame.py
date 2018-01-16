@@ -8,6 +8,7 @@ import random
 import copy
 import argparse
 import cmd
+import os
 import dice
 import sob.town as town
 from sob.town import Town
@@ -18,10 +19,10 @@ from sob.game import HexCrawl
 
 # Test Hexcrawl module components
 
-DEFAULT_LOGFILE = 'hexgame'
+DEFAULT_LOGFILE = 'logs/hexgame'
 DEFAULT_LOG_LEVEL = 'INFO'
 
-def setup_logging(time_now, log_level, log_path, log_filename):
+def setup_logging(time_now, log_level, log_file):
 
     global log
     global root_logger
@@ -38,7 +39,25 @@ def setup_logging(time_now, log_level, log_path, log_filename):
     root_logger = logging.getLogger()
     root_logger.setLevel(levels[log_level])
 
-    log_file = log_path + '/' + log_filename + '_' + timestamp_now + '.log'
+    log_path, log_filename = os.path.split(log_file)
+    log_filename = log_filename + '_' + timestamp_now + '.log'
+    #
+    # Check for an actual log filename
+    #
+    if not log_filename:
+        raise ValueError("Log file path must include a filename")
+
+    #
+    # Check that the log directory exists
+    #
+    if log_path and not os.path.exists(log_path):
+        #
+        #  It doesn't.
+        #  Create the directory
+        #
+        os.makedirs(log_path)
+    
+    log_file = os.path.join(log_path, log_filename)
     file_handler = logging.FileHandler(log_file)
     file_handler.setFormatter(log_formatter)
     root_logger.addHandler(file_handler)
@@ -46,10 +65,10 @@ def setup_logging(time_now, log_level, log_path, log_filename):
     log = logging.getLogger()
     return log_file
 
-parser = argparse.ArgumentParser(description='Play a practice session of Deduce or Die')
+parser = argparse.ArgumentParser(description='Track a Hexcrawl game session')
 
 parser.add_argument('--logfile', dest='log_file', default=DEFAULT_LOGFILE,
-                        help='The name of the log file. Default={}_<timestamp>.log'.format(DEFAULT_LOGFILE))
+                        help='The path and name of the log file. Default={}_<timestamp>.log'.format(DEFAULT_LOGFILE))
 parser.add_argument('--level', dest='log_level', default=DEFAULT_LOG_LEVEL,
                         help='Set the log level for the application log. ' \
                              '[ERROR, WARN, INFO, DEBUG] Default={}'.format(DEFAULT_LOG_LEVEL))
@@ -59,13 +78,13 @@ parser.add_argument('--level', dest='log_level', default=DEFAULT_LOG_LEVEL,
 args = parser.parse_args()
 
 time_now = datetime.datetime.now()
-full_log_file = setup_logging(time_now, args.log_level, 'logs', args.log_file)
+full_log_file = setup_logging(time_now, args.log_level, args.log_file)
 
 
 log.info("Game Start")
 
 class HexcrawlCommands(cmd.Cmd):
-    """Command processor for Deduce or Die"""
+    """Command processor for Shadows of Brimstone Hexcrawl"""
 
     def __init__(self, game, the_map):
         """Create a command processor for testing Hexcrawl
