@@ -53,7 +53,7 @@ As I'm writing this I realize I need to figure out a way for the application to 
 I'm using Python 3.6.3
 
 ## pygame
-[Install pygame for your system.](http://www.pygame.org/wiki/GettingStarted#Pygame Installation)
+[Install pygame for your system.](http://www.pygame.org/wiki/GettingStarted#Pygame)
 
 I'm using pygame 1.9.3
 
