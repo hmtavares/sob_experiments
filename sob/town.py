@@ -5,12 +5,6 @@ import datetime
 import logging
 import random
 import copy
-
-
-#import enum
-#from random import choice
-
-#import charts
 import dice
 
 #
@@ -18,29 +12,6 @@ import dice
 #  Note that these rolls also work as
 #  an 'id' for the town
 #
-#TOWNS = {
-#        2  : ("Masthead", (11, 1)),
-#        3  : ("Fort Burk", (11, 4)),
-#        4  : ("West Witold", (-4,9)),
-#        5  : ("Hill Town", (1, 6)),
-#        6  : ("Serafin", (7, 7)),
-#        7  : ("Fringe", (10, 6)),
-#        8  : ("Wood's End", (-8, 17)),
-#        9  : ("Larberg's Landing", (-4, 20)),
-#        10 : ("Stone's Crossing", (-1, 18)),
-#        11 : ("Lestina", (0, 14)),
-#        12 : ("Last Chance", (15, 1)),
-#        13 : ("Fort Lopez", (10, 8)),
-#        14 : ("Adlerville", (6, 14)),
-#        15 : ("Flamme's Folly", (14, 7)),
-#        16 : ("Fort Landy", (12, 11)),
-#        17 : ("Conradt's Claim - fort", (17, 9)),
-#        18 : ("Wilshin's Lodge", (13, 14)),
-#        19 : ("Seto's Mill", (19, 3)),
-#        20 : ("San Miguel Mission", (19, 10)),
-#    }
-
-
 TOWNS = {
         2  : {'name':"Masthead",
               'coord': (11, 1),
@@ -131,60 +102,26 @@ def town_json_factory(town_json):
         town_json['coord'],
         town_json['type'],
         town_json['trait_id'],
+        town_json['job'],
         town_json['locations'])
 
 
-def town_random_factory(tn_id, name, coord):
+def town_random_factory_2(tn_id, allow_ruins = False):
         """Create a random town
 
         Args:
-            name - The name of the town
-            coord - the q,r coordinates of the town
+            tn_id - The id of the town on the hexcrawl map
+            allow_ruins - True if a town can be generated as
+                          type 'Ruins'
         """
 
-        #
-        # Town Size and how many buildings
-        #
-        town_size, size_low, size_high  = random.choice(TOWN_SIZES)
-
-        num_buildings = random.randint(size_low, size_high)
-
-        #
-        #  Generate town kind
-        #
-        roll = dice.roll('2d6')
-        town_type = TOWN_TYPES[sum(roll)]
-
-        #
-        # Generate Town Trait
-        #
-        roll = dice.roll('2d6')
-        trait_roll = roll[0] * 10 + roll[1]
-        town_trait = trait_roll
-
-        #
-        # Generate buildings
-        #
-        # Copy the building list
-        draw_buildings = TOWN_BUILDINGS[:]
-
-        random.shuffle(draw_buildings)
-
-        town_buildings = []
-        for i in range(num_buildings):
-            town_buildings.append(draw_buildings.pop())
-
-        return Town(tn_id, name, coord, town_type, town_trait, town_buildings)
-
-
-def town_random_factory_2(tn_id, tn):
-        """Create a random town
-
-        Args:
-            name - The name of the town
-            coord - the q,r coordinates of the town
-        """
-
+        tn = TOWNS[tn_id]
+        if not allow_ruins:
+            #
+            # Ruins are not allowed for this town so
+            # add Ruins to the disallowed type list
+            #
+            tn['disallowed'].append("Ruins")
         #
         # Town Size and how many buildings
         #
@@ -199,7 +136,6 @@ def town_random_factory_2(tn_id, tn):
         while(True):
             roll = dice.roll('2d6')
             town_type = TOWN_TYPES[sum(roll)]
-            #print( "{} - {} - {}".format(tn['name'], town_type, tn['disallowed']))
             if town_type not in tn['disallowed']:
                 break
 
@@ -265,12 +201,22 @@ def town_random_factory_2(tn_id, tn):
         for i in range(num_buildings):
             town_buildings.append(draw_buildings.pop())
 
+
+        #
+        # Roll for the town job
+        #
+        # TODO: Create a seperate "Manditory" roll to
+        #       check if the town has a manditory job
+        #
+        town_job = dice.roll('d100')
+
         #
         # Fix town coordinates to be normalized 3-tuple coordinates
         # 
         (q, r) = tn['coord']
         coord = (q, r, 0 - (q + r))
-        return Town(tn_id, tn['name'], coord, town_type, trait_roll, town_buildings)
+        return Town(tn_id, tn['name'], coord, town_type, trait_roll,
+                    town_job, town_buildings)
 
 
 
@@ -491,7 +437,7 @@ TOWN_TRAITS = {
 
 class Town():
 
-    def __init__(self, tn_id, name, coord, town_type, trait_id, locations):
+    def __init__(self, tn_id, name, coord, town_type, trait_id, job, locations):
 
         #TODO: Add validation
         #
@@ -506,6 +452,8 @@ class Town():
         # Quickly validate the trait_id
         #
         trait_test = self.trait
+
+        self.job = job
 
         self.locations = locations
         self.coord = coord
@@ -531,13 +479,14 @@ class Town():
 
     def __str__(self):
                 return '''
-Town: {} - {}
- Size: {}
- Kind: {}
+Town:   {} - {}
+ Size:  {}
+ Kind:  {}
  Trait: {}
+ Job:   {}
  Buildings ({}):'''.format(self.name, self.coord,
                            self.size, 
                            self.type,
+                           self.job,
                            self.trait['name'],
-#                           TOWN_TRAITS[self.trait]['name'],
                            self.locations)
