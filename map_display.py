@@ -103,7 +103,6 @@ class PosseMarker(object):
         # TODO doesn't work. Why?
         self.set_coord(coord)
 
-
     def render(self, screen, screen_layout):
         (x, y) = redhex.hex_to_pixel(screen_layout, self._loc)
         (px, py) = (int(x), int(y))
@@ -118,9 +117,9 @@ class MapDisplay():
         pygame.init()
 
         #
-        # List of artifacts to render
+        # Map of artifacts to render
         #
-        self.artifacts = []
+        self.artifacts = {}
 
         self.world_map = pygame.image.load("world_default_medium.jpg")
         self.map_rect = self.world_map.get_rect()
@@ -128,7 +127,7 @@ class MapDisplay():
         hex_size = HEX_HEIGHT / 2
 
         screen_size = self.map_rect.inflate(0, 100).size
-        self.screen = pygame.display.set_mode(screen_size)
+        self.screen = pygame.display.set_mode(screen_size,)
 
         self.map_rect.move_ip(0, 100)
 
@@ -148,8 +147,11 @@ class MapDisplay():
         #
         self.clock = pygame.time.Clock()
 
-    def add_artifact(self, artifact):
-        self.artifacts.append(artifact)
+    def add_artifact(self, art_id, artifact):
+        self.artifacts[art_id] = artifact
+
+    def get_artifact(self, art_id):
+        return self.artifacts[art_id]
 
 
     def get_click(self):
@@ -177,7 +179,7 @@ class MapDisplay():
                         
                         return mouse_hex
 
-            for art in self.artifacts:
+            for art in self.artifacts.values():
                 art.render(self.screen, self.screen_layout)
 
             pygame.display.flip()
@@ -231,7 +233,7 @@ class MapDisplay():
             # #     #print ('{} - {}'.format(coord, mhex.__dict__))
             # pygame.draw.circle(self.screen, GREEN, (px, py), int(HEX_WIDTH / 2), 3)
 
-            for art in self.artifacts:
+            for art in self.artifacts.values():
                 art.render(self.screen, self.screen_layout)
 
             pygame.display.flip()
