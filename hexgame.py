@@ -216,7 +216,7 @@ class HexcrawlCommands(cmd.Cmd):
         except SystemExit as e:
             #
             # Gross but it's the only way to prevent
-            # a command error for dumping out of the
+            # a command error from dumping out of the
             # entire application.
             #
             pass
@@ -276,7 +276,7 @@ class HexcrawlCommands(cmd.Cmd):
             self.game.posse.mission_loc = mission_hex
 
     def do_job(self, line):
-        """Set a mission for the Posse
+        """Set a job for the Posse
 
         Pararmeters:
             line - The Job ID (roll) from the job table
