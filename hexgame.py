@@ -103,14 +103,39 @@ class HexcrawlCommands(cmd.Cmd):
         self.game = game
         self.display = the_map
         self.posse = None
+        self.setup_parsers()
 
         cmd.Cmd.__init__(self)
+
+
+    def setup_parsers(self):
+        #
+        # Show parser
+        #
+        # show [town, posse]
+        self.show_parser = argparse.ArgumentParser(description='Track a Hexcrawl game session')
+        subparsers = self.show_parser.add_subparsers(help='Show towns or posse')
+
+        #        
+        # show town <town name/id>
+        #
+        town_parser = subparsers.add_parser("town")
+        town_parser.set_defaults(func=self.show_town)
+        #
+        # show posse
+        #
+        posse_parser = subparsers.add_parser("posse")
+        posse_parser.set_defaults(func=self.show_posse)
+
+        town_parser.add_argument('name',
+                        help='The name of the town to show.')
 
     def do_newgame(self, line):
         """Create a new Hexcrawl game session
 
-        newgame <cr>
-        Parameters: None
+        newgame {Posse name}<cr>
+        Parameters: 
+            Posse name: [optional] The name of the Posse for the game
         
         Create all town locations.
         Randomly place the Posse
@@ -118,22 +143,14 @@ class HexcrawlCommands(cmd.Cmd):
         If there is an existing game session it will be replaced with
         the new session. Save before running this command.
         """
-        self.game.new_game()
-        if not self.posse:
-            #
-            # Create a posse marker the old posse from the display
-            #
-            self.posse = map_display.PosseMarker(self.game.posse.location)
-            self.display.add_artifact(self.posse)
+        posse_name = line.strip()
+        self.game.new_game(posse_name)
+        #
+        # Create a posse marker
+        #
+        self.display.add_artifact('posse',
+            map_display.PosseMarker(self.game.posse.location))
 
-        else:
-            #
-            # Move the posse marker
-            #
-            loc = self.game.posse.location
-            self.posse.set_coord(loc)
-
-        print (self.posse.__dict__)
         self.display.event_update()
 
     def do_jumpposse(self, line):
@@ -153,14 +170,22 @@ class HexcrawlCommands(cmd.Cmd):
               on the command line
         """
         desthex = self.display.get_click()
-        self.posse._loc = desthex
-        self.display.event_update()
+        #
+        # If we got a destination set it.
+        # Otherwise leave the Posse where it is.
+        #
+        if desthex:
+            self.game.posse.location = desthex
+            self.display.get_artifact('posse').set_coord(desthex)
+            self.display.event_update()
 
     def do_show(self, line):
-        """Show the details of a town
+        """Show details of a game element
 
-        show <town name> <cr>
-        Parameters: Town name
+        show [town, posse]
+
+        show town <town> <cr>
+        Parameters: town - Town name or id
         
         Print the details of the town named in the command.
 
@@ -176,28 +201,106 @@ class HexcrawlCommands(cmd.Cmd):
               e.g. 'show Fort' will show Fort Burke, Fort Lopez
               and Fort Landy
 
-        TODO: Improve formatting
-        TODO: Add Job if one has been rolled.
-        TODO: Optionally hide towns that have not been visited
-        TODO: Show "last known" town stats and don't show any changes
-              i.e. destroyed buildings, until the town is visited
+        show posse
+        Parameters: None
+
+        Print the details of the Posse
+
         """
         if not self.game.started:
             print ("Start or load a game")
             return
-        if not line:
-            print ("ID or town name required")
-            return
+
+        try:
+            show_args = self.show_parser.parse_args(line.split())
+        except SystemExit as e:
+            #
+            # Gross but it's the only way to prevent
+            # a command error from dumping out of the
+            # entire application.
+            #
+            pass
+
+        show_args.func(show_args)
+
+
+    def show_town(self, town_args):
+        """Show the details of a town
+        Parameters:
+            town_args - The parse_arg argument object
+
+        This is used by the do_show() parser
+        """
+        tn_name = town_args.name
+
         towns = self.game.towns
         try:
-            tn_id = int(line)
+            tn_id = int(tn_name)
             tn = towns[tn_id]
             print (tn)
         except ValueError:
             for tn in towns.values():
-                if line in tn.name:
+                if tn_name in tn.name:
                     print(tn)
                     break
+
+    def show_posse(self, posse_args):
+        """Show the details of a posse
+        Parameters:
+            town_args - The parse_arg argument object
+
+        This is used by the do_show() parser
+        """
+
+        print(self.game.posse)
+
+    def do_mission(self, line):
+        """Set a mission for the Posse
+
+        Pararmeters:
+            line - The text description for the mission
+
+        The map graphic will be activated and the destination
+        for the mission can be set. The ESC key will cancel
+        the map action and save the mission with no location.
+        """
+        self.game.posse.mission_text = line
+
+        mission_hex = self.display.get_click()
+        #
+        # If we got a hex set it.
+        # Otherwise no location
+        #
+        self.game.posse.mission_loc = None
+        if mission_hex:
+            self.game.posse.mission_loc = mission_hex
+
+    def do_job(self, line):
+        """Set a job for the Posse
+
+        Pararmeters:
+            line - The Job ID (roll) from the job table
+
+        The map graphic will be activated and the destination
+        for the job can be set. The ESC key will cancel
+        the map action and save the job with no location.
+        """
+        try:
+            self.game.posse.job_id = int(line)
+        except ValueError:
+            print("Job key must be an integer")
+            return
+
+
+        job_hex = self.display.get_click()
+        #
+        # If we got a hex set it.
+        # Otherwise no location
+        #
+        self.game.posse.job_loc = None
+        if job_hex:
+            self.game.posse.job_loc = job_hex
+
 
     def do_save(self, line):
         """Save the current Hexcrawl game session data
@@ -207,7 +310,7 @@ class HexcrawlCommands(cmd.Cmd):
         filename - A filname to use when saving the data.
         
         Saves all town locations.
-        [TODO] Saves Posse location.
+        Saves Posse data.
 
         """
         parms = line.split()
@@ -234,7 +337,20 @@ class HexcrawlCommands(cmd.Cmd):
             print("Invalid filename")
             return
         
-        self.game.load_game(line)
+        try:
+            self.game.load_game(line)
+        except FileNotFoundError:
+            print("Could not find the file")
+            return
+
+        #
+        # Create a new posse marker
+        #
+        self.display.add_artifact('posse',
+            map_display.PosseMarker(self.game.posse.location))
+
+        self.display.event_update()
+
 
     def do_EOF(self, line):
         """Exits the program
@@ -262,7 +378,7 @@ class HexcrawlCommands(cmd.Cmd):
         """Exits the program
 
         exit <cr>
-        Parameters: None
+        Parameters: None(q, r, s) 
 
         If there is an existing game session it is lost.
         Save before running this command.
