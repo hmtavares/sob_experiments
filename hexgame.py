@@ -332,16 +332,24 @@ class HexcrawlCommands(cmd.Cmd):
 
         draws = []
         for member in range(loot_args.members):
-            print ("Member {}:".format(member))
+            print ("Member {}:".format(member+1))
+            print ("  XP   Reward   Description")
+            print ("  ---  ------   -----------")
+
             for card in range(loot_args.cards):
-                thing = deck.draw()
-                print("  {}".format(thing))
-                draws.append(thing)
+                loot = deck.draw()[0]
+                mult = dice.roll(loot['die'])[0] if loot['die'] else 1
+                value = loot['unit_mult'] * mult if loot['unit_mult'] else '--'
+
+                print ("  {:>3}  {:>6}   {}".
+                    format(loot['xp'], value, loot['text']))
+
+                draws.append(loot)
 
         #
         # Discard the cards drawn
         #
-        deck.discard([draws])
+        deck.discard(draws)
 
         #
         # Shuffle the discards back into the deck
@@ -442,7 +450,7 @@ game = HexCrawl()
 #  Setup and display the map
 #
 display  = map_display.MapDisplay()
-#display.update()
+display.update()
 
 
 #
