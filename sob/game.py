@@ -3,6 +3,69 @@ from .hexmap import *
 import json
 
 
+LOOT_ITEMS = [
+    {'xp' : 20,
+     'unit_name' : 'Gold',
+     'unit_mult' : 25,
+     'die' : None,
+     'text' : 'Coins - 25 gold'},
+
+    {'xp' : 20,
+     'unit_name' : 'Gold',
+     'unit_mult' : 25,
+     'die' : '1d6',
+     'text' : 'Blood Money - 1d6 x 25 Gold'},
+
+    {'xp' : 20,
+     'unit_name' : 'Gold',
+     'unit_mult' : 50,
+     'die' : None,
+     'text' : 'Cash - 50 Gold'},
+
+    {'xp' : 20,
+     'unit_name' : 'Gold',
+     'unit_mult' : 50,
+     'die' : '1d6',
+     'text' : 'Gold Nuggets - 1d6 x 50 Gold'},
+
+    {'xp' : 20,
+     'unit_name' : 'Gold',
+     'unit_mult' : 100,
+     'die' : None,
+     'text' : 'Sack of Gold Dust - 100 Gold'},
+
+    {'xp' : 20,
+     'unit_name' : 'Gold',
+     'unit_mult' : 250,
+     'die' : None,
+     'text' : 'Gold Bars - 250 Gold'},
+
+    {'xp' : 20,
+     'unit_name' : 'Stone',
+     'unit_mult' : 1,
+     'die' : None,
+     'text' : 'Dark Stone Shard - 1 Dark Stone'},
+
+    {'xp' : 20,
+     'unit_name' : 'Stone',
+     'unit_mult' : 1,
+     'die' : '1d3',
+     'text' : 'Dark Stone Rock - 1d3 Dark Stone'},
+
+     {'xp' : 20,
+     'unit_name' : None,
+     'unit_mult' : None,
+     'die' : None,
+     'text' : 'This should come in handy. Draw a Gear card'},
+
+     {'xp' : 20,
+     'unit_name' : None,
+     'unit_mult' : None,
+     'die' : None,
+     'text' : "What's this! Draw an Artifact card"},
+
+]
+
 class Posse():
 #
 # Memers?
@@ -113,6 +176,11 @@ class HexCrawl():
         #
         self.world_map = self.load_map('world_map.json')
 
+        #
+        # Create the loot deck
+        #
+        self.loot = Deck(LOOT_ITEMS, "Loot")
+
     @property
     def towns(self):
         return self.map_towns
@@ -217,6 +285,116 @@ class HexCrawl():
         posse_dict['game'] = self
 
 
+class Deck:
+    """A deck represents a collection of things that can be drawn.
 
+    A Deck will have both a collection of items that can be drawn
+    and a seperate collection of items that have been discarded.
 
-        
+    Once the items that can be drawn has been exhausted the discards
+    will be shuffled and become the new collection that can be drawn.
+    """
+
+    def __init__(self, items, name=None):
+        """Create a deck of items with the given name.
+
+        A full deck of Cards will be produced (all suits, all ranks) and then
+        shuffled. The discards will be empty.
+
+        Args:
+            items: The items that will be contained in the deck.
+                   These items will be able to be drawn, i.e. not discards.
+            name : The name of the deck. This is primarily used for logging.
+                   The name is optional and will be 'None' if not set
+
+        """
+
+        self.log = logging.getLogger(self.__class__.__name__)
+        if not items:
+            #
+            #  The deck must contain items
+            #
+            raise ValueError("No items provided when creating a Deck")
+
+        if name:
+            self.name = name
+        else:
+            self.name = str(id(self))
+
+        self.discards = []
+        self.items = items
+        random.shuffle(self.items)
+        self.log.info("Created deck {}".format(self.name))
+
+    def draw(self, num_items=1):
+        """Draw the indicated number of items from the deck.
+
+        Items are removed from the deck and will not be drawn again.
+        If the deck is empty discards will be shuffled into the
+        deck to produce the required items.
+
+        Args:
+            num_items : Number of items to draw. Default = 1
+
+        Returns:
+            A list with the items drawn
+
+        Raises:
+            IndexError : If a draw is attempted on an empty deck.
+                         This can happen if the deck items are empty
+                         as well as the discards.
+        """
+
+        items_drawn = []
+        for i in range(num_items):
+            if not self.items:
+                #
+                # The deck ran out of items.
+                # shuffle over the discard deck
+                #
+                self.log.info("Deck empty. Shuffling in discards")
+                self.reset()
+
+            items_drawn.append(self.items.pop())
+
+        return items_drawn
+
+    def reset(self):
+        """ Shuffle the discards into the draw items
+
+        Args: None
+        """
+        self.items = self.items + self.discards
+        random.shuffle(self.items)
+        self.discards = []
+        self.log.info("Deck Reset: {} : {}".format(self.name, len(self.items)))
+
+    def discard(self, d_items):
+        """ Put a set of items on the discard pile for this deck.
+
+        Args:
+            d_items : A list of items to take as discards
+        """
+
+        # TODO: Would it be a good idea to add a "deck"
+        # attribute to items and throw an exception
+        # if an item was discarded into the wrong deck?
+        self.discards += d_items
+
+    def combine(self, other):
+        """ Combine another deck with this deck.
+
+        The contents of the other deck are added to this deck.
+
+        Args:
+            other : The deck to add to this one.
+
+        Raises:
+            ValueError if the object passed in is not a Deck
+
+        """
+
+        if not isinstance(other, Deck):
+            raise ValueError("A Deck can only be combined with another deck")
+
+        self.items += other.items

@@ -113,7 +113,7 @@ class HexcrawlCommands(cmd.Cmd):
         # Show parser
         #
         # show [town, posse]
-        self.show_parser = argparse.ArgumentParser(description='Track a Hexcrawl game session')
+        self.show_parser = argparse.ArgumentParser(description='Show game element details')
         subparsers = self.show_parser.add_subparsers(help='Show towns or posse')
 
         #        
@@ -129,6 +129,13 @@ class HexcrawlCommands(cmd.Cmd):
 
         town_parser.add_argument('name',
                         help='The name of the town to show.')
+
+        #
+        # Loot Parser
+        #
+        self.loot_parser = argparse.ArgumentParser(description='Draw loot after a fight')        
+        self.loot_parser.add_argument('members', type=int, help='Number of members in posse')
+        self.loot_parser.add_argument('cards', type=int, help='Number of cards to draw for each member')
 
     def do_newgame(self, line):
         """Create a new Hexcrawl game session
@@ -219,7 +226,7 @@ class HexcrawlCommands(cmd.Cmd):
             # a command error from dumping out of the
             # entire application.
             #
-            pass
+            return
 
         show_args.func(show_args)
 
@@ -301,6 +308,54 @@ class HexcrawlCommands(cmd.Cmd):
         if job_hex:
             self.game.posse.job_loc = job_hex
 
+    def do_loot(self, line):
+        """Draw Loot cards for the Posse
+
+        loot ...
+        
+        Draw the specified number of loot cards for the
+           specified Posse members
+        """
+
+        try:
+            loot_args = self.loot_parser.parse_args(line.split())
+        except SystemExit as e:
+            #
+            # Gross but it's the only way to prevent
+            # a command error from dumping out of the
+            # entire application.
+            #
+            return
+
+
+        deck = self.game.loot
+
+        draws = []
+        for member in range(loot_args.members):
+            print ("Member {}:".format(member+1))
+            print ("  XP   Reward   Description")
+            print ("  ---  ------   -----------")
+
+            for card in range(loot_args.cards):
+                loot = deck.draw()[0]
+                mult = dice.roll(loot['die'])[0] if loot['die'] else 1
+                value = loot['unit_mult'] * mult if loot['unit_mult'] else '--'
+
+                print ("  {:>3}  {:>6}   {}".
+                    format(loot['xp'], value, loot['text']))
+
+                draws.append(loot)
+
+        #
+        # Discard the cards drawn
+        #
+        deck.discard(draws)
+
+        #
+        # Shuffle the discards back into the deck
+        # for the next loot draw
+        #
+        deck.reset()
 
     def do_save(self, line):
         """Save the current Hexcrawl game session data
