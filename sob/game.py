@@ -181,6 +181,10 @@ class HexCrawl():
         #
         self.loot = Deck(LOOT_ITEMS, "Loot")
 
+        # Load jobs
+        #
+        self.jobs = self.load_jobs('jobs.json')
+
     @property
     def towns(self):
         return self.map_towns
@@ -204,14 +208,20 @@ class HexCrawl():
         hexes = load_data['terrain_map']
 
         w_map = HexMap_factory_json(hexes)
-#        w_map = HexMap()
-#        for h in hexes:
-#            thex = Hex_factory_json(h)
-#            (q, r, s) = h['save_coord']
-#            coord = redhex.Hex(q, r, s)
-#            w_map.put_hex(coord, thex)
 
         return w_map
+
+    #
+    # Load the job data
+    #  - mandatory jobs
+    #  - normal jobs
+    #
+    def load_jobs(self, job_file):
+        with open(job_file, 'r') as infile:
+            load_data = json.load(infile)
+
+        return load_data
+
 
     def new_game(self, posse_name = None):
         #
@@ -224,7 +234,7 @@ class HexCrawl():
         # Generate the towns
         self.map_towns = {}
         for tn_id in TOWNS:
-            self.map_towns[tn_id] = town_random_factory_2(tn_id)
+            self.map_towns[tn_id] = Town.random_factory(tn_id, self.jobs)
 
         #
         # Pick a random town for the Posse

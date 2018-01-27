@@ -106,117 +106,6 @@ def town_json_factory(town_json):
         town_json['locations'])
 
 
-def town_random_factory_2(tn_id, allow_ruins = False):
-        """Create a random town
-
-        Args:
-            tn_id - The id of the town on the hexcrawl map
-            allow_ruins - True if a town can be generated as
-                          type 'Ruins'
-        """
-
-        tn = TOWNS[tn_id]
-        if not allow_ruins:
-            #
-            # Ruins are not allowed for this town so
-            # add Ruins to the disallowed type list
-            #
-            tn['disallowed'].append("Ruins")
-        #
-        # Town Size and how many buildings
-        #
-        town_size, size_low, size_high  = random.choice(TOWN_SIZES)
-
-        num_buildings = random.randint(size_low, size_high)
-
-        #
-        #  Generate town kind.
-        #  Keep trying until a valid type is generated
-        # 
-        while(True):
-            roll = dice.roll('2d6')
-            town_type = TOWN_TYPES[sum(roll)]
-            if town_type not in tn['disallowed']:
-                break
-
-        #
-        # Generate Town Trait
-        # Keep trying until a valid trait is generated
-        #
-        while(True):
-            roll = dice.roll('2d6')
-            trait_roll = roll[0] * 10 + roll[1]
-            town_trait = TOWN_TRAITS[trait_roll]
-
-            #
-            # Check for special trait considerations
-            #
-            disallowed = town_trait.get('disallowed')
-            if not disallowed:
-                #
-                # No special considerations.
-                # Keep the trait
-                #
-                break
-            if town_type not in disallowed:
-                #
-                # No special consideration violations
-                # Keep the trait.
-                #
-                break
-        #
-        # Generate buildings
-        #
-        # Copy the building list so we can 'draw' from it
-        # without modifying the reference list.
-        draw_buildings = TOWN_BUILDINGS[:]
-        town_buildings = []
-
-        #
-        # Check if the town has special building considerations
-        #
-        special_tn = TOWN_TYPE_BLDGS.get(town_type)
-        if special_tn:
-            #
-            # Get manditory buildings then remove
-            # them from the available buildings
-            #
-            for bldg in special_tn['include']:
-                draw_buildings.remove(bldg)
-                town_buildings.append(bldg)
-                num_buildings -= 1
-
-            #
-            # Get excluded buildings and take them out of the
-            # available buildings                
-            #
-            for bldg in special_tn['exclude']:
-                draw_buildings.remove(bldg)
-
-        #
-        # Randomize the remaining buildings
-        # and draw enough to fill the town
-        #                
-        random.shuffle(draw_buildings)
-        for i in range(num_buildings):
-            town_buildings.append(draw_buildings.pop())
-
-
-        #
-        # Roll for the town job
-        #
-        # TODO: Create a seperate "Manditory" roll to
-        #       check if the town has a manditory job
-        #
-        town_job = dice.roll('d100')
-
-        #
-        # Fix town coordinates to be normalized 3-tuple coordinates
-        # 
-        (q, r) = tn['coord']
-        coord = (q, r, 0 - (q + r))
-        return Town(tn_id, tn['name'], coord, town_type, trait_roll,
-                    town_job, town_buildings)
 
 
 
@@ -476,6 +365,154 @@ class Town():
             return "Large"
         raise Exception("Invalid town size: {}".format(num_buildings))
 
+    def random_factory(tn_id, jobs, allow_ruins = False, job_mandatory=20):
+        """Create a random town
+
+        Args:
+            tn_id - The id of the town on the hexcrawl map
+            jobs - The collection of mandatory and non-mandatory jobs
+            allow_ruins - True if a town can be generated as
+                          type 'Ruins'
+            job_mandatory - The % chance that a town will have a mandatory
+                            job. 0% indicates that the method defind in the
+                            Hexcrawl document should be used (roll +/- 1)
+        """
+
+        tn = TOWNS[tn_id]
+        if not allow_ruins:
+            #
+            # Ruins are not allowed for this town so
+            # add Ruins to the disallowed type list
+            #
+            tn['disallowed'].append("Ruins")
+        #
+        # Town Size and how many buildings
+        #
+        town_size, size_low, size_high  = random.choice(TOWN_SIZES)
+
+        num_buildings = random.randint(size_low, size_high)
+
+        #
+        #  Generate town kind.
+        #  Keep trying until a valid type is generated
+        # 
+        while(True):
+            roll = dice.roll('2d6')
+            town_type = TOWN_TYPES[sum(roll)]
+            if town_type not in tn['disallowed']:
+                break
+
+        #
+        # Generate Town Trait
+        # Keep trying until a valid trait is generated
+        #
+        while(True):
+            roll = dice.roll('2d6')
+            trait_roll = roll[0] * 10 + roll[1]
+            town_trait = TOWN_TRAITS[trait_roll]
+
+            #
+            # Check for special trait considerations
+            #
+            disallowed = town_trait.get('disallowed')
+            if not disallowed:
+                #
+                # No special considerations.
+                # Keep the trait
+                #
+                break
+            if town_type not in disallowed:
+                #
+                # No special consideration violations
+                # Keep the trait.
+                #
+                break
+        #
+        # Generate buildings
+        #
+        # Copy the building list so we can 'draw' from it
+        # without modifying the reference list.
+        draw_buildings = TOWN_BUILDINGS[:]
+        town_buildings = []
+
+        #
+        # Check if the town has special building considerations
+        #
+        special_tn = TOWN_TYPE_BLDGS.get(town_type)
+        if special_tn:
+            #
+            # Get manditory buildings then remove
+            # them from the available buildings
+            #
+            for bldg in special_tn['include']:
+                draw_buildings.remove(bldg)
+                town_buildings.append(bldg)
+                num_buildings -= 1
+
+            #
+            # Get excluded buildings and take them out of the
+            # available buildings                
+            #
+            for bldg in special_tn['exclude']:
+                draw_buildings.remove(bldg)
+
+        #
+        # Randomize the remaining buildings
+        # and draw enough to fill the town
+        #                
+        random.shuffle(draw_buildings)
+        for i in range(num_buildings):
+            town_buildings.append(draw_buildings.pop())
+
+
+        #
+        # Roll for the town job
+        #
+        # TODO: Create a seperate "Manditory" roll to
+        #       check if the town has a manditory job
+        #
+        town_job = Town.generate_jobs(jobs, job_mandatory)
+
+        #
+        # Fix town coordinates to be normalized 3-tuple coordinates
+        # 
+        (q, r) = tn['coord']
+        coord = (q, r, 0 - (q + r))
+        return Town(tn_id, tn['name'], coord, town_type, town_job,
+                    trait_roll, town_buildings)
+
+
+    def generate_jobs(jobs, mandatory):
+        """Create a set of random jobs
+
+        Return a single mandatory job
+        or
+        Return 3 non-mandatory jobs
+
+        Args:
+            jobs - The collection of mandatory and non-mandatory jobs
+            job_mandatory - The % chance that a town will have a mandatory
+                            job. 0% indicates that the method defind in the
+                            Hexcrawl document should be used (roll +/- 1)
+        """
+        town_jobs = []
+        roll = dice.roll('1d100')
+        if roll[0] <= mandatory:
+            #
+            # Generate a single mandatory job
+            #
+            random.shuffle(jobs['mandatory'])
+            town_jobs = [jobs['mandatory'][0]]
+        else:            
+            #
+            # Generate 3 different jobs
+            #
+            random.shuffle(jobs['normal'])
+            town_jobs = [jobs['normal'][0],
+                         jobs['normal'][1],
+                         jobs['normal'][2]]
+
+        return town_jobs
 
     def __str__(self):
                 return '''
