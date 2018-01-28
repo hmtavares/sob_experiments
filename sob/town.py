@@ -365,7 +365,20 @@ class Town():
             return "Large"
         raise Exception("Invalid town size: {}".format(num_buildings))
 
-    def random_factory(tn_id, jobs, allow_ruins = False, job_mandatory=20):
+
+    def update_jobs(self, jobs, job_mandatory):
+        """Generate a new set of jobs for the town.
+           This is used to refresh the jobs at a town.
+
+           Args:
+            jobs - The collection of mandatory and non-mandatory jobs
+            job_mandatory - The % chance that a town will have a mandatory
+                            job. 0% indicates that the method defind in the
+                            Hexcrawl document should be used (roll +/- 1)
+        """
+        self.job = Town.generate_jobs(jobs, job_mandatory)
+
+    def random_factory(tn_id, jobs, job_mandatory, allow_ruins = False):
         """Create a random town
 
         Args:
@@ -478,8 +491,8 @@ class Town():
         # 
         (q, r) = tn['coord']
         coord = (q, r, 0 - (q + r))
-        return Town(tn_id, tn['name'], coord, town_type, town_job,
-                    trait_roll, town_buildings)
+        return Town(tn_id, tn['name'], coord, town_type, trait_roll,
+                    town_job, town_buildings)
 
 
     def generate_jobs(jobs, mandatory):
@@ -515,15 +528,19 @@ class Town():
         return town_jobs
 
     def __str__(self):
-                return '''
+        town_str = '''
 Town:   {} - {}
- Size:  {}
- Kind:  {}
- Trait: {}
- Job:   {}
- Buildings ({}):'''.format(self.name, self.coord,
-                           self.size, 
-                           self.type,
-                           self.job,
-                           self.trait['name'],
-                           self.locations)
+  Size:  {}
+  Kind:  {}
+  Trait: [{}]{}
+  Buildings:
+'''.format(self.name, self.coord,
+                     self.size, 
+                     self.type,
+                     self.trait_id, self.trait['name'])
+
+
+        for loc in self.locations:
+            town_str += "    {}\n".format(loc)
+
+        return town_str
