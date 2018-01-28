@@ -66,6 +66,55 @@ LOOT_ITEMS = [
 
 ]
 
+SCAVENGE_ITEMS = [
+    {'xp' : 10,
+     'unit_name' : None,
+     'value' : None,
+     'text' : '3 Horror hits. Two sanity damage per hit'},
+
+    {'xp' : 10,
+     'unit_name' : None,
+     'value' : None,
+     'text' : 'Draw a darkness card'},
+
+    {'xp' : 10,
+     'unit_name' : None,
+     'value' : None,
+     'text' : 'Draw a Growing Dread card'},
+
+    {'xp' : 10,
+     'unit_name' : None,
+     'value' : None,
+     'text' : 'Nothing here'},
+
+    {'xp' : 10,
+     'unit_name' : 'Gold',
+     'value' : 25,
+     'text' : 'Small Find'},
+
+    {'xp' : 10,
+     'unit_name' : 'Gold',
+     'value' : 50,
+     'text' : 'Small Find'},
+
+    {'xp' : 10,
+     'unit_name' : None,
+     'value' : None,
+     'text' : 'Draw a gear card'},
+
+    {'xp' : 10,
+     'unit_name' : None,
+     'value' : None,
+     'text' : 'Something Shiny',
+     'something' : [
+        '1 Dark Stone',
+        '1 Dark Stone',
+        '1 Dark Stone',
+        '1 Dark Stone',
+        'Draw a Gear Card',
+        'Draw an Artifact Card']},
+]
+
 class Posse():
 #
 # Memers?
@@ -163,6 +212,11 @@ class HexCrawl():
         # Create the loot deck
         #
         self.loot = Deck(LOOT_ITEMS, "Loot")
+
+        #
+        # Create the scavenge deck
+        #
+        self.scavenge = Deck(SCAVENGE_ITEMS, "Scavenge")
 
         #
         # Load jobs
