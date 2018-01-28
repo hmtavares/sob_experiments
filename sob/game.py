@@ -157,14 +157,23 @@ class Posse():
 
     def json_factory(posse_json, game):
         (q, r, s) = posse_json['_loc']
-        (x, y, z) = posse_json['job_loc']
+
+        job_loc = posse_json['job_loc']
+        mission_loc = posse_json['mission_loc']
+
+        if job_loc:
+            job_loc = tuple(job_loc)
+
+        if mission_loc:
+            mission_loc = tuple(mission_loc)
+
         return Posse(
             (q, r, s),
             game,
             posse_json['name'],
-            posse_json['mission_loc'],
+            mission_loc,
             posse_json['mission_text'],
-            (x, y, z),
+            job_loc,
             posse_json['job_id'])
 
     def __str__(self):
@@ -173,6 +182,7 @@ class Posse():
         mission_loc_string = self.game.location_string(self.mission_loc)
 
         job_loc_string = self.game.location_string(self.job_loc)
+        job_string = self.game.job_index[self.job_id]['title']
 
         return '''
 Posse:
@@ -182,12 +192,12 @@ Posse:
  Mission: {} {}
    {}
  Job: {} {}
-   {}'''.format(self.name,
+   [{}] {}'''.format(self.name,
                  loc_string, self.location,
                  mission_loc_string, self.mission_loc, 
                  self.mission_text,
                  job_loc_string, self.job_loc,
-                 self.job_id)
+                 self.job_id, job_string)
 
 
 class HexCrawl():
@@ -223,6 +233,14 @@ class HexCrawl():
         #
         self.jobs = self.load_jobs('jobs.json')
 
+        #
+        # Build an index of jobs
+        #
+        self.job_index = {}
+        for job in self.jobs['mandatory']:
+            self.job_index[job['id']] = job
+        for job in self.jobs['normal']:
+            self.job_index[job['id']] = job
         #
         # Chance of a mandatory job being generated
         # using the modified job rules
@@ -349,10 +367,11 @@ class HexCrawl():
 
         map_hex = self.world_map.get_hex(redhex)
         loc_string = ""
-        if map_hex.town:
-            loc_string = TOWNS[map_hex.town]['name']
-        elif map_hex.mine:
-            loc_string = MINES[map_hex.mine][0]
+        if map_hex:
+            if map_hex.town:
+                loc_string = TOWNS[map_hex.town]['name']
+            elif map_hex.mine:
+                loc_string = MINES[map_hex.mine][0]
         return loc_string
 
 class Deck:

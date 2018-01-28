@@ -323,6 +323,7 @@ class HexcrawlCommands(cmd.Cmd):
         self.game.posse.mission_loc = None
         if mission_hex:
             self.game.posse.mission_loc = mission_hex
+            print(mission_hex)
             print("Mission location set: {} [{}]".format(
                 self.game.location_string(mission_hex), mission_hex))
         else:
