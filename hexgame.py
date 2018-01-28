@@ -176,6 +176,13 @@ class HexcrawlCommands(cmd.Cmd):
         self.loot_parser.add_argument('members', type=int, help='Number of members in posse')
         self.loot_parser.add_argument('cards', type=int, help='Number of cards to draw for each member')
 
+        #
+        # Scavenge Parser
+        #
+        self.scavenge_parser = argparse.ArgumentParser(description='Draw scavenge cards')        
+        self.scavenge_parser.add_argument('cards', type=int, help='Number of cards to draw')
+
+
     def do_newgame(self, line):
         """Create a new Hexcrawl game session
 
@@ -542,6 +549,59 @@ MANDATORY JOB:
         # for the next loot draw
         #
         deck.reset()
+
+    def do_scavenge(self, line):
+        """Draw Scavenge cards when searching
+
+        scavenge x
+
+        Draw (x) scavenge cards
+        """
+
+        try:
+            scavenge_args = self.scavenge_parser.parse_args(line.split())
+        except SystemExit as e:
+            #
+            # Gross but it's the only way to prevent
+            # a command error from dumping out of the
+            # entire application.
+            #
+            return
+
+
+        deck = self.game.scavenge
+
+        draws = []
+        print ("  XP   Reward   Description")
+        print ("  ---  ------   -----------")
+
+        draws = deck.draw(scavenge_args.cards)
+        for card in draws:
+
+            value = card['value'] if card['value'] else '--'
+            card_text = card['text']
+
+            if card['text'] == 'Something Shiny':
+                #
+                # The one special case
+                # GEnerate the specific something
+                #
+                random.shuffle(card['something'])
+                card_text = "Something Shiny - {}".format(card['something'][0])
+
+            print ("  {:>3}  {:>6}   {}".
+                format(card['xp'], value, card_text))
+
+        #
+        # Discard the cards drawn
+        #
+        deck.discard(draws)
+
+        #
+        # Shuffle the discards back into the deck
+        # for the next loot draw
+        #
+        deck.reset()        
 
     def do_save(self, line):
         """Save the current Hexcrawl game session data
