@@ -113,22 +113,61 @@ class HexcrawlCommands(cmd.Cmd):
         # Show parser
         #
         # show [town, posse]
-        self.show_parser = argparse.ArgumentParser(description='Show game element details')
-        subparsers = self.show_parser.add_subparsers(help='Show towns or posse')
+        self.show_parser = argparse.ArgumentParser(description='Show game element details',
+                                                   prog='show')
+        subparsers = self.show_parser.add_subparsers(dest='command')
+        subparsers.required = True
 
         #        
         # show town <town name/id>
         #
-        town_parser = subparsers.add_parser("town")
+        town_parser = subparsers.add_parser("town", help='Show the details for the specified town')
         town_parser.set_defaults(func=self.show_town)
+        town_parser.add_argument('name', help='The name of the town to show.')
+
         #
         # show posse
         #
-        posse_parser = subparsers.add_parser("posse")
+        posse_parser = subparsers.add_parser("posse", help='show the Posse details')
         posse_parser.set_defaults(func=self.show_posse)
 
-        town_parser.add_argument('name',
-                        help='The name of the town to show.')
+        #
+        # Job parser
+        #
+        # job {show, set, refresh}
+        self.job_parser = argparse.ArgumentParser(description='Job operations',
+                                                  prog='job')
+        subparsers = self.job_parser.add_subparsers(dest = 'command')
+        subparsers.required = True
+        #        
+        # job show <town name/id>
+        #
+        job_parser = subparsers.add_parser("show", help="Show the jobs for a town")
+        job_parser.set_defaults(func=self.show_jobs)
+
+        job_parser.add_argument('name',
+                        help='The town to show jobs for.')
+
+        #        
+        # job set <none>
+        #
+        job_parser = subparsers.add_parser("set", help="Set the job for the posse")
+        job_parser.set_defaults(func=self.set_job)
+
+        job_parser.add_argument('id',
+                        help='The ID of the job to add to the Posse.')
+
+        #        
+        # job refresh <town name/id>
+        #
+        job_parser = subparsers.add_parser("refresh", help="Refresh the jobs at a town")
+        job_parser.set_defaults(func=self.refresh_jobs)
+
+        job_parser.add_argument('-s', dest = 'show', action='store_true',
+                        help='Show the jobs after refresh')
+        job_parser.add_argument('name',
+                        help='The town refresh')
+
 
         #
         # Loot Parser
@@ -238,18 +277,13 @@ class HexcrawlCommands(cmd.Cmd):
 
         This is used by the do_show() parser
         """
-        tn_name = town_args.name
-
-        towns = self.game.towns
         try:
-            tn_id = int(tn_name)
-            tn = towns[tn_id]
-            print (tn)
-        except ValueError:
-            for tn in towns.values():
-                if tn_name in tn.name:
-                    print(tn)
-                    break
+            town = self.args_to_town(town_args)
+        except ValueError as e:
+            print (e)
+            return
+
+        print(town)            
 
     def show_posse(self, posse_args):
         """Show the details of a posse
@@ -273,6 +307,7 @@ class HexcrawlCommands(cmd.Cmd):
         """
         self.game.posse.mission_text = line
 
+        print("Select the mission location on the map")
         mission_hex = self.display.get_click()
         #
         # If we got a hex set it.
@@ -281,24 +316,79 @@ class HexcrawlCommands(cmd.Cmd):
         self.game.posse.mission_loc = None
         if mission_hex:
             self.game.posse.mission_loc = mission_hex
+            print("Mission location set: {} [{}]".format(
+                self.game.location_string(mission_hex), mission_hex))
+        else:
+            print("No location selected")
+
 
     def do_job(self, line):
-        """Set a job for the Posse
+        """Job operations
 
-        Pararmeters:
-            line - The Job ID (roll) from the job table
+        show [show, set, refresh]
+
+        job show <town>
+        Parameters: town - Town name or id
+        
+        Print the Jobs at that town
+
+        job set <job id>
+        Parameters: job id: The 'roll' from the job chart for the job
+
+        Make that job thte current posse job
+
+        job refresh <town>
+        Parameters: town - Town name or id
+
+        Generate a new set of jobs for the town. May result in a Mandatory job.
+
+        Note: The entire name does not need to be typed in for a town.
+              e.g. 'jow show Fri' will show Fringe.
+
+              Multiple matches will show all matches.
+              e.g. 'job show Fort' will show Fort Burke, Fort Lopez
+              and Fort Landy
+
+              The command line does not support spaces in names so just use
+              a unique portion for multi-word names
+              e.g. 'job show Fort Burk' will result in an error use
+                   'job show Burk' instead.
+
+        """
+        if not self.game.started:
+            print ("Start or load a game")
+            return
+
+        try:
+            job_args = self.job_parser.parse_args(line.split())
+        except SystemExit as e:
+            #
+            # Gross but it's the only way to prevent
+            # a command error from dumping out of the
+            # entire application.
+            #
+            return
+
+        job_args.func(job_args)
+
+
+    def set_job(self, job_args):
+        """Set a job for the Posse
+        Parameters:
+            job_args - The parse_arg argument object
 
         The map graphic will be activated and the destination
         for the job can be set. The ESC key will cancel
         the map action and save the job with no location.
         """
+        job_id = job_args.id
         try:
-            self.game.posse.job_id = int(line)
+            self.game.posse.job_id = int(job_id)
         except ValueError:
             print("Job key must be an integer")
             return
 
-
+        print("Select the job location on the map")
         job_hex = self.display.get_click()
         #
         # If we got a hex set it.
@@ -307,6 +397,102 @@ class HexcrawlCommands(cmd.Cmd):
         self.game.posse.job_loc = None
         if job_hex:
             self.game.posse.job_loc = job_hex
+            print("Job location set: {} [{}]".format(
+                self.game.location_string(job_hex), job_hex))
+        else:
+            print("No location selected")
+
+
+    def show_jobs(self, job_args):
+        """Show the jobs in a town
+        Parameters:
+            job_args - The parse_arg argument object
+
+        This is used by the do_show() parser
+        """
+        try:
+            town = self.args_to_town(job_args)
+        except ValueError as e:
+            print (e.message)
+            return
+
+        self.print_jobs(town)
+
+    def print_jobs(self, town):
+        """Print the jobs for a town
+
+        """
+        if len(town.job) == 1:
+            #
+            # Single mandatory job
+            #
+            job_str = '''
+MANDATORY JOB:
+  [{}] {}'''.format(town.job[0]['id'], town.job[0]['title'])
+        else:
+            #
+            # 3 Optional jobs
+            #
+            job_str = "Town Jobs:\n"
+            for job in town.job:
+                job_str += "  [{}] {}\n".format(job['id'], job['title'])
+
+        print(job_str)
+
+
+
+    def args_to_town(self, town_name_args):
+        """Given parser args with a town id or name in 'name'
+           Get the town or raise a ValueError
+        """
+        tn_name = town_name_args.name
+
+        towns = self.game.towns
+        town = None
+        try:
+            tn_id = int(tn_name)
+            town = towns[tn_id]
+        except ValueError:
+            #
+            # The arg wasn't a number
+            # Try it as a name
+            #
+            for tn in towns.values():
+                if tn_name in tn.name:
+                    town = tn
+                    break
+        except KeyError:
+            #
+            # The arg was a number but
+            # not a valid town key.
+            #
+            # We'll handle the error later
+            # in the function
+            #
+            pass
+
+
+        if not town:
+            raise ValueError("Unknown Town -  {}".format(tn_name))
+        
+        return town
+
+
+
+    def refresh_jobs(self, job_args):
+        """Refresh the jobs in a town
+        Parameters:
+            job_args - The parse_arg argument object
+
+        Used to reset the jobs in a town when re-visiting
+        """
+        try:
+            town = self.args_to_town(job_args)
+        except ValueError as e:
+            print (e.message)
+            return
+
+        town.update_jobs(self.game.jobs, self.game.mandatory_jobs)
 
     def do_loot(self, line):
         """Draw Loot cards for the Posse

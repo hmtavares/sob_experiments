@@ -119,28 +119,11 @@ class Posse():
             posse_json['job_id'])
 
     def __str__(self):
-        hex = self.game.world_map.get_hex(self.location)
-        loc_string = ""
-        if hex.town:
-            loc_string = TOWNS[hex.town]['name']
-        elif hex.mine:
-            loc_string = MINES[hex.mine][0]
+        loc_string = self.game.location_string(self.location)
 
-        hex = self.game.world_map.get_hex(self.mission_loc)
-        mission_loc_string = ""
-        if(hex):
-            if hex.town:
-                mission_loc_string = TOWNS[hex.town]['name']
-            elif hex.mine:
-                mission_loc_string = MINES[hex.mine][0]
+        mission_loc_string = self.game.location_string(self.mission_loc)
 
-        hex = self.game.world_map.get_hex(self.job_loc)
-        job_loc_string = ""
-        if(hex):
-            if hex.town:
-                job_loc_string = TOWNS[hex.town]['name']
-            elif hex.mine:
-                job_loc_string = MINES[hex.mine][0]
+        job_loc_string = self.game.location_string(self.job_loc)
 
         return '''
 Posse:
@@ -181,6 +164,17 @@ class HexCrawl():
         #
         self.loot = Deck(LOOT_ITEMS, "Loot")
 
+        #
+        # Load jobs
+        #
+        self.jobs = self.load_jobs('jobs.json')
+
+        #
+        # Chance of a mandatory job being generated
+        # using the modified job rules
+        #
+        self.mandatory_jobs = 20
+
     @property
     def towns(self):
         return self.map_towns
@@ -204,14 +198,20 @@ class HexCrawl():
         hexes = load_data['terrain_map']
 
         w_map = HexMap_factory_json(hexes)
-#        w_map = HexMap()
-#        for h in hexes:
-#            thex = Hex_factory_json(h)
-#            (q, r, s) = h['save_coord']
-#            coord = redhex.Hex(q, r, s)
-#            w_map.put_hex(coord, thex)
 
         return w_map
+
+    #
+    # Load the job data
+    #  - mandatory jobs
+    #  - normal jobs
+    #
+    def load_jobs(self, job_file):
+        with open(job_file, 'r') as infile:
+            load_data = json.load(infile)
+
+        return load_data
+
 
     def new_game(self, posse_name = None):
         #
@@ -224,7 +224,9 @@ class HexCrawl():
         # Generate the towns
         self.map_towns = {}
         for tn_id in TOWNS:
-            self.map_towns[tn_id] = town_random_factory_2(tn_id)
+            self.map_towns[tn_id] = Town.random_factory(tn_id,
+                                                        self.jobs,
+                                                        self.mandatory_jobs)
 
         #
         # Pick a random town for the Posse
@@ -284,6 +286,20 @@ class HexCrawl():
         #
         posse_dict['game'] = self
 
+    def location_string(self, redhex):
+        """Given a coordinate hex produce a
+           town or mine name if one exists on that hex.
+        """
+        if not redhex:
+            return ""
+
+        map_hex = self.world_map.get_hex(redhex)
+        loc_string = ""
+        if map_hex.town:
+            loc_string = TOWNS[map_hex.town]['name']
+        elif map_hex.mine:
+            loc_string = MINES[map_hex.mine][0]
+        return loc_string
 
 class Deck:
     """A deck represents a collection of things that can be drawn.

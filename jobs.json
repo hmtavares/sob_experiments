@@ -1,0 +1,1498 @@
+{
+    "mandatory": [
+        {
+            "desc": "Place a Strangler figure on Arzhakovs Gate. At the beginning of each day, add another Strangler figure to a random hex adjacent to the previous hex where a Strangler was placed the previous day. If a Strangler figure is ever placed on a Town, remove all Stranglers and the Job is failed. If the Heroes move onto a hex with any of these Strangler figures, remove all these Strangler figures from the map and Attack! The Heroes will fight as many Strangler as were removed from the map on an overland terrain battlemap. If you run out of Strangler figures before they reach a Town or are fought, remove all Strangler figures and the Job is failed. ",
+            "fail": "If the Heroes fail to contain the Strangler outbreak, they overrun the nearest Town and it is Destroyed. ",
+            "flavor": "Horrible things have been streaming forth from the once dormant Arzhakovs Gate. If these new monstrosities are not contained, they could very well overwhelm the region! ",
+            "id": 5,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Fight",
+                "Mandatory!"
+            ],
+            "location": "Arzhakovs Gate ",
+            "success": "If the Posse defeats the Strangler outbreak, each Hero gains 35 XP and D6x$50. ",
+            "time": "No Time Limit ",
+            "title": "Arzhakov's Gate "
+        },
+        {
+            "desc": "Place a token down on the Random Mine, this represents the Blackfang war party. Each day, before the Heroes move, this token will move two spaces in a random direction (roll a D6 and use the Random Hex Diagram). If it ever reaches a Town, the Blackfangers have launched a raid and will decimate this Town and its inhabitants. To stop the token the Posse needs to engage this raiding party by intercepting the token. Upon reaching the token, the Heroes immediately begin a Fight on a Terrain battlemap against either a worth of Indian Human Enemies or an Epic Level Threats worth of Blackfang Indians (whichever Enemies are available). ",
+            "fail": "If the Blackfang token reaches a Town, that Town is Destroyed and remove the Blackfang token from the board. Each Hero in the Posse takes Corruption Points (ignores Willpower) from knowing the horrors that befell those townsfolk while they did nothing to stop it. You careless bastards should be ashamed of yourselves. ",
+            "flavor": "A Blackfang Indian War party is on the rampage across the region, pillaging, raping, and destroyin everywhere they go. ",
+            "id": 9,
+            "keywords": [
+                "Job",
+                "Tribal",
+                "Fight",
+                "Mandatory!"
+            ],
+            "location": "Random Mine ",
+            "success": "For successfully putting down the Blackfang Indian War party, the Heroes each receive 30 XP and worth of Dark Stone, in addition to whatever Loot they find off the Indians. ",
+            "time": "No Time Limit ",
+            "title": "Indian War Party "
+        },
+        {
+            "desc": "The Posse must either stop the Cultists before they make off with the ancient artifact from a Town or, failing that, pursue them deep into the bowels of a mine to close the gate they have opened before they summon an Ancient One. If the Heroes arrive at the Town before the Cultists do (before the first deadline), they immediately fight against a High Human Threat on a terrain or Frontier Town battlemap. If they successfully dispatch these Enemies, they have stopped the Cultists. If the Heroes are unable to stop them from stealing the artifact, the Posse must engage them in their lair deep in one of the Mines. Treat this as a Seal the Void Gate Mission [Basic:3], with the sole exception that the final fight is against an Epic Human Threat (though the Enemies placed via Creature Summoning are still Monsters). ",
+            "fail": "If the Heroes fail this Mission, an Ancient One emerges from the gate and lays waste to the surrounding region before it eventually grows bored and leaves back through the gate from which it came. All Towns within 2 hexes of the Mine are Destroyed. ",
+            "flavor": "A cult seeks to awaken something that is better left sleeping. Theyre only missing a single item located deep in a long forgotten Mine tunnel. ",
+            "id": 17,
+            "keywords": [
+                "Job",
+                "Occult",
+                "Mandatory!"
+            ],
+            "location": "Random Town + Random Mine ",
+            "success": "Each Hero receives 25 XP as well as D6x$50 for their efforts in safeguarding humanity from yet another threat. ",
+            "time": "4 days + 7 days ",
+            "title": "Slumbering Gods "
+        },
+        {
+            "desc": "The group must travel to various Mines looking for the one that holds the ancient tome. The old books mention a very specific landmark that you should be able to spot by Searching at the Mine Entrance. As soon as the Heroes find their first Clue Icon, they have found the Mine theyre looking for. If the Heroes reach the Mine before the first Time Limit runs out, they have found the Mine before the Cult has and can go on an Exploration Mission [Basic:2] to find the Tome. Ignore the normal Reward & Failure results for this Mission. If the Heroes find the Mine after the first Time Limit runs out, then the Cult has made it there first and the Heroes must instead go on a Seal the Void Gate Mission [Basic:3] to stop the Cultists. Replace all Threats in the Mine with Human Enemies up until the Final Battle for this Mission (Draw an Epic Threat for the Final Battle). Ignore the normal Reward & Failure results for this Mission. ",
+            "fail": "If the Heroes are unsuccessful in stopping the Cult, their Void Gate that they opened up becomes rapidly unstable and begins shifting around the entire region before it eventually burns itself out. 3 Random Towns across the Map are Destroyed (across the entire region, not just the nearest). ",
+            "flavor": "A doomsday cult has sprung up since the destruction of Brimstone and aims to bring about what it sees as the inevitable end of the world. Theyre tracking down an ancient text in hopes of finding a way to summoning the Darkness across the entire planet. ",
+            "id": 23,
+            "keywords": [
+                "Job",
+                "Occult",
+                "Mandatory!"
+            ],
+            "location": "Mine Hexes ",
+            "success": "If the Posse is successful in finding the Tome before the Cultists, they each draw a Mine Artifact card and gain 35 XP. If the Posse doesnt get to the Tome before the Cultists and have to go on a Seal the Void Gate Mission, the Heroes instead gain 25 XP and gain D6x$50. ",
+            "time": "9 days/ 12 days ",
+            "title": "Cult Following "
+        },
+        {
+            "desc": "Place a Hungry Dead figure on the Originating Mine. At the beginning of every day, add another Hungry Dead figure to a random hex adjacent to the previous hex where a Hungry Dead was placed the previous day. If a Hungry Dead figure is ever placed on a Town, remove all Hungry Dead and that Town is Destroyed. If the Heroes move onto a hex with any of these Hungry Dead figures, remove all these Hungry Dead figures from the map and Attack! The Heroes will fight as many Hungry Dead as were removed from the map on an overland terrain battlemap. If you run out of Hungry Dead figures before they reach a Town or are fought, remove all Hungry Dead figures and Destroy the nearest Town. ",
+            "fail": "If the Heroes fail to contain the Hungry Dead menace, they overrun the nearest Town and it is Destroyed. ",
+            "flavor": "An outbreak of Hungry Dead is beginning to spread through an area. If its not contained, it could overrun the whole region! ",
+            "id": 26,
+            "keywords": [
+                "Job",
+                "Undead",
+                "Mandatory!"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Posse defeats the Hungry Dead menace, each Hero gains 30 XP and D6x$50. ",
+            "time": "No Time Limit ",
+            "title": "The Slow and the Undead "
+        },
+        {
+            "desc": "Ambush - Epic Human Threat. The Heroes need to either kill all the Enemies or all need to Escape to complete the Job. ",
+            "fail": "If the Heroes fail to defeat all the Enemies or Escape, then whoever didnt escape, rolls on the Injury Chart and that Hero loses 1 permanent Health. ",
+            "flavor": "Someone has led a band of outlaws right to the Posse and now youve been Ambushed! ",
+            "id": 30,
+            "keywords": [
+                "Job",
+                "Fight",
+                "Mandatory!"
+            ],
+            "location": "Local Town ",
+            "success": "If all the Enemies are killed, each Hero gains 25 XP and D3x$25. \nIf all the Heroes successfully Escape, each Hero gains 15 XP. ",
+            "time": "Immediate ",
+            "title": "Betrayal! "
+        },
+        {
+            "desc": "The Posse may either try to peacefully evict the strikers or they may violently eject them. The Posse will need to visit each Town Location to deal with all the strikers and complete the Job. Heroes may not purchase Goods or Services while in this Town while the strike is going on. \nIf the Heroes want to peacefully evict, a Hero must make a successful Cunning 5+ or Spirit 5+ Test while in each Town Location. Each time one of these Skill Tests is failed at a Location, it increases the difficulty the next time any Heroes attempt a Skill Test again at that Location. Failed Skill Tests add on an additional success needed to complete the Skill Test, so a failed Cunning 6+ roll then becomes a Cunning 5+^2 (two 5 or better results are needed from a single skill roll to complete). \nIf the Posse decides to forcefully evict the strikers, they will need to fight the leaders of the strike in Town on a battlemap (either the Town or a terrain battlemap can be used). Attack - Roll for an Epic Human Threat. ",
+            "fail": "If the Heroes fail to find some resolution to this mass strike before the end of the week, local business leaders call in the Pinkertons to break up the strikes. The Pinkertons brutally put down the strikers, injuring many and killing a few. The townsfolk are torn apart by the savagery and many decide to move away, leaving the Town a barren husk of what it used to be. All but 1 Town Location here is Destroyed. ",
+            "flavor": "Workers throughout the Town have gone on strike to protest local working conditions. The Towns businessmen think theyve been quite equitable and want you to put a stop to these rabble rousers. ",
+            "id": 34,
+            "keywords": [
+                "Job",
+                "Labor",
+                "Negotiation",
+                "Mandatory!"
+            ],
+            "location": "Local Town ",
+            "success": "Each Hero in the Posse gains 30 XP and $5 for each Town Location that is peacefully resolved. The businessmen pay out less money due to the higher wages they pay out as a result of your negotiating. \nFor each Town Location where strikers are forcefully evicted, each Hero gains 5 XP and $50, but gains 1 Corruption (no Willpower save). The Heroes have beaten back peaceful protesters who simply wanted honest pay for honest work, and you went in there and cracked their skulls for it. ",
+            "time": "7 days ",
+            "title": "Labor Strike "
+        },
+        {
+            "desc": "Place a Monster token on the Mine. At the beginning of each day, that token moves 3 hexes in a random direction (use the Random Hex Diagram). If it passes over a Town, Destroy a Random Location there. If it passes over the Heroes, the Heroes all take D8 Hits. If it ends its movement on a Town, remove the Monster token from the map and the Job is failed. \nAs soon as the Heroes enter a hex with the Monster token: Attack - Draw an Epic Threat card (High Threat if only two Heroes). \nIf the Monster token ends its move on the Posses hex: Ambush! - Draw an Epic Threat card (High Threat if only two Heroes) ",
+            "fail": "You have failed to defeat the Monster, it has made its way across the countryside and settled on a Town to feast upon the locals. It toys with them at first, doing things to people that would drive you insane if you'd seen it done. The lucky ones are the ones that were just killed outright. No one will ever forget what happened to them people, though no one ever mentions it aloud. Destroy the Town. ",
+            "flavor": "An amateur diabolist summoned up some things from another dimension. Luckily, he got himself killed, but now them things is roaming the countryside preying on innocent folk. ",
+            "id": 39,
+            "keywords": [
+                "Job",
+                "Occult",
+                "Mandatory!"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Heroes successfully put down these Monsters, they gain 30 XP and D3x$100 each from the local Marshal who was afraid these fiends would do some real damage before being put down. ",
+            "time": "No Time Limit ",
+            "title": "A Summoning Most Foul "
+        },
+        {
+            "desc": "The Posse must travel to the Mine in question and first go on an Exploration Mission [Basic:2] to determine if theres any merit to the Artists visions. If the Posse comes across a Growing Dread Exploration Token result at any point during this Mission, then the Heroes will need to go on a follow-up Mission in that same Mine and perform a Blow the Mine Mission [Basic:6] to seal the tunnel into the lost world below. If both these Missions occur, they are performed back-to-back with only a single Catch Your Breath roll between them. ",
+            "fail": "If the Posse is unsuccessful, this menacing race from the past rises up from beneath the Earth and engages in a brutal raid on nearby Towns, Destroying the 3 Nearest Towns before that cruel race of ancient beings once again mysteriously returns to their subterranean abode. ",
+            "flavor": "A local artist has gone seemingly insane and rants of seeing creatures from another era. He speaks of a long-forgotten race of beings beneath the Earth that have been plotting their return to the surface to end mankinds reign. ",
+            "id": 50,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Investigate",
+                "Mandatory!"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Posse goes on the Exploration Mission and no Growing Dread result is pulled, then there was nothing to the Artists visions, hes clearly crazy or been taking too many drugs. For their trouble though, the Heroes each gain 30 XP and x$50. \nIf the Heroes end up having to go on a Blow the Mine Mission, they each gain 50 XP and $450 for their trouble. ",
+            "time": "No Time Limit ",
+            "title": "Memories of Aeons Past "
+        },
+        {
+            "desc": "Place a Void Twister token on the Random Mine. At the start of each day the Void Twister will travel 5 hexes in a random direction (use the Random Hex Diagram). If the Void Twister hits the edge of the Map, it finishes out its movement going back the way it came. If it passes over a Town, it will Destroy 2 Random Town Locations. If the Void Twister ends its turn directly on a Town hex, that Town is Destroyed. \nIf the Heroes are able to get to a Town hex first and warn the townsfolk there (free action), then they can mitigate the disaster and those Towns that are warned gain Armor 3+ to protect themselves from any destruction while the Void Twister is active. Roll a D6 whenever a Town or Location would be Destroyed, on a 3+, that Town or Location is not Destroyed (Armor ends after this Job is over). ",
+            "fail": "There is no set Failure result for this Job. ",
+            "flavor": "A Void Twister is making its way through the region, destroying anything in its path. Theres not much to be done to stop it, but if folks can be warned that its coming itd go a long way towards minimizing the damage. ",
+            "id": 56,
+            "keywords": [
+                "Job",
+                "Environment",
+                "Void",
+                "Mandatory!"
+            ],
+            "location": "Random Mine ",
+            "success": "For each Town that the Posse is able to warn about the Void Twister, each Hero gains 5 XP and $25 from the grateful townsfolk. ",
+            "time": "5 days ",
+            "title": "Void Twister "
+        },
+        {
+            "desc": "The Heroes may not travel by Rail lines while this Job is active. \nThe Heroes will need to travel to the Town and attempt to negotiate with the Rail workers. To do so the Heroes will need to make a Cunning 5+ test over the course of a few days in Town. Only one Hero may make this test per day (though you may switch off who takes the test each day). Beginning at $90, for each success the price of Train Tickets will reduce by $10 from the Rail workers request in wage increases. For each success made with a 6 or better, that price is instead reduced by $25. The minimum you will be able to go to is $30. ",
+            "fail": "If the Heroes fail to end this strike peacefully, strikebreakers enter the region and forcefully deal with the leaders and end the strike. One of the strike leaders gets away and blows up all the railroads into the Town in retaliation. All Railroad hexes into this Town are considered permanently Destroyed and the rail line will not travel to or from any destinations that would require them to pass through those Railroad hexes. ",
+            "flavor": "Rail workers in the region have gone on strike, shutting down all the railway lines. Its starting to affect business and the Rail Line company isnt liking it. ",
+            "id": 59,
+            "keywords": [
+                "Job",
+                "Labor",
+                "Negotiation",
+                "Mandatory!"
+            ],
+            "location": "Random Town on Rail Line ",
+            "success": "If the Heroes successfully negotiate with the Rail workers and come to a peaceful resolution, the Heroes each gain 50 XP and $25. In addition, the Rail Line company gives you one free Train ticket to travel anywhere in the Brimstone region. Isnt that swell of them? \nThe price that the Heroes negotiate down the Rail workers is now the permanent price of all Train Tickets in every Town. ",
+            "time": "7 days ",
+            "title": "Rail Workers Strike "
+        },
+        {
+            "desc": "The Mutants have gathered together at this Town (either at the Campsite or Mutant Quarter, depending on which is present in this Town). Whenever Heroes enter this Location to deal with the Mutants, they should roll a D8. On a 1, they need to make a Luck 4+ test or they have contracted the Plague (roll once on the Madness Chart and -2 Health permanently). \nIn order to help save the Mutants, the Heroes will need to get in enough medical supplies to relieve the Mutants before this outbreak spreads and gets out of control. To control the outbreak, the Heroes will need to transport in a number of healing Side Bag Tokens equivalent to 2 x the Town Size. For example, if a Town is a size 8 Town, they will need to bring in 16 (2x8) healing Side Bag Tokens. Healing Side Bag Tokens may be any Side Bag Tokens that can heal health (items that just heal Sanity do not count). The Heroes must enter into the Town Location itself to drop off the healing items. \nHoly Heroes or any other Heroes with healing abilities may also spend time with the Mutants attempting to heal or comfort the sick, but must roll a D6 and will contract the Plague on a roll of 1 or 2 (roll once on the Madness Chart and -2 Health permanently). Each day that they spend with the Mutants counts as 2 healing Side Bag Tokens. ",
+            "fail": "If the Heroes fail to control the outbreak, the Plague spreads beyond just the Mutants and start to infect the regular Human populace and proves to be even more virulent within Humans. Although eventually this Plague is brought under control, it's not without a heavy cost. Half the Town Locations (rounded up) in this Town are Destroyed. In addition, the nearest 4 Towns from this Town also lose half of their Town Locations (rounded up). \nIf playing with the Frontier Town expansion, the Originating Town also changes its Town Type to Plague Town, if it wasnt a Plague Town already. ",
+            "flavor": "A vagrant colony of mutants has contracted a particularly devastating Plague that is rendering them hairless and in some cases is eating away at their skin or causing insanity. In desperation, these mutants are waiting on the outskirts of one Town looking for help. Theyve collected together at one town looking for help, but if this goes untreated, theres no telling how far it will spread. ",
+            "id": 64,
+            "keywords": [
+                "Job",
+                "Science",
+                "Mandatory!"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes successfully bring the Plague under control in this Town before it gets a chance to spread they are hailed as miracle workers. Each Hero gains 50 XP. In addition, the Posse as a whole is compensated with twice the amount it cost them to buy supplies. \nFor example, if the Heroes bought 16 bandages ($50 each) to heal a size 8 Town, they wouldve originally paid $800. If successful in healing the Town, the Posse would gain a total of $1600 as a reward. ",
+            "time": "10 days ",
+            "title": "Mutant Plague "
+        },
+        {
+            "desc": "Place the King in Yellow token at the Mine hex. At the beginning of each day, the King token will move one hex towards the nearest Town (choose 1 if multiple Towns are the same distance). If the King token enters the Town hex, then the townsfolk are driven raving mad by the King and his degenerate retinue. The Town Type is changed to Town Ruins (if applicable) and remove all other Town Traits and add the Town Trait Religious Cult (Strange) to the Town. This modified Town Trait reads the same as Religious Cult, except swap out the keyword Holy with Strange in the description. The King token is never removed until defeated in a Fight and will continue traveling from one Town to the next (even if the Heroes are all KOd during their Fight). \nTo stop the King in Yellow, the Posse will need to enter into the same hex as the King token and engage in a Fight on a Terrain battlemap. Roll an Epic Human Threat. All the Enemies in this Fight have the ability Fear (2) - A Hero starting their Activation adjacent automatically takes 2 Horror Hits. Randomly choose one of the Villains to be the King in Yellow. When the King in Yellow is killed, transform that model into an XL Monster Enemy at full health instead. The Job is complete when all Enemies have been defeated. ",
+            "fail": "If the King in Yellow makes his way through more than half the un- Destroyed Towns on the Map, then the campaign is failed as the region descends into madness and an unstoppable wave of religious maniacs sweeps through the area and on to the rest of the world. ",
+            "flavor": "A caravan of insane religious fanatics is making their way through the region, lead by their mysterious King in Yellow. All those they come into contact with are driven mad, can you stop them before they destabilize the region? ",
+            "id": 80,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Mandatory!"
+            ],
+            "location": "Random Mine ",
+            "success": "If the King in Yellow and his insane followers are defeated, then the Heroes each gain 50 XP and may each draw an Artifact card from a random Other World (only one Other World for all Heroes). All Towns that were turned into Town Ruins remain that Town Type, but reroll any Town Traits that were changed to Religious Cult (Strange). Everybody affected has lost their memories and have come out from the experience completely changed. ",
+            "time": "No Time Limit ",
+            "title": "The King Walks Among Us "
+        },
+        {
+            "desc": "The Posse should immediately begin a Fight using the Town or a Terrain battlemap. The Posse will go against a High Human Threat at one level higher than the Heroes. This Fight will last until the bandits decide to clear off. Starting the Depth track from the Darkness Start space, move the Darkness marker forward once each turn. Also, push it forward whenever one of the bandits is killed. When the Darkness marker reaches the end of the track, the Fight is over and the rest of the bandits flee. \nAlternatively, if you own the Frontier Town expansion, you may start a Shootout in the Streets Town Mission [Frontier:1] instead to resolve this Job. ",
+            "fail": "If the Heroes fail to kill more than half of the bandits before the Fight is over then the bandits make off with their earnings, crippling the economy of this Town. Half the Town Locations here are Closed because of this (Destroyed). \nIf playing with the Frontier Town expansion, this Towns Type is converted to Town Ruins. ",
+            "flavor": "While the Posse is looking around for jobs, a gang of bandits shows up in Town and is holding up local businesses. The Posse has moments to react before the bandits make off with whatever valuables they can. ",
+            "id": 84,
+            "keywords": [
+                "Job",
+                "Outlaw",
+                "Mandatory!"
+            ],
+            "location": "Local Town ",
+            "success": "If the Heroes manage to kill of more than half of the bandits (rounded up), they keep any of the bandits from making off with their ill-gotten gains and each Hero in the Posse gains 25 XP and $50. \nIf all of the bandits are defeated, the Heroes each gain 50 XP and $100. ",
+            "time": "Immediate ",
+            "title": "Stick em Up! "
+        },
+        {
+            "desc": "Choose a Random Hero, that Hero has had a relative kidnapped. To pay the ransom and immediately complete the Job, the Posse may pay D3x$1000 (the Job will be completed with no Reward or Failure results). \nIf instead the Posse wants to try to rescue the hostage, they may travel to the Mine and go on a Search Party Mission [Basic:4]. All Set Up and Rules are the same, however any Enemies encountered in that Mission should be rolled for on the Human Threat charts instead of drawing Threat cards for Monster Enemies. Ignore the normal Reward/Failure results from that Mission description as well. ",
+            "fail": "If the Job is failed, then the family member is killed and the Hero who lost the family member takes D6 Corruption (no Willpower save) and also rolls once on the Madness Chart. ",
+            "flavor": "Somebody has taken a member of a random Heros family hostage and is threatening to kill them in 10 days unless a ransom is paid. ",
+            "id": 90,
+            "keywords": [
+                "Job",
+                "Rescue",
+                "Mandatory!"
+            ],
+            "location": "Random Mine ",
+            "success": "If successful, each Hero gains 30 XP and the Hero whose family member was kidnapped gains an additional 20 XP on top of that. ",
+            "time": "10 days ",
+            "title": "The Ones We Love "
+        },
+        {
+            "desc": "Immediately Destroy one Random Town Location in the affected Town. The Heroes must travel to the Town and engage in a fight against an Epic Level threat. Begin the Fight on a Town or terrain battlemap and place a Gate tile on the opposite, middle side of the board. This Gate is considered adjacent to the edge of the battlemap. To close the Gate the Heroes need to defeat all Enemies on the board. \nWhile in this fight, make a Hold Back the Darkness roll each turn. Each time this roll is failed, draw a Low Threat card and add those Enemies around the Gate. ",
+            "fail": "If the Heroes are unsuccessful in closing the Gate, the entire Town itself is Destroyed. ",
+            "flavor": "A Gate to an Other World has opened up in the middle of a Town. It could destroy the Town if the group doesnt close the gate in time. ",
+            "id": 93,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Mandatory!"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes are successful in defeating the Enemies and closing the Gate, the Town is saved and the people sing your praises for saving them. Prices in Town are permanently $25 less for the Heroes (minimum $25). In addition, each Hero gains 30 XP. ",
+            "time": "5 days ",
+            "title": "The Gate "
+        }
+    ],
+    "normal": [
+        {
+            "desc": "The Posse must locate 2 Clue Icons on Mountain hexes. After finding the last Clue Icon, the Heroes enter a cave and find the Bandido along with some henchmen. The Bandido is an Epic Human Threat (Brutal Bandido + 1 Threat roll [at level]). You may bring in the Bandido dead or alive. You may use the Capture action on the Bandido instead of killing him. See Expanded Combat for rules on Capturing. If the Bandido is immobilized in this manner, the Job is complete when all other Enemies are defeated. ",
+            "fail": "In the event that the Heroes are unable to kill or apprehend the Bandido, he goes on a rampage and 1 Random Location from the Originating Town has closed down and is considered Destroyed. ",
+            "flavor": "A real scum of a bandido has taken to terrorizing the citizenry, holding-up decent folk and robbing from merchants. Someone needs to take him out or bring him in to face justice. ",
+            "id": 0,
+            "keywords": [
+                "Job",
+                "Law",
+                "Bounty"
+            ],
+            "location": "Mountain Hex ",
+            "success": "Alive: If the Bandido is brought back alive, each Hero gains 35 XP, $100 and draws a Loot card. \nDead: If the Bandido is killed off in the battle, each Hero instead gains 25 XP and the Posse gains D3x$50, to be split amongst the Heroes. ",
+            "time": "No Time Limit ",
+            "title": "Wanted: An Ugly, No Good Bandido "
+        },
+        {
+            "desc": "This is an optional side Job that may be completed at any point in the future, but you automatically begin this Job in the next Mine you enter. You may roll for another Job, in addition to this Job. The next time the Heroes have a Mission in a Mine, they may go on an optional side mission to look for whatever this map is pointing towards. To go off in search of the reward: the Heroes need to make a Strength 4+ test at a closed doorway in the first available room in their current Mission. The Heroes then need to find 1 extra Clue Icon past that point to find the reward and this Clue Icon cannot be applied towards whatever their main mission is in that Mine. ",
+            "fail": "If the Posse gives up on the Job, doesn't find the chest on this Mission or loses the map for whatever reason, then someone or something else finds the treasure before them. The Job is over. ",
+            "flavor": "A prospector has come across an old map, but doesnt have the resources or the courage to follow it to the end and instead offers to sell you the map, though the Posse has no guarantee that the map actually leads to anything useful. ",
+            "id": 1,
+            "keywords": [
+                "Job",
+                "Frontier",
+                "Find"
+            ],
+            "location": "Random Mine ",
+            "success": "Each Hero in the Posse gains 25 XP. Upon locating the Clue Icon, the Heroes come across an ancient chest. Roll a D8 to discover what lies inside: 1 Youve sprung a trap! Each Hero takes D6 Wounds from the exploding chest! 2-7 Youve found a chest filled with gold! Each Hero gets D3x$50. 8 Draw 1 Mine Artifact ",
+            "time": "No Time Limit ",
+            "title": "X Marks the Spot "
+        },
+        {
+            "desc": "The Heroes must enter the Town and conduct an investigation. The Posse needs to successfully perform a Cunning 5+ test in at least half of the Locations in that Town (rounded up) to find the killer. Each Location may only be investigated once and only needs one Hero to perform the test. If successfully completed, the Heroes have a Fight with 1 Brutal Human Enemy in the streets of the Town. If unsuccessful, then all leads have dried up and the Job is failed. ",
+            "fail": "The killer has gotten away scot free. The townsfolk get a bit more paranoid and uninviting knowing that there's a killer still loose among them, while others get out of town for fear of being the next victim. A Random Location in Town closes up shop for good (Destroyed). ",
+            "flavor": "A grisly murder in a Town has left a community in shock. The ferocity of the murder suggests it was a crime of passion, pointing to another Town local. ",
+            "id": 2,
+            "keywords": [
+                "Job",
+                "Law",
+                "Murder",
+                "Investigate"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes successfully complete this Job, each Hero gains 40 XP and D3x$50. In addition, the local Sheriff buys the Posse a round of drinks to congratulate them (each Hero gains an alcoholic Side Bag Token). ",
+            "time": "14 days ",
+            "title": "Inexplicable Murder "
+        },
+        {
+            "desc": "The Heroes must enter a Random Mine and complete a Search Party Mission [Basic:4], however there are 4 settlers that need to be found in this Mine. Instead of the normal rules, each Clue Icon found represents a settler that is rescued. The Posse may exit the Adventure at any time, but any settlers not found are considered lost and presumably dead. When this Job is completed, both the Reward and Failure results are applied to all of the Heroes in the Posse. ",
+            "fail": "For each Settler that is not rescued, each Hero takes D3 Corruption Points, ignoring Willpower, as the loss weighs heavily on their souls. ",
+            "flavor": "A group of settlers was holed up in an old abandoned Mine, fending off attacks from some Blackfangers. ",
+            "id": 3,
+            "keywords": [
+                "Job",
+                "Frontier",
+                "Rescue"
+            ],
+            "location": "Random Mine ",
+            "success": "For each Settler that is successfully rescued, each Hero gains 30 XP and D3x$50. ",
+            "time": "No Time Limit ",
+            "title": "Last Stand "
+        },
+        {
+            "desc": "The Posse will need to Search each Rail hex between this Town and another until they come across a total of 3 Clue Icons. After the 1st Clue Icon is found, the Heroes have gotten deep into the mystery, but the spectral train starts targeting the Heroes. Until the mystery is solved, each Hero suffer D6 Horror Hits every time they enter any Rail hex. After the 2nd Clue Icon is found, this ramps up to D8 Horror Hits every time they enter a Rail hex. Upon finding the 3rd Clue Icon, the spectral train is exorcised and the Heroes can travel as normal. ",
+            "fail": "Unable to banish the haunted locomotive, travel to this Town begins to dry up and them folks that was here close up shop and head out. Half the Locations (rounded down) in the Originating Town are Destroyed. \n",
+            "flavor": "A ghastly locomotive has been spotted moving up and down the tracks and the Posse needs to do some investigating to find out why its there. ",
+            "id": 4,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Train"
+            ],
+            "location": "Random Town on Rail Line ",
+            "success": "When the train is finally banished, each Hero gains 30 XP and D3x$50. ",
+            "time": "No Time Limit ",
+            "title": "The Charon Express "
+        },
+        {
+            "desc": "To go investigate these rumors, the Posse will need to Search the Fallen Forts. If a Gate icon is pulled from these searches, then the rumor is true and the Posse comes across an illegal slave labor operation! The group must immediately fight an Epic level Human Threat to free those people that are being held there (use a Terrain or Town battlemap). If none of the Fallen Forts have a Gate icon from the Search, then the rumors turned out to be just that... rumors. ",
+            "fail": "Each Hero in the Posse takes D6 Corruption Hits, knowing that those people are probably out there still suffering at the hands of those damned slavers. Or maybe not, it was probably just a crazy rumor anyways... ",
+            "flavor": "Theres word that something has started stirring at one of the old Fallen Forts. Some say its been turned into a prison camp and that folks are being dragged there to be worked to death. ",
+            "id": 6,
+            "keywords": [
+                "Job",
+                "Rumor",
+                "Investigate"
+            ],
+            "location": "Random Fort ",
+            "success": "Upon defeating the slavers, the Heroes free some townsfolk that were being held against their will to mine. While theyll never truly recover, they can at least live out their lives in freedom. For selflessly coming to the aid of these people, each Hero in the Posse receives 35 XP and gains 1 extra Revive Token that can be used at any time. ",
+            "time": "No Time Limit ",
+            "title": "Slave Labor "
+        },
+        {
+            "desc": "Roll a Random Town on the rail line to determine the intended final destination of the freight train. The Posse must Search Rail hexes until they have come across a combined total of at least 5 Door icons (Gate icons count as 3 Door icons, any Door icons found from Searching other terrain do not count). Upon finding the last required Door icon, the Heroes have found the fallen freight train and can collect the cargo. From there they must transport the cargo to its final destination. ",
+            "fail": "The precious, perishable goods that were to be delivered have gone bad and are of no use to anybody. Otherwise, there is no Failure result for this Job. ",
+            "flavor": "A train has derailed, spilling its precious cargo all over the place. The Posse needs to find the derailed train and pick up the cargo, then take it to its destination. ",
+            "id": 7,
+            "keywords": [
+                "Job",
+                "Train",
+                "Delivery"
+            ],
+            "location": "Rail Hex + Random Town on Rail Line ",
+            "success": "If the cargo is successfully delivered on time, the Heroes are rewarded by the recipients who had assumed their cargo lost. Each Hero gains 30 XP and is rewarded with x$50 for a finders fee. ",
+            "time": "10 days ",
+            "title": "Derailed Train "
+        },
+        {
+            "desc": "Begin a battle on a Terrain or Town battlemap against Hungry Dead. If the group wants to avoid re-killing the townsfolks decaying loved ones, they may (foolishly) attempt to convince each Hungry Dead to get back into their graves. While adjacent to 1 or more Hungry Dead, any Hero may attempt to talk them back into the grave by making a Cunning 5+ or Spirit 5+ roll. If successful, that Hungry Dead will stop attacking and move to Escape from the battlemap. Heroes may only attempt to convince each Hungry Dead twice, after that you have no choice but to kill the Dead that wont listen to reason. ",
+            "fail": "For each Hungry Dead that is re-killed, the Posse as a whole may gain $25 from the looting the Dead if they want to, but the townsfolk won't appreciate their loved ones getting slaughtered or family heirlooms being looted. The Heroes will be banned from entering that Town again if more than $250 is looted from the dead or if they re-kill more than half the Hungry Dead. ",
+            "flavor": "The local graveyard has a slight problem with keeping its bodies where they belong and needs some assistance. The Posse can go in guns blazing to put the dead back in the ground or try to find another way. ",
+            "id": 8,
+            "keywords": [
+                "Job",
+                "Undead"
+            ],
+            "location": "Local Town ",
+            "success": "For each Hungry Dead that is successfully convinced to get back into their grave, the Heroes each gain 5 XP. ",
+            "time": "3 days ",
+            "title": "The Dead Don't Stay Dead "
+        },
+        {
+            "desc": "The Posse will first need to find the Indians that are causing the trouble for the loggers. To find them the Posse should Search through Forest hexes until they come across a Gate icon (ignore any Encounters on that Exploration Token). Upon finding the Indians, the Heroes may either attempt to negotiate with the Indians or may attack them to remove the Indians. If any of the Heroes have the keyword Tribal or Kemosabe, they may attempt to negotiate with the Indians by passing a Cunning 6+ test. If the Heroes want to or fail to negotiate, they may attack the Indians to evict them. Immediately start a battle on a Terrain battlemap against Indian Scout Human Enemies. If anyone in the Posse already has the keyword Paleface, automatically begin an Ambush battle against the Indians, they have gotten the jump on you. The Indians will not Ambush the group if there are any Heroes with the keywords Tribal or Kemosabe in the Posse. This Jobs Failure result will occur if the Heroes drop the Job, do not complete it in time, or attack the Indians. However, if the Indians are defeated, the Heroes still read from the Reward section as well. ",
+            "fail": "The argument between the loggers and Indians has taken a turn for the worst and tensions around the area are running high now that blood has been shed. Permanent Effect: if the Posse has any Heroes with the keyword Tribal or Kemosabe in the group with other Heroes with the keywords Frontier or Paleface (who do not also have either the Tribal or Kemosabe keywords), the Posse is -1 to all Hold Back the Darkness rolls while those two groups of Heroes are in the Posse together. Their mutual distrust and fear of each other is affecting the groups performance. Does not stack with multiple Heroes or keywords. ",
+            "flavor": "Some loggers in a forest are coming up against some trouble and have requested help from anyone brave enough to deal with the injuns infesting their woods. ",
+            "id": 10,
+            "keywords": [
+                "Job",
+                "Frontier",
+                "Tribal",
+                "Negotiate"
+            ],
+            "location": "Forest Hex ",
+            "success": "If the Posse finds a way to peacefully resolve the situation, each Hero gains 50 XP and may Heal 1 Injury, Mutation, or Madness from a grateful Indian Medicine Man. Any Heroes that do not have the keywords Tribal or Kemosabe, gain the keyword Kemosabe for helping to avoid any unpleasantries. If the Posse ends up fighting the Indians and beating them, any Heroes with the keyword Kemosabe lose that keyword and any Heroes that do not have the keyword Tribal, gain the keyword Paleface. Each Hero in the Posse also gains 25 XP and x$100 as a reward for dispatching those savages. Also, follow the Failure result for this Job. ",
+            "time": "14 days ",
+            "title": "At Loggerheads "
+        },
+        {
+            "desc": "After arriving in Town, each member of the Posse may bet on how many Shooting rolls they can succeed at consecutively without failing. Then each Hero makes a series of Shooting rolls until they fail, keeping track of the number of successes. Afterwards, roll a to determine how many the best Challenger from the competition was able to finish with. Whoever has the most successes wins the competition. Roll additional Shooting tests in the case of ties (The Challenger has a 3+ To Hit Ranged skill) until there is a clear winner. ",
+            "fail": "Whoever has the lowest number of successes in the competition is struck by a stray bullet and suffers the Permanent loss of D3 Health. Be careful where you're standing next time, you frickin' jackass. ",
+            "flavor": "A local gunslingerturned- Mayor has called together the meanest sunsuvbitches from all around the region to compete in a Gunfighting competition. ",
+            "id": 11,
+            "keywords": [
+                "Job",
+                "Showman",
+                "Contest"
+            ],
+            "location": "Random Town ",
+            "success": "If one of the Heroes is the winner of the competition, they gain 50 XP and take home D3x$100 in winnings. The other Heroes that participated each gain 35 XP. Heroes that matched exactly the number of successes they bet also gain an additional $25 per success, regardless of whether or not they actually won the competition. ",
+            "time": "7 days ",
+            "title": "Gunfighting Competition "
+        },
+        {
+            "desc": "Generate a Clue Site to Search that is D10 Hexes away. Search for a Clue Icon at the Clue Site and/or any surrounding hexes. When a Clue icon is found, generate another Clue Site that is D6 Hexes away and Search for another Clue Icon at that Clue Site and/ or any surrounding hexes. When that is found, then generate another Clue Site that is D3 Hexes away and Search for one final Clue Icon. At this final Clue Site, the Bandit is found. If a Clue icon is not found at any of the Clue Sites or any of their surrounding areas, then the Bounty has escaped and the Job ends in failure. If the Bandit is found, immediately begin an Overland battle on a Terrain or Town battlemap against a Brutal Outlaw Human Enemy. You may bring in the Bandit dead or alive. You may use the Capture action on the Bandit instead of killing him. See Expanded Combat for rules on Capturing. If the Bandit is immobilized in this manner, the Job is complete when all other Enemies are defeated. ",
+            "fail": "The Bandit has escaped the long arm of the Law and is free to roam, engaging in all sorts of banditry. Ironically enough, the Bandit follows the Posse back and steals a Random Hero's Horse when they're not looking. Their Horse is lost. ",
+            "flavor": "Theres a bandit on the loose with a price on his head running around the area, trying not to be found. The job posting says he can be brought back Dead or Alive. ",
+            "id": 12,
+            "keywords": [
+                "Job",
+                "Law",
+                "Bounty"
+            ],
+            "location": "Random Clue Site ",
+            "success": "Alive: Each Hero gains 50 XP and $150 and also draws a Loot card. Dead: Each Hero gains 35 XP and the Posse as a whole gains D3x$50, to be split amongst themselves. ",
+            "time": "14 days ",
+            "title": "Bounty Huntin' "
+        },
+        {
+            "desc": "The Posse must Search River hexes to find survivors or casualties. For each Clue Icon result, you have found either a body or a survivor. \nFor each Clue Icon/survivor located, roll a D6. \n1-2 Gain 15 XP. Youve only managed to locate a corpse, though the settlers are still grateful for the closure, but theyre in mourning and you dont gain any money from the discovery. \n3-5 Gain $50 and 20 XP. \n6 Gain $100 and 25 XP. You locate a settler of some great importance and you are rewarded quite handsomely. ",
+            "fail": "If you find no bodies, then each Hero takes D6 Corruption Hits. ",
+            "flavor": "A group of settlers was crossing over a river when a flash flooding occurred that washed the entire group all over the place. Some survivors of the flooding are looking for help in locating fellow survivors and family. ",
+            "id": 13,
+            "keywords": [
+                "Job",
+                "Settler",
+                "Rescue"
+            ],
+            "location": "River Hex ",
+            "success": "There is no set Reward for successfully completing this Job ",
+            "time": "4 days ",
+            "title": "Raging River Rescue "
+        },
+        {
+            "desc": "The Heroes need to Search any clear (Medium terrain) hexes to find any Clues regarding the local strangeness. Whenever a Clue Icon is found: Lore 5+ \nIf the Posse makes the test, they found some kind of Clue about whats going on here. To complete the Job, the Heroes must successfully investigate three Clue Icons. ",
+            "fail": "The Heroes never are able to figure out what's going on with them cattle. It could be some ancient evil that walks the Earth again or strange visitors from some far off Other World, but you'll never know for sure... ",
+            "flavor": "Ranchers are complainin about their cattle being stolen off in the night or being mutilated in strange ways and theres been a rash of strange sightings in the night sky. Youll need to roam around the area to figure out whats going on. ",
+            "id": 14,
+            "keywords": [
+                "Job",
+                "Strange",
+                "Investigate"
+            ],
+            "location": "Any Medium Terrain ",
+            "success": "Each Hero gains 25 XP. Turns out it was just some old, local hermit that just wanted to be left alone. Them cattle was eatin some of his choice herbs and he wasnt having none of it. If the Heroes give the Hermit Herb Side Bag Tokens hell forget all about the whole thing even sit and talk with the Posse for a spell. If the Heroes give the Herb Side Bag Tokens, each Hero gains an additional 50 XP as well. ",
+            "time": "14 days ",
+            "title": "Cowboys and Aliens "
+        },
+        {
+            "desc": "While this Job is active with the Posse, any Hero may spend their day in this Town digging graves. Those that spend their day digging graves may not visit any other Town Locations for that day. Heroes may dig graves multiple times during their Town Stay. As soon as the Posse leaves the Town, this Job is over. ",
+            "fail": "There is no cost to failing at being a grave digger. One way or another, you'll wind up at the bottom a grave eventually... ",
+            "flavor": "Its back-breaking work, but somebody has to get it done. Help out the local cemetery by digging graves in town and maybe unburden the dead of their unneeded... belongings. ",
+            "id": 15,
+            "keywords": [
+                "Job",
+                "Labor"
+            ],
+            "location": "Local Town ",
+            "success": "Each Hero that is digging performs a series of eight D8 rolls. On a result of 1, that Hero has suffered from an accident and rolls once on the Injury Chart. For each 4+ roll you earn 15 XP & $25 and for each 7+ rolled you may earn an additional 20 XP & $100, but take a point of Corruption (ignores Willpower) for looting a body of some valuable piece of jewelry. ",
+            "time": "No Time Limit ",
+            "title": "Grave Diggin' "
+        },
+        {
+            "desc": "To help garner support for the candidate, the Heroes need to travel around the area surrounding the Town and try to generate support for the candidate. To convince voters youll need to make appeals to their intellect (Cunning 6+ test), their patriotism (Lore 5+ test), intimidate them into voting correctly (Strength 5+ test), or just bribe them with money and/or alcohol. In each hex where youre trying to build support, you may spend 1 MP to try to influence the locals there. Youll need to sway 6 hexes to vote for the candidate to complete this Job. You only have one chance to sway each hex, otherwise it goes for the opposition and you may not try to sway that hex for the rest of the Job. Place a marker on hexes to keep track of those for or against the candidate. If you decide to bribe the locals instead, you may spend D6x$25 or 1 alcoholic Side Bag Token to automatically convince locals in that hex. ",
+            "fail": "Unfortunately the election didn't go as planned and your candidate lost in a big way. It didn't help what with all the scandal and controversy over questionable campaign tactics. The new Mayor is trying to clean house and rid the Town of corruption and sees the Posse as part of the problem. For the rest of the campaign: the Posse may not stop in this Town again for a Town Stay and if it enters this Town's hex, you must immediately fight a Medium level Human Threat. ",
+            "flavor": "A Town is holding its election for a new Mayor and one of the candidates is vying for support. If the Posse helps him out they may be able to gain some influence with the higher ups in Town. ",
+            "id": 16,
+            "keywords": [
+                "Job",
+                "Politics"
+            ],
+            "location": "Random Town ",
+            "success": "The candidate sails to an easy victory and becomes the new Mayor of this Town. The Mayor remembers his friends and rewards them well. Upon completing the Job, each Hero gains 35 XP & $150 and the Posse may immediately swap one of the Town Locations in this Town for any other Location you would like. ",
+            "time": "14 days ",
+            "title": "Election Season "
+        },
+        {
+            "desc": "When the Heroes make it to the Town holding the Poker tournament, theyll each need to pay an entrance fee of $100 to join the Tournament. Each Hero that enters the tournament rolls 5D6 and add the numbers together to represent their score. To represent their competitions score in the Tournament, roll 6D6 and add the numbers together. Whoever rolls the highest amount wins the purse, if the competition gets it then the Job is failed. Reroll in the case of ties. ",
+            "fail": "In the case of failure, the Heroes either didn't make it to the Tournament in time or didn't win the Tournament. The only result of failing this Job is that the Heroes lose any money they paid for the entrance fee. ",
+            "flavor": "Theres a poker tournament going on in another Town thats looking for entrants. The stakes are high and the competition is fierce. ",
+            "id": 18,
+            "keywords": [
+                "Job",
+                "Performer",
+                "Contest"
+            ],
+            "location": "Random Town ",
+            "success": "If a Hero wins the Poker Tournament, they gain back triple the sum of the entrance fees paid by all the Heroes to enter the Tournament. ",
+            "time": "5 days ",
+            "title": "Brimstone Poker Tournament "
+        },
+        {
+            "desc": "To find the Fugitive, the Heroes will need to Search hexes within 2 hexes of this Town in hopes of capturing the escapee before he flees the area and escapes for good. When the Heroes come across their first Gate Icon, they have found the Fugitive and will need to apprehend him. To apprehend the Fugitive the Heroes will need to engage him in a fight on an overland battlemap, he is a single Brutal Human Outlaw Villain at the Posses Threat level. You may use the Capture action on the Fugitive instead of killing him. See Expanded Combat for rules on Capturing. ",
+            "fail": "If the Heroes fail to stop the Fugitive from escaping, he gets away and immediately starts a wave of bank robberies before leaving the area for good. One Random Town is especially hard hit and two Town Locations become Closed as a result (Destroyed). ",
+            "flavor": "A fugitive broke out of a local jail cell and is on the run. Can you track him down before you lose his trail for good? If he makes it too far hes a free man. ",
+            "id": 19,
+            "keywords": [
+                "Job",
+                "Law",
+                "Hunt"
+            ],
+            "location": "Local Town ",
+            "success": "Alive: If the Fugitive is captured alive, each Hero gains 50 XP and D3$50 and also draws a Loot card. Dead: If the Fugitive is killed, each Hero gains 30 XP and the Posse as a whole gains D3x$50, to be split amongst themselves. ",
+            "time": "7 days ",
+            "title": "Fugitive on the Run "
+        },
+        {
+            "desc": "The Posse will need to get to the other Town in time to present the evidence to the local sheriff and make a Cunning 4+ test, otherwise the Sheriff wont believe the evidence is real and hangs the man anyways. ",
+            "fail": "The innocent man hangs for a crime he didn't commit, just another casualty of life. Each Hero takes D3 Corruption Hits. ",
+            "flavor": "A man is set to hang real soon in another Town. Evidence has come to light that could free this man, but if you dont get there in time, hell hang for sure. ",
+            "id": 20,
+            "keywords": [
+                "Job",
+                "Law"
+            ],
+            "location": "Random Town ",
+            "success": "Each Hero receives 50 XP and D3x$50 as a reward for freeing the man. ",
+            "time": "4 days ",
+            "title": "An Innocent Man "
+        },
+        {
+            "desc": "Youll need to first find where these child criminals have gotten off to by Searching road hexes. Upon finding your 3rd Clue Icon, you have found the outlaw children. The child outlaws immediately attack you, you have been Ambushed. Use the same stats as Lackeys for these kids (see new Human Enemy Record Sheets). You may use the Capture action on the child bandits instead of killing them. See Expanded Combat for rules on Capturing. If any of the children are killed while in the Fight, the Hero that killed them immediately takes D6 Corruption Points (ignore Willpower). ",
+            "fail": "You were unable to take out the pint-sized predators and so they continue their reign of terror unopposed and eventually form a massive network of orphan thieves and pickpockets across the region. Each Hero loses D6x$50 from orphan pickpockets that slip the cash from your wallet without you knowing. ",
+            "flavor": "A gang of child outlaws are holding up travelers, how can the Posse handle these nefarious underage criminals? Is a spanking a tough enough sentence, or do they need to go further? ",
+            "id": 21,
+            "keywords": [
+                "Job",
+                "Youth",
+                "Outlaw",
+                "Fight"
+            ],
+            "location": "Road Hex ",
+            "success": "For taking care of the underage thugs, each Hero receives 50 XP and $100. ",
+            "time": "No Time Limit ",
+            "title": "Orphan Outlaws "
+        },
+        {
+            "desc": "This is an optional side Job that may be completed at any point in the future. You may roll for another Job, in addition to this Job. While in this Town you may sell Artifacts from a random Other World at twice their listed value. Each time you sell an Other World Artifact, roll a D6. On a 5 or 6, Acquisitions Incorporated has found what theyre looking for an close up shop without a word. Whatever these strange fellows wanted, they now have it thanks to you... ",
+            "fail": "There is no Failure result for this Job. ",
+            "flavor": "A treasure hunting agency is offering top dollar for any artifacts that adventurers can recover from Other Worlds. ",
+            "id": 22,
+            "keywords": [
+                "Job",
+                "Occult",
+                "Find"
+            ],
+            "location": "Random Other World ",
+            "success": "There is no set Reward result for this Job. ",
+            "time": "No Time Limit ",
+            "title": "Acquisitions Incorporated "
+        },
+        {
+            "desc": "Youll need to watch the spouses movements over the course of the Jobs time limit. One Hero per day will need to dedicate their time to following after the spouse and wont be able to visit any Town Locations or take any other actions for that day. Heroes may alternate who follows the spouse each day. To follow the spouse, youll need to make an Agility 4+ test to see if you evade detection. If you fail this Agility test 2 days in a row, the Job is failed. ",
+            "fail": "The spouse catches wind of your investigation and hires some thugs to ambush your group. Though you're able to fend them off, each Hero takes D8 Hits in the process. ",
+            "flavor": "A husband or wife suspects that their spouse has been cheating on them and wants you to track their movements through Town. ",
+            "id": 24,
+            "keywords": [
+                "Job",
+                "Investigate"
+            ],
+            "location": "Local Town ",
+            "success": "For each day that you successfully follow the spouse, each Hero gains 20 XP and $20. ",
+            "time": "4 days ",
+            "title": "An Illicit Affair "
+        },
+        {
+            "desc": "As soon as you enter the Shull Party Massacre hex, a Gate opens up: Ambush - Draw a High Threat. After the Fight, you may explore around the area to try to find the Artifacts. You find some tunnels leading beneath the Burial Grounds and may begin an Exploration Mission [Basic:2] to recover the Artifacts. All Rules are the same, except add on an additional Hungry Dead to each Fight during this Mission. When the Posse finds the final Dead End in the Mine, they automatically face an Epic Threat. ",
+            "fail": "If the Heroes fail the Mission, vengeful spirits escape the tunnels and lay waste to Towns in the area. The nearest four Towns each have 1 Random Building Destroyed by the vengeful spirits. In addition, until the Posse gets back into Town, each Hero in the Posse will need to roll for Wilderness Encounters at the beginning of the day, rather than rolling for the Posse as a whole. ",
+            "flavor": "An old Indian Burial Ground is said to hold powerful artifacts, but is also protected by menacing spirits meant to ward off treasure seekers. The Shull Party got a bit too close to that burial ground and paid the price. Maybe your Posse will fare a bit better? ",
+            "id": 25,
+            "keywords": [
+                "Job",
+                "Tribal",
+                "Supernatural"
+            ],
+            "location": "Shull Party Massacre ",
+            "success": "If the Heroes successfully finish the Mission, they come across a cache of valuable Artifacts. Each Hero gains 25 XP and any non-Tribal Hero may draw a Mine Artifact card. Any Heroes that take Artifacts from the site will lose the Kemosabe keyword (if they already have it) and will gain the Paleface keyword. ",
+            "time": "No Time Limit ",
+            "title": "Shull Party Massacre "
+        },
+        {
+            "desc": "The group will need to meet up with the Settlers on one edge of the HexCrawl overland map (players choice). And will then need to escort the Settlers to the other end of the map. While traveling with the Settlers, draw an Exploration Token at the end of each day. If all the Heroes run from a Fight or are KOd, then the Settlers caravan is attacked and the Job is failed. ",
+            "fail": "The Settlers are dispersed, their pilgrimage for a better way of life is now just a broken dream. Any Heroes with the keyword Holy are at -2 Faith until the end of their next successful Mission. ",
+            "flavor": "[Requires Holy Hero] \nA caravan of religious settlers is traversing through the area and are requesting protection from any decent, God-fearing folk that can lend a hand. ",
+            "id": 27,
+            "keywords": [
+                "Job",
+                "Holy",
+                "Settler"
+            ],
+            "location": "Any Hex on the East/ West edge of the map ",
+            "success": "The Settlers thank you for your service in helping them across this dangerous region. They dont have much, but what they do have they offer to you without hesitation. The Posse gains a number of Loot cards equal to the amount of Heroes in the Posse that must be distributed amongst the group. Heroes with the keyword Holy get first choice of the Loot cards, other Heroes may choose after them. Each Hero also gains 25 XP. ",
+            "time": "No Time Limit ",
+            "title": "Going to the Promised Land "
+        },
+        {
+            "desc": "An Occultist joins the Posse as an ally (choose 1 player to control the Occultist model during their Activation). The Occultist has the following stats: No Combat actions available \nMove 4 \nHealth 8 (Def 5+) \nSanity 10 (Will 3+) \nAny Wounds or Sanity damage that affects the Heroes during Encounters, also affects the Occultist. If the Occultist is KOd at any point, the Job is failed. Go on a Seal the Void Gate Mission [Basic:3]. When the Posse gets to the Objective Room for this Mission, the Occultist will need to spend 3 turns adjacent to the Void Gate in order to complete his research. However, upon completing his research, the Heroes should make a separate Hold Back the Darkness roll. On a fail, the Occultist is driven insane by what he has learned from the Void Gate and is transformed into an XL or bigger Monster (same stats as normal at Posses level) and begins attacking the party. In this case, the Job is not complete until all enemies, including the transformed Occultist is killed (you do not fail the Job for having to kill him in this case). The Void Gate will need to be sealed as well, but only requires 2 Sanity tokens instead of 5. If the Hold Back the Darkness roll is successful however, the Occultist keeps the Darkness under control. The Occultist may attempt to seal the Gate in place of the Heroes. In either case, only 2 Sanity tokens are required on the Void Gate to seal it. ",
+            "fail": "If the Occultist is killed without having studied the Void Gate or if the Posse fails the Job in any other way, then the Void Gate becomes unstable and a series of Void Twisters spill forth from the Gate and wreak havoc on the countryside. D3 of the nearest Towns are Destroyed in the ensuing chaos. ",
+            "flavor": "An Occultist is searching for artifacts of power and has requested the aid of the Posse to hunt down one of these artifacts. He joins along with the party for fear that some ancient rune magic may be disturbed and release a foul curse on the countryside. ",
+            "id": 28,
+            "keywords": [
+                "Job",
+                "Occult",
+                "Research"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Occultist survives until the end of the Job, each Hero gains 50 XP and D3x$100. If the Posse ends up having to kill the transformed Occultist, each Hero gains 30 XP, but only find $100 in his remains, apparently he hid the rest of the money somewhere else in case you were planning on double-crossing him. ",
+            "time": "No Time Limit ",
+            "title": "Occult Collector "
+        },
+        {
+            "desc": "The Posse will need to go into the Town and investigate each Town Location until they find the runaway bride. Once per day, each Hero may attempt a Cunning 6+ test to look for Clues as to the Brides intentions/whereabouts. Each attempt discovers a single Clue. \nThe Posse must find 5 Clues in this way before the mystery of the Runaway Bride is solved. The Posse should head back to the Originating Town to receive their reward. \nOptionally, when all 3 Clues are found, the Posse may also attempt to convince the Bride to come back with them by making a Spirit 6+ test. ",
+            "fail": "If the Posse fails to locate the Bride in time and notify the family, then the groom moves on with his life and finds the newest love of his life in a local Saloon Girl, impulsively getting married right away. After 3 months, the Saloon Girl leaves the groom for more exciting pastures. Heart-broken, the groom rides out into the wilderness, digs a hole in the ground, and slowly raises the gun to his head... ",
+            "flavor": "A woman was supposed to get married, but uncharacteristically left at the last minute. The groom and the Brides family fear something sinister, though you suspect it may be as mundane as cold feet. ",
+            "id": 29,
+            "keywords": [
+                "Job",
+                "Investigate"
+            ],
+            "location": "Random Town ",
+            "success": "If the Posse brings back news of the Bride and her whereabouts in time, each Hero gains 25 XP and D6x$10. \nIf the Posse is also successful in convincing the Bride to come back with them, each Hero gains an additional 15 XP and $100. Instead of bankrupting the newlyweds, each Hero may forgo gaining ANY gold and instead gain an additional 15 XP and remove 1 point of Corruption. ",
+            "time": "14 days ",
+            "title": "Runaway Bride "
+        },
+        {
+            "desc": "The Heroes need to Search any clear (Medium terrain) hexes to find any clues as to the location of the Rangers herd. As soon as the first Clue Icon is found, the Heroes have found the herd and must engage the Cattle Rustlers if they want to recover the cattle. Attack - Human Threat level. During this Fight, whenever anyone rolls a 1 while attacking with a Range weapon, their Shot hits and kills one of the roaming cattle instead. Keep track of how many cattle are killed using some form of counters, as this will be necessary for calculating your Reward. ",
+            "fail": "If the Cattle Rustlers manage to get away with the cattle, the Heroes reputation is damaged and they lose any choice of Jobs they can get whenever they consult the Jobs Board. Whatever number is rolled is the Job they must take (instead of being able to choose + or - the number rolled). This restriction is in effect until the Heroes successfully complete an Adventure. ",
+            "flavor": "A herd of cattle has gone missing and a local Rancher suspects cattle rustlers have stolen his cattle and are taking his cattle to parts unknown. ",
+            "id": 31,
+            "keywords": [
+                "Job",
+                "Frontier",
+                "Strange"
+            ],
+            "location": "Any Medium Terrain ",
+            "success": "If the Heroes successfully fight off the Cattle Rustlers and recover the cattle, they each gain 30 XP and x$100. However, for each cattle that is killed from stray shots, they get $25 less from their total reward. If this goes into the negative, then yes, the Heroes must pay the money back to the Rancher. ",
+            "time": "6 days ",
+            "title": "Cattle Rustlers! "
+        },
+        {
+            "desc": "The Posse will need to first find where the Fellah is at in Town. When visiting a Town Location for the day, the Heroes can draw an Exploration Token, ignore all icons except for Clue Icons. When Clue Icon is drawn, any Heroes present at that Town Location can attempt to eliminate the Fellah by making an attack (either with your normal Combat rating or Ranged shots on an equipped gun). If at least 5 damage is done to the Fellah, he is killed. Whether successful or not, the Posse will need to end their Town Stay after the attempt. ",
+            "fail": "If the Posse is unsuccessful in eliminating the Fellah, your employers hire a mercenary to come after you now. \nThe next time the Heroes face off against an Epic Threat, a sniper takes a few shots at the Posse and you all take D6 Wounds (no defense) from his bullets. ",
+            "flavor": "[Not available if Law Heroes in Posse] \nA fellah has gone and pissed off the wrong people, now its up to the Posse to go make this fella see the error in his ways... permanently. ",
+            "id": 32,
+            "keywords": [
+                "Job",
+                "Outlaw",
+                "Fight"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes are successful in eliminating the Fellah they each gain 25 XP and D3x$50. ",
+            "time": "10 days ",
+            "title": "Cleaning Contract "
+        },
+        {
+            "desc": "The Heroes will need to go to the Mine and perform a Search action on the Mine entrance hex. If the Heroes find a Clue Icon, then the Heroes have found a trace of the expedition at the Mine entrance and may continue on into the Mine to attempt to rescue the expedition. To find the archaeologists, the Heroes will need to enter the Mine and complete a Search Party Mission [Basic:4]. All the same default rules apply except that the Heroes are rescuing multiple people. When the archaeologists are found at the end of the Adventure, roll . That is how many archaeologists that were there in the Mine. Then roll D6 for each to determine how many were still alive by the time you reached them. Ignore the default Reward/Failure results for that Mission. If no Clue Icons are found, then the Heroes find the expeditions camp completely empty. All their personal effects are still there and theres no signs of a struggle. Its as if the group simply got up and left on their own, but theres no tracks leading away. They just disappeared. ",
+            "fail": "If the Heroes fail the Job, each Hero takes D6 Corruption Points, ignoring Willpower, as the loss of all those brave men weighs heavily on their souls. ",
+            "flavor": "An expedition has not been heard from for some weeks and the sponsors are getting nervous that either something happened to them or that theyve been cheated out of their money. Theyd like the Posse to look into the matter and figure out whats going on. ",
+            "id": 33,
+            "keywords": [
+                "Job",
+                "Science",
+                "Investigate"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Posse enters the Mine and completes the Search Party Mission, the Heroes each gain 50 XP and may draw an Artifact card. For each missing archaeologist that is recovered alive, the Heroes also gain $50. \nIf the archaeologists simply disappeared, each Hero in the Posse gains 25 XP and $50, but it still bothers you never did find nothing about those people. Its darned creepy what happened. ",
+            "time": "7 days ",
+            "title": "Archaeological Expedition "
+        },
+        {
+            "desc": "The Creature begins D3 hexes in a random direction away from a random Town and will slowly move 1 hex towards the Town each day. If and when the Creature reaches the Town, roll a D6 to determine how the Creature reacts. \nIf anything other than a 6 is rolled, the townsfolk react in fear and the Creature attacks. In a rampage, the Creature Destroys two Random Town Locations before disappearing into the wilderness. If a 6 is rolled, then the Creature is frightened off and runs off into the wilderness, never to be seen again. \nIf the Heroes reach the Creature before it reaches the Town: Attack - one XL or larger-sized Monster (same stats as normal at the Posses level). ",
+            "fail": "If the Job is failed before the Creature enters the Town, then the Creature goes on a frenzied killstreak, Destroying 2 Random Town Locations in the nearest Town. ",
+            "flavor": "A scientist playing with the forces of God tinkered with the building blocks of life and has now created a creature with the potential to destroy an entire Town. Or its just a misunderstood peace-loving creature, its hard to tell. ",
+            "id": 35,
+            "keywords": [
+                "Job",
+                "Science",
+                "Investigate"
+            ],
+            "location": "Random Town + Random Hex Diagram D3 hexes away ",
+            "success": "When the Job is complete, each Hero receives 30 XP. If the Heroes kill the Creature, they each gain an additional $50 from the grateful townsfolk that didnt have to take their chances with the Creature. ",
+            "time": "4 days ",
+            "title": "Experiments in Disaster "
+        },
+        {
+            "desc": "When the Posse reaches the Site, theyll need to travel with the Archaeologists into the nearest Town so they can transport the things they found back to wherever. The Posse may only travel one hex maximum per day with the Archaeologists, their equipment, and the corpses. \nAt the beginning of each day that the Posse travels with them, a Random Hero makes a Luck 3+ test. If this test is ever failed while transporting everyone, then the alien entities come alive: Attack - Draw a Threat card at the Posses level. If a 1 is ever rolled during this test, then the alien entities come alive while everyone is unprepared: Ambush! Draw a Threat card one level higher than the Posses current level. \nIf the Posse reaches the nearest Town, the Job is completed. ",
+            "fail": "If the Posse fails to get to the Archaeologists and get them back to Town in time, then whatever those things were that they recovered come back to life during the night and slaughter the Archaeologists in their sleep. The creatures then slink off into the night, never to be heard from or seen again (you hope). Each Hero takes D3 Corruption Points knowing that they should've been protecting them Archaeologists. ",
+            "flavor": "The corpse of some kind of alien entities have been discovered by an archaeological expedition and theyre requesting help hauling it back into Town. ",
+            "id": 36,
+            "keywords": [
+                "Job",
+                "Science",
+                "Investigate"
+            ],
+            "location": "Random Mine + Random Hex Diagram D3 spaces away ",
+            "success": "If the Posse reaches the Town without the alien entities coming to life, each Hero gains 30 XP and D3x$50. If the Posse reaches the Town, but had to fight the alien entities that came back to life, each Hero instead gains 40 XP and D3x$25, on account of the extra mutilating they did to them bodies. ",
+            "time": "14 days ",
+            "title": "Dangerous Excavations "
+        },
+        {
+            "desc": "From the Originating Town, the Posse must head to the Mine and begin a Search Party Mission [Basic:4] in order to rescue the official. Instead of drawing Threat Cards though, the Heroes should roll on the Human Threat Tables. All other rules for this Mission are the same, except the Reward/Failure results. ",
+            "fail": "If the Heroes fail to recover the Official alive, then his widow personally holds your Posse responsible for the Official's death. She uses her influence in Originating Town to get everyone in the Posse banned from entering the Town. From now on the Posse may not enter any Locations in this Town, though they may stay at the Campsite. ",
+            "flavor": "An important official in this town is being held hostage by a group of crazy cultists. The Posse needs to act quickly or hes a goner for sure. ",
+            "id": 37,
+            "keywords": [
+                "Job",
+                "Rescue"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Heroes successfully bring back the Official alive, they are rewarded with 35 XP and each Hero gains their choice of D3X$100 or they may draw a Mine Artifact card. If the Official is recovered dead, then the Job is failed. ",
+            "time": "4 days ",
+            "title": "The Heads of Statesman "
+        },
+        {
+            "desc": "When the Posse reaches the Mine, they must then move with this group of Travelers to the nearest edge of the map to escort them away from the area to safer parts. The Posse moves at a slow pace of 4 MP per day while traveling with this group (no abilities or effects may be used to increase this speed). \nIf the Posse is ever in a Fight while traveling with the group, the Travelers are killed if the Heroes all Escape from the Fight or are all KOd. Anytime the Posse as a group would suffer damage from an Encounter, roll a D8. On a 1, the Travelers are also hit by the same thing and are dispersed. In either case, the Job is failed. ",
+            "fail": "If the Posse fails to get the Travelers to the nearest edge of the map in time, then the Travelers lose hope and disperse on their own. There is no other Failure result for this Job. ",
+            "flavor": "A group of travelers from a far off land have gotten themselves a bit lost in this area and need someone to escort them out and away from Brimstone so they can continue on their way. Youll need to find them first, then bring them back to safety. ",
+            "id": 38,
+            "keywords": [
+                "Job",
+                "Escort"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Posse successfully escorts the Travelers then each Hero gains 30 XP and each Hero may either get $300 or may draw a Gear card as payment from the grateful folks. ",
+            "time": "16 days ",
+            "title": "Exotic Travelers "
+        },
+        {
+            "desc": "The Posse will need to Search for a suitable site for the Settlers to inhabit. Any Medium Terrain hex or Destroyed Town hex where a Clue Icon is found without an Attack or Growing Dread result is suitable for the Settlers. ",
+            "fail": "If the Heroes are unsuccessful in finding a site for the Settlers in time, they start to realize what a bad area they're in and move on to find safer, greener pastures. Otherwise, there are no other Failure results. ",
+            "flavor": "Some folks is wanting to settle down in this area, though why theyd want to live anywhere near Brimstone is beyond you. You just gotta find them a proper place to get started. ",
+            "id": 40,
+            "keywords": [
+                "Job",
+                "Settler",
+                "Find"
+            ],
+            "location": "Any Medium Terrain or Destroyed Towns ",
+            "success": "If the Posse successfully finds a suitable location for the Settlers, they may build a new Town in that hex or rebuild an old Town that was previously Destroyed. Perform a new Town Setup for this new location. In addition, each Hero gains 20 XP. ",
+            "time": "7 days ",
+            "title": "Settlers of Brimstone "
+        },
+        {
+            "desc": "The Posse will need to head out to the Town and join up with the Ranchers and help bring them to another Town on the Map, one hex at a time. The Heroes may decide which Town they will bring the cattle to. The cattle drive moves at a top speed of 3MP per day. At the end of each day when traveling with the cattle drive, each Hero makes either a Strength 5+, Cunning 5+, Agility 5+, or Luck 5+ Skill Test. If less than half of the Posse (rounded down) or up to three Heroes fail their rolls for the day, then one of the cattle has gone missing. ",
+            "fail": "There is no Failure result for this Job. ",
+            "flavor": "Some Ranchers are bringing in a herd of cattle back into Town to sell and need some assistance. It aint as exciting as the normal stuff youre used to, but at least you can make yourselves some money out of the whole thing. ",
+            "id": 41,
+            "keywords": [
+                "Job",
+                "Labor",
+                "Frontier"
+            ],
+            "location": "Random Town ",
+            "success": "The Heroes gain 5 XP and $10 for each hex that the group travels from the Originating Town to the destination Town. However, for each cattle that is lost during the trip, lower this amount by $1 per hex. So, for example, if 1 cattle is lost each Hero only gains $9 per hex, with 2 cattle lost each Hero gains $8 per hex, and so on. ",
+            "time": "No Time Limit ",
+            "title": "Cow Herders "
+        },
+        {
+            "desc": "The Heroes must travel to the other Town and pick up the Medical Supplies that are needed to heal the Child. If the Heroes do not get back into the Originating Town before the Time Limit is up, the Job is failed. ",
+            "fail": "If the Heroes fail to get back to the Originating Town to deliver the medicine in time, the Child has died and each Hero takes D6 Corruption Points (no Willpower save). ",
+            "flavor": "A small child has fell deathly ill and if the Posse cant return in time with a life-saving medicine, the child will surely perish. Its a race against the clock. ",
+            "id": 42,
+            "keywords": [
+                "Job",
+                "Science",
+                "Delivery"
+            ],
+            "location": "Random Town ",
+            "success": "If the Posse is able to get the Medical Supplies and get back to the Originating Town in time to save the Child, each Hero gains 40 XP and D3x$100 from the Childs grateful parents. ",
+            "time": "5 days ",
+            "title": "Life-Saving Medicine "
+        },
+        {
+            "desc": "The Heroes will need to travel to any Towns on the Map with either a Gambling Hall or Saloon Town Location. While at that location, at least one Hero will need to make a Gambling action and then make a Cunning 5+ roll. If successful, the Heroes have gathered a Clue on the Cheaters and are closer to homing in on them. Each Town only has 1 Clue. The Posse will need to gather a total of 3 Clues before they have finally found those damn cheats. Upon finding the Cheats, the Heroes call them out for bein a bunch of no-good bastards and they take it out into the street. Attack! - Roll a Human Threat at the Posses level. ",
+            "fail": "If the Heroes fail to stop the Cheats, their reign of gambling terror continues unabated. A Random Town Location closes down in the Originating Town due to heavy losses sustained from gambling debts (Destroyed). ",
+            "flavor": "A group of card sharks has been traveling from town to town, swindling honest gamblers out of their hard-earned money. Its time the Posse pulled a fast one over on them. ",
+            "id": 43,
+            "keywords": [
+                "Job",
+                "Performer",
+                "Gambling",
+                "Investigation"
+            ],
+            "location": "Any Towns with Gambling Halls or Saloons ",
+            "success": "The Heroes have successfully dealt with those damn dirty cheats. Each Hero in the Posse gains 30 XP and as you search their things you find their ill-gotten fortunes. The Posse finds a total of x$100, to be split amongst themselves. ",
+            "time": "No Time Limit ",
+            "title": "Dirty Cheats "
+        },
+        {
+            "desc": "The Group will need to travel to this Mine and get to workin to get paid. Theyll need to make a Search roll on the Mine hex for each day that they plan to work. Theyll only be able to Search the Mine hex a total of 10 times for this Job before theyll need to head back for their reward. Each Clue Icon they find counts as a successful haul. ",
+            "fail": "There is no Failure result for this Job. ",
+            "flavor": "Theres nothing exciting about this job, just tough, back-breaking labor hauling stuff out of a Mine. Its not Dark Stone mining at least, but not as lucrative either. ",
+            "id": 44,
+            "keywords": [
+                "Job",
+                "Labor"
+            ],
+            "location": "Random Mine ",
+            "success": "For each Clue Icon the Posse comes across on this Job they come across a successful haul from the Mine and gain $50 and 10 XP per Hero. ",
+            "time": "No Time Limit ",
+            "title": "Sixteen Tons "
+        },
+        {
+            "desc": "Between this Originating Town and the Travelers starting point (the Random Town), the Heroes will need to Search Road and Town hexes and anything else between these two Towns to see if they can find out what happened to those Travelers. After the Heroes have found their 2nd Clue Icon, they have found the bloody, tattered remains of the Travelers, which confirms your suspicions that they ran into some kind of trouble on their way. The Job may be completed at this point. \nAdditionally, the Heroes may stop in any Towns along the way and if theyre able to pass two Cunning 5+ tests, they find out that the Travelers were being followed by some unsavory sorts who had an unhealthy interest in the Travelers belongings. \nIf the Posse fulfills both requirements above, they may also attempt to track down those unsavory sorts and recover their belongings for their families. The Posse will need to find an additional Clue Icon in one of the Towns between the Originating Town and the starting point to find them. When the Clue Icon is found, ignore any additional results and go straight into a Fight with a High Human Threat on a terrain or Town battlemap. ",
+            "fail": "If the Heroes fail to find any information as to the whereabouts of the Travelers, the Heroes take D3 Corruption Hits from the pain of knowing failure. ",
+            "flavor": "Some travelers have gone missing on their way into Town and their family would like you all to look into it and find out what happened to them. Youll probably want to take a look at where they was travelin from and check every place from here to there to see if maybe theres some kind of clues you might be able to find. ",
+            "id": 45,
+            "keywords": [
+                "Job",
+                "Traveler",
+                "Investigate"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes determine that the Travelers met a grisly end based on the Clue Icons they find, each Hero gains 30 XP. If the Heroes also track down those unsavory sorts and recover the Travelers belongings, the Heroes also gain an additional $100 and may gain +1 Health or Sanity. ",
+            "time": "No Time Limit ",
+            "title": "Disappearing Travelers "
+        },
+        {
+            "desc": "The Group will need to Search Mountain hexes until they find a Gate Icon, at which point the Heroes come across the entrance to the ancient city. The city is old and crumbling and doesnt look particularly stable, with one more good rumble enough to cause the whole thing to come tumbling down. Each Hero may investigate one aspect of the city and can perform one Skill Test before the time limit for the Job is up: \nArchaeology - Lore 5+ \nTreasure-hunting - Luck 5+ \nMonster-killing - Agility or Strength 4+ \nAt the end of the time limit, another quake will send the city crumbling into oblivion, blocking any further activities here. ",
+            "fail": "There is no Failure result for this Job, but if the Heroes are in the hex with the Lost City when the time limit ends, each Hero must make an Agility 6+ test or take D6 Wounds (no defense) and rolls once on the Injury Chart. ",
+            "flavor": "An earthquake is rumored to have unearthed an ancient buried city made of gold. A few groups of prospectors have gone to stake a claim, but none have returned. Maybe they just got lost? ",
+            "id": 46,
+            "keywords": [
+                "Job",
+                "Explore"
+            ],
+            "location": "Mountain Hex ",
+            "success": "Archaeology (Lore 5+) For each 5 or 6 rolled, gain 50 XP \nTreasure-hunting (Luck 5+) For each 5 or 6 rolled, gain D3x$50 \nMonster-killing (Agility or Strength 4+) For each 4, 5, or 6 rolled, gain 25 XP and $25 ",
+            "time": "10 days ",
+            "title": "Lost City of Gold "
+        },
+        {
+            "desc": "The Posse will need to try to build a case against the Sheriff by collecting evidence against him in the Town. Theyll need to travel to the Town and during a Town Visit each day Heroes may attempt to Search for evidence instead of visiting a Town Location. \nIf the Posse finds two Clue Icons without getting either an Attack or Ambush result, they have found the evidence they needed without bloodshed and the Sheriff is kicked out of his position. If however any Attack or Ambush results are turned over, the Sheriff has caught wind of your snooping around and has gotten together some of this own gang to put a stop to your investigating. Fight a High level Human threat, the Corrupt Sheriff is a Lawman. ",
+            "fail": "If the Posse fails to stop the Sheriff then he strengthens his grip on the Town and turns the citizens against you. You're no longer welcome in the Town and will not be able to stop in the Town for Town Visits any more (may still stay at the Campsite, may not visit Locations). ",
+            "flavor": "A Towns Sheriff has reportedly been taking advantage of his position and is behaving like a crime lord. Some folks would like this Sheriff out of his position, but theyd prefer to avoid any unpleasantries... ",
+            "id": 47,
+            "keywords": [
+                "Job",
+                "Law",
+                "Outlaw"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes peacefully evict the Sheriff from his position without bloodshed, then the Heroes each gain 40 XP and $100. If the Heroes have to end up fighting the Sheriff and his gang, the Posse instead gains 25 XP and $50. ",
+            "time": "No Time Limit ",
+            "title": "Lawful Corruption "
+        },
+        {
+            "desc": "To find the Gambler, the Posse will need to look in Towns with a Saloon or Gambling Hall. At one of those Locations, a Hero may make a Cunning 5+ test to see if they find anything about the Gambler there. If successful, draw an Exploration Token (ignore all results except for Clue Icons). When the first Clue Icon is found in this way, the Gambler is found. How the Heroes want to deal with the Gambler is up to them... ",
+            "fail": "Well, you didn't exactly catch the Gambler, dashing some important folks expectations of what you was gonna do for them. Trouble is, now you've made a bad situation worse and what're they supposed to do now? You've made them look like fools and that damn two-bit gambler got away scot-free. Somebody's gonna have to pay... and that \"\"somebody\"\" is you. \nThe Heroes each lose $100, somebody went through and picked your bags and left a Queen of Hearts playing card for you to grumble over. ",
+            "flavor": "[Not available if Law Heroes in Posse] \nA local gambler has come up a bit short on his winnings and has skipped town to avoid his unscrupulous creditors. He should be found and made an example of. ",
+            "id": 48,
+            "keywords": [
+                "Job",
+                "Performer",
+                "Outlaw"
+            ],
+            "location": "Random Town ",
+            "success": "If the Gambler is found, the Heroes will need to mete out a punishment, which will directly influence their reward. His creditors would prefer something particularly nasty to deter future debtors from trying the same thing. \nThe Heroes may all take X points of Corruption (no Willpower save, maximum of 4 points of Corruption possible). For each point of Corruption that the Posse takes, they each earn $100. Alternatively, the Posse may let the Gambler go and earn 25 XP, but the Job is failed. ",
+            "time": "14 days ",
+            "title": "Debt Collection "
+        },
+        {
+            "desc": "The Heroes will need to Search Road hexes to find the missing stagecoach. Upon finding 1 Clue Icon, the Posse will have found the location of the stage coach. \nCunning 5+ \nIf passed, each Hero gains 20 XP and finds evidence that the stage coach was attacked and its passengers were taken off by some Bandits. To find the passengers, the Heroes will need to Search nearby Tough Terrain to find the Bandits hideout. Upon finding a Clue Icon, the Posse has tracked down the Bandits and may enter their hideout (Mines) to try to recover the passengers. \nThe Heroes must go on a Search Party Mission [Basic:4] to recover the passengers. All Threats in this hideout should be rolled for on the Human Threat Charts. All other rules for this Mission will be the same except that there are 4 passengers in total and at the end of the Mission the Heroes should roll for each passenger to see if they are still alive. Ignore the normal Reward/Failure results. ",
+            "fail": "If the Heroes fail the Mission, each Hero takes D8 Corruption Points, ignoring Willpower, at the thought of all those people dead. ",
+            "flavor": "A stagecoach making a routine run from one town to another has gone missing. Friends and family of the passengers are understandably upset and want answers. ",
+            "id": 49,
+            "keywords": [
+                "Job",
+                "Traveler",
+                "Investigate"
+            ],
+            "location": "Road hexes + Tough Terrain ",
+            "success": "If the Heroes successfully complete the Mission, each Hero gains 50 XP. Also, for each missing passenger that is recovered alive, they each gain $100 and may remove 1 Corruption. ",
+            "time": "7 days ",
+            "title": "Missing Stage Coach "
+        },
+        {
+            "desc": "The Heroes simply need to travel from the Originating Town to another Random Town. As soon as they arrive there, they have dropped off the package with their contact and get their reward. \nAt the end of each day of travel while delivering the package, the Posse rolls a single D8. If a 1 is rolled, the package has been stolen by somebody and the Job is failed. ",
+            "fail": "If the Posse is unsuccessful in delivering the package on time, their contact gets pissed off at them and demands payment for the bungled shipment. The Posse collectively loses D3x$100 ",
+            "flavor": "Someone in Town is needing a rather important package delivered quickly and theyre willing to pay you money for this service, does this need any more explaining? ",
+            "id": 51,
+            "keywords": [
+                "Job",
+                "Traveler",
+                "Delivery"
+            ],
+            "location": "Local Town + Random Town ",
+            "success": "If the Heroes successfully deliver the package on time, each Hero gains 30 XP and the Posse collectively gains x$100. ",
+            "time": "4 days ",
+            "title": "Special Delivery "
+        },
+        {
+            "desc": "The Heroes will need to perform a Search action on Mountain hexes to see if they can find any indication of whatever it was people think fell to earth. If a Gate Icon is found during any of these Searches, the Posse has found the fiery remains of the sky ship, however whatever strange device powers this ship is in danger of reaching critical mass and will explode at the end of the Time Limit. If the Heroes find the crash site and are in the same or adjacent hex to the crash site at the end of the Time Limit, they are caught in the explosion and take D8 Wounds (no defense). \nTo Search the wreckage of the sky ship the Heroes may each perform a Scavenge roll twice per day [3 MP for the whole group or individual Heroes to Scavenge]. Draw from the Scavenge deck, but any results to draw Gear or Artifact cards should always be drawn as Artifact cards when drawing for this Scavenge attempt. ",
+            "fail": "There is no set Failure result for this Job, apart from being in the same or adjacent hex to the crash site if the Heroes find the location of the sky ship. If the Heroes do not find the sky ship in time, it explodes somewhere else and the Heroes take no damage. ",
+            "flavor": "Most folks thought it was a meteorite, but off in the mountains some locals are saying theyve seen the smoldering remains of a giant sky ship that fell to earth. ",
+            "id": 52,
+            "keywords": [
+                "Job",
+                "Strange",
+                "Investigate"
+            ],
+            "location": "Mountain Hex ",
+            "success": "There is not set Reward for this Job. ",
+            "time": "5 days ",
+            "title": "Crashed Sky Ship "
+        },
+        {
+            "desc": "The Heroes will need to enter the Mine and go on a Search Party Mission [Basic:4] to try to recover the young Rancher. All the rules are the same except that all Hold Back the Darkness rolls are at -1 during this Mission. ",
+            "fail": "If the Heroes fail the Mission, each Hero takes D3 Corruption Points, ignoring Willpower, as the loss of the young Rancher weighs heavily on their conscience. ",
+            "flavor": "Moaning spirits have grabbed a young rancher who strayed a bit too far from the group. ",
+            "id": 53,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Rescue"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Heroes successfully rescue the young Rancher, they each gain 50 XP and each Hero may draw a Gear card. ",
+            "time": "4 days ",
+            "title": "Prairie Banshees "
+        },
+        {
+            "desc": "The Heroes may travel through Mountain hexes looking for a suitable site for a Mine to be built. First the Heroes will need to perform a Search action on a Mountain hex. If a Clue Icon is discovered, they have found a cave entrance, but they will still need to go on an Exploration Mission [Basic:2] (same Rules, ignore normal Reward/Failure results) inside the cave to see if its suitable for Mining. \nIf the Heroes find a Gate and a Clue Icon together during this Mission, they have seen enough to know that this cave will be perfect to start up a Mine here. The Posse does not need to finish out the rest of the Mission at this point. At the start of any turn in which all the Heroes are in the Mines and there are no Enemies on the board, the Heroes may leave the Mine, ending the Mission and the Job. ",
+            "fail": "There is no set Failure result for this Job. ",
+            "flavor": "A group of foolish investors is looking to dig out a new Mine for some Dark Stone. Youll need to do some prospecting for them to find a suitable site to build the Mine. ",
+            "id": 54,
+            "keywords": [
+                "Job",
+                "Frontier",
+                "Explore"
+            ],
+            "location": "Mountain Hex ",
+            "success": "If the Posse finds a suitable Mine, they each gain 50 XP and $300. In addition, a new Mine is added to the hex that the Heroes found the cave at. From now on when rolling for a random Mine, this new Mine will be assigned #3 when rolling with a D20 for a Random Mine. ",
+            "time": "No Time Limit ",
+            "title": "Prospecting "
+        },
+        {
+            "desc": "If the Heroes take on this Job, they lend the Merchant $X (can be any amount). After the Merchant takes their money, he thanks them and promptly disappears. \nAfter that the Heroes may take on other Jobs in addition to this one. At the end of the Time Limit for this Job, the Posse makes a Group Luck 6+ roll. If all the Heroes are successful, the next time they enter the Originating Town, they are met by the Merchant. He gives each Hero 5 x the original Gold they lent to him. Otherwise, you never hear anything from the Merchant ever again and hes likely skipped Town and moved on from the area. ",
+            "fail": "There is no set Failure result for this Job. ",
+            "flavor": "A businessman is engaged in a most profitable venture selling the extract of venomous serpents. but needs some initial start-up contributions to get his business off the ground. Investors who get in quickly can expect enormous returns! ",
+            "id": 55,
+            "keywords": [
+                "Job",
+                "Merchant"
+            ],
+            "location": "Local Town ",
+            "success": "There is not set Reward for this Job. ",
+            "time": "16 days ",
+            "title": "Miracle Drink "
+        },
+        {
+            "desc": "When the Heroes get to Town they immediately get Ambushed by a High Human Threats worth of Enemies. These Enemies all have the keyword Tribal. You may use the Capture action on the Indians instead of killing them. See Expanded Combat for rules on Capturing. \nAny Hero with the keyword Kemosabe that kills any of the Indians, loses that keyword. Any Hero that does not have the keyword Tribal that kills any of the Indians, gains the keyword Paleface. ",
+            "fail": "If the Heroes are unsuccessful in driving out the Indian Raiding party before the week is up, then the Indians go on one last massive raid, pillaging and burning as much as they can find. This Town has 3 Random Locations Destroyed before the Indians leave Town and the area for better pickings. ",
+            "flavor": "A vicious group of Indian raiders has been ruthlessly coming into Town, stealing, raping, and pillaging to their hearts content. The townsfolk are fed up and demand an end to these incursions. ",
+            "id": 57,
+            "keywords": [
+                "Job",
+                "Tribal",
+                "Fight"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes are successful in driving off the Indian raiders, they each gain 30 XP and D3x$50 from the grateful townsfolk. \nIf none of the Indians are killed during the Fight then the Heroes have earned the respect of the local Indian populace for not shedding the blood of these rogue Indians. Each non-Tribal Hero that has the keyword Paleface loses that keyword and also gains the keyword Kemosabe. ",
+            "time": "7 days ",
+            "title": "Savage Raiding Party "
+        },
+        {
+            "desc": "The Heroes may try to coax the walking dead back into the ground, but they arent being particularly threatening to anybody. Heroes will need to visit each Town Location and attempt a Cunning 5+ test to try to talk them back into their graves. Each Hero may make the attempt, but if two Heroes fail this test in a row, the dead at that Town Location refuse all attempts at logic and wont go back to their graves. You need two successes in order to clear a Town Location. \nIn addition to the above, Holy Heroes may attempt an exorcism on the Town to banish the spirits of the dead back to the afterlife. A Holy Hero may attempt a series of three Spirit 6+ tests or the Posse as a whole can try to make a series of three All Hero Spirit 4+ tests (choose one, cannot attempt both). If two out of the three tests are passed, then the walking dead are successfully exorcised from the Town, though now everyone has to re-bury all these corpses. ",
+            "fail": "For each Town Location that the Heroes fail to clear out of the walking dead, that Town Location Closes Down (Destroyed) due to the lack of customers willing to buy stuff with corpses hanging around there. ",
+            "flavor": "The dead have started to rise in Town, but arent exactly causing any trouble with the locals, apart from body parts falling off and scaring the children and womenfolk with their rotting flesh. ",
+            "id": 58,
+            "keywords": [
+                "Job",
+                "Undead",
+                "Investigate"
+            ],
+            "location": "Local Town ",
+            "success": "For each Town Location that the Heroes successfully clear, each Hero gains 10 XP and $25. If all the Town Locations are successfully cleared, each Hero may buy one Purchase Item or Service from anywhere in that Town at a 25% discount (to the nearest whole $, rounded down). ",
+            "time": "No Time Limit ",
+            "title": "Dia de los Muertos "
+        },
+        {
+            "desc": "The Heroes will need to travel to this Ancient Library to recover what scrolls they can from the Library. Go on an Exploration Mission [Basic:2] and in addition to the normal rules, each time the Heroes find a Clue Icon they also find a Scroll Side Bag Token. When the Heroes have finished the Mission, they need to return to the Originating Town to deliver the Scrolls to the Professor. Ignore the normal Reward/Failure results for the Exploration Mission. ",
+            "fail": "There is no Failure result for this Job. ",
+            "flavor": "An old decrepit structure was recently uncovered and inside it appears to be a vast library filled with old, rotting scrolls. A professor from out east is asking to get his hands on anything valuable. ",
+            "id": 60,
+            "keywords": [
+                "Job",
+                "Ancient",
+                "Explore"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Heroes successfully bring back any Scrolls to the Professor they gain 25 XP. For each Scroll that the Heroes recover from the Ancient Library, the Posse gains $200 per Scroll. Note that Scroll Side Bag Tokens bought from the Campsite can not be used to complete this Job. ",
+            "time": "No Time Limit ",
+            "title": "The Ancient Library "
+        },
+        {
+            "desc": "The Posse needs to travel to Towns around the Map and do a Search at each Town to count the number of folks there. Each Town on the Map may only be Searched once as part of this Job. ",
+            "fail": "There is no Failure result for this Job. ",
+            "flavor": "Some Government folks are wanting an accounting of the people still left in the region around Brimstone. Pretty boring, but they pay in cash. ",
+            "id": 61,
+            "keywords": [
+                "Job",
+                "Traveler",
+                "Labor"
+            ],
+            "location": "Towns ",
+            "success": "For each Town that the Heroes Search, each Hero gains 5 XP and $5. ",
+            "time": "No Time Limit ",
+            "title": "The Census "
+        },
+        {
+            "desc": "The Heroes may take along a Writer with them on their Missions. He will pay the Heroes for each Adventure hes able to follow along with, but if he dies the Heroes wont get anything. The Writer joins the Posse as an ally (choose 1 player to control the Journalist model on their turn) with the following stats: \nNo Combat actions available \nMove 4 \nHealth 6 (Def 6+) \nSanity 4 (Will 5+) \nAny Wounds or Sanity damage that affects the Heroes during Encounters, also affects the Writer. \nIf the Writer is KOd at any point, he dies and the Job is failed. Other Jobs may be taken while taking on this Job. When the Heroes are ready for a payout they can end their contract with the Writer while in any Town. ",
+            "fail": "If the Writer dies while traveling with the Heroes, they each take D6 Corruption Hits from the guilt of letting one of their traveling companions die. ",
+            "flavor": "A Writer from a big fancy newspaper out east is reporting on the events around Brimstone and wants to tag along with the party for his story. ",
+            "id": 62,
+            "keywords": [
+                "Job",
+                "Escort"
+            ],
+            "location": "No Location ",
+            "success": "For each Job or Mission that the Heroes go on with the Writer that he survives, they will each receive an extra 30 XP and $75 at the end of the Adventure. If the Writer is killed at any point during a Job or Mission, then the Heroes will receive nothing. ",
+            "time": "No Time Limit ",
+            "title": "Journalistic Excellence "
+        },
+        {
+            "desc": "The Posse will need to travel to the Landowners secluded estate and attempt an exorcism. This exorcism can be attempted once per day per Hero by using a single D8 to attempt an Exorcism 8+ test, however some factors can add a bonus to the Heros roll, but only one Side Bag Token may be used in the attempt at a time. \nHero has Holy keyword = +2 to Exorcism roll \nScroll Side Bag Token = +1 to Exorcism roll (used up in the attempt) \nRosary Side Bag Token = +2 to Exorcism roll (used up in the attempt) ",
+            "fail": "If the Heroes are unsuccessful in exorcising the spirits from the Landowner's estate in time, then he takes it upon himself and is killed by malevolent spirits. Each Hero in the Posse takes D3 Corruption Hits when they catch word of what happened to the Landowner. ",
+            "flavor": "A rich landowner has been having some ghastly visits at his estate and has requested the help of anybody that can exorcise these troublesome spirits. ",
+            "id": 63,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Investigate"
+            ],
+            "location": "Random Town + Random Hex Diagram D3 spaces away ",
+            "success": "If the Heroes are successful in expelling the spirits from the Landowners estate, then each Hero gains 20 XP and D6x$50 from the grateful Landowner. ",
+            "time": "7 days ",
+            "title": "The Exorcism "
+        },
+        {
+            "desc": "The Posse will need to attempt to negotiate with either the wealthy Investors or the Indian tribe to try to find some kind of peaceful resolution to this, otherwise the Indian tribe on that land will surely get wiped out by wealthy Investors looking to exploit that property. \nTo Negotiate with the Indians, the Heroes will need to travel to the Indians sacred land and attempt to convince them to leave peacefully. They will need to either make two out of three Solo Spirit 5+ tests (Tribal/Kemosabe Heroes get +1 on these rolls) or may try to Intimidate them by fighting their bravest warriors: Attack - Roll a Human Threat (all Enemies have the Tribal keyword). \nTo Negotiate with the wealthy Investors and to try to convince them to look elsewhere, the Posse will need to make a trip to their offices in their Town. They will need to either make two out of three Solo Cunning 5+ tests (Frontier Heroes get +1 on these rolls) or the Posse may try to Intimidate them by roughing up their bodyguards: Attack - Roll for an Epic Human Threat. ",
+            "fail": "If the Heroes fail to come to some kind of settlement to this dispute, the wealthy investors hire a group of armed thugs to go through and forcibly evict them from the land. Each Hero with the keyword Tribal or Kemosabe takes Corruption Points with no Willpower save. Heroes with the keyword Frontier or Paleface lose nothing. ",
+            "flavor": "Some Indian folk are living on some property thats just going to waste beneath their feet. Its a damn shame and some wealthy investors are looking to develop that property into something real nice n perty. ",
+            "id": 65,
+            "keywords": [
+                "Job",
+                "Tribal",
+                "Negotiation"
+            ],
+            "location": "Random Mine + Random Hex Diagram D3 spaces away (Indians) and/or Random Town (Investors) ",
+            "success": "If the Heroes peacefully negotiate with the Indians, then they each gain 25 XP and $100. \nIf the Posse successfully beats the Indian warriors and intimidates them into leaving, then they each gain 50 XP and $300. \nIn either case, non-Tribal Heroes lose the Kemosabe keyword and gain the Paleface. \nIf the Heroes successfully negotiate with the Investors, they each gain 25 XP and lose 1 point of Corruption. \nIf the Posse successfully intimidates the Investors, they each gain 50 XP and lose D3+1 Corruption. \nIn either case, non-Tribal Heroes lose the keyword Paleface and gain Kemosabe. ",
+            "time": "10 days ",
+            "title": "Indian Relocation "
+        },
+        {
+            "desc": "If the Heroes make it to the Town in time, they find that bastard John Moulton and immediately begin a Fight. Use a Brutal Preacher with D3 Elite abilities to represent John Moulton. He is alone. If the Human form of John Moulton is defeated, replace his model with a random Brutal Monster with the keyword Demon that is at least XL in size. This form of John Moulton has D6 Elite abilities. ",
+            "fail": "If the Heroes don't make it to the Town in time, then there is no Failure result. John Moulton has simply faded away as he seems to do so often. In search of another hapless victim for one of his deals... \nIf the Heroes fight John Moulton and are defeated, he is unimpressed with your attempt. As punishment for your misguided attempt to stop him from delivering his gifts, he erases your memories. Each Hero loses all accumulated XP and is knocked back a single level to whatever their previous level was. \nIn addition, choose a Random Hero. That Hero is Dead. ",
+            "flavor": "Stranger  John Moulton That evil sumuvabitch John Moulton needs to get himself killed and you been itchin to be the one to do it. Hes been spotted in another Town and if you get there quick you might be able to catch him. What happens after that though is anyones guess... Maybe he gets a bullet right between his damn devil, lyin eyes, whos to say? ",
+            "id": 66,
+            "keywords": [
+                "Job",
+                "Supernatural"
+            ],
+            "location": "Random Town ",
+            "success": "Each Hero gains 333 XP. \nThen John Moulton appears again in a puff of smoke. You didnt think it was going to be that easy, did you? He offers you a deal. Each Hero that wants to may look through any Gear or Artifact decks available and choose a card to keep. Add the keyword Cursed to any items that are taken in this way. Those items may never be destroyed, sold, or given away. \nIf John Moulton is ever encountered again in any way, then any Heroes that took the items that John Moulton offered are Killed. John Moulton has come back to collect on his deal. ",
+            "time": "2 days ",
+            "title": "The Devil, John Moulton "
+        },
+        {
+            "desc": "The Posse will need to take on a gang of bandits in this Town for the Marshal. If you have the Frontier Town expansion, start a Shootout in the Streets Mission [Frontier:1] (same rules apply). \nOtherwise, begin a Fight on a Large Terrain battlemap against a Low Human Threat. Each turn, add another Low Human Threat to the edge of the map (1-2=North, 3-4=East, 5-6=South). Use the Depth track and make Hold Back the Darkness tests each turn. For each Enemy killed, move the Posse tracker one space forward on the Depth track (2 steps if playing with 1 or 2 heroes). Whenever the Posse tracker move from one stage to the next (steps 10 & 5), all Enemies immediately get a free attack. When the Heroes make the Hold Back the Darkness test each turn, if they roll higher than the current step that the Posse tracker is on, reinforcements stop coming and the Job is complete when all remaining Enemies are defeated. ",
+            "fail": "Each Hero is beaten up pretty badly by the gang of outlaws and the Marshal is killed in the gunfight. Each Hero loses D6x$50, rolls on the Injury Chart, and this Towns type or keyword changes to Outlaw (reroll any Traits that become incompatible because of this). ",
+            "flavor": "[Not available if Outlaw Heroes in Posse or if in an Outlaw Town or if the Town has the keyword Outlaw] \nThe Marshal in this town has his hands full dealing with a gang of some outlaws and needs some help. ",
+            "id": 67,
+            "keywords": [
+                "Job",
+                "Strange"
+            ],
+            "location": "Local Town ",
+            "success": "Each Hero gains 50 XP and $100. ",
+            "time": "No Time Limit ",
+            "title": "Cleaning Up "
+        },
+        {
+            "desc": "The Posse must perform a Search action on Road hexes until they come across a Gate Icon. When they find the Gate Icon, they have stumbled across a portal and are immediately transported to a Random Other World. The Heroes must now begin an Escape Mission [Basic:5], starting off at the Other World Entrance Map Tile. All the same rules apply, however the Heroes do not roll to Find the Mine Entrance until the Heroes have found a Gate. All Gates lead to the Mines. ",
+            "fail": "If the Heroes fail the Job before even entering the portal, Destroy a Random Town. \nIf the Heroes fail the Escape Mission while on the Job, each Hero must discard one Gear or Artifact card with a value of at least $300. Any Hero that cannot discard a Gear or Artifact like this must instead roll once on the Injury Chart. This is in addition to any Injury for being KOd. ",
+            "flavor": "A commonly traveled road between two settlements has somehow become unhinged from reality. Travelers say something is off, as if they went to another place. Local officials are hoping that someone can help figure it out. ",
+            "id": 68,
+            "keywords": [
+                "Job",
+                "Strange",
+                "Investigate"
+            ],
+            "location": "Road Hex ",
+            "success": "Each Hero receives 50 XP and may draw an Artifact card from whatever Other World they were in. ",
+            "time": "5 days ",
+            "title": "Road to Nowhere "
+        },
+        {
+            "desc": "Any one Hero may complete this Job. If you have the Frontier Town expansion, you can start a High Noon Duel (Solo) Mission [Frontier:6] (same rules apply). Otherwise, start the Hero on a Medium Terrain battlemap 5 spaces away from a Random Human Villain at the Posses Threat level, youre having a Fight. There is no Escape from this duel, no Hold Back the Darkness rolls, and no Loot cards drawn from this encounter, this is about honor. There is variable initiative, the Hero and Enemy both roll D6 and add that to their initiative at the start of each turn. The fight lasts until one of the combatants is KOd. ",
+            "fail": "The Hero that failed this Job rolls for an Injury if KOd and starts their next Job or Mission with no Grit. ",
+            "flavor": "Theres an old so-and-so from way back when thats been sayin some pretty nasty things about your mother all over town. Everyone knew your mother in lots of ways, its true, but thats not right what that sumbitch been sayin in public. You need to call that dog out and make him pay for them words. ",
+            "id": 69,
+            "keywords": [
+                "Job",
+                "Personal",
+                "Duel"
+            ],
+            "location": "Local Town ",
+            "success": "Congratulations, your mommas name wont be besmirched again anytime soon. Shed be so proud of you if she wasnt holed up in that fancy house getting intimate with any Jim, Joe, or Bob with a nickel to his name. But lets not dwell on that, the important thing is that you taught that bastard a lesson. \nThe Hero that completed this Job gains 25 XP x their Hero level. ",
+            "time": "Immediate ",
+            "title": "Some Old So-and-So "
+        },
+        {
+            "desc": "The Heroes must enter into the Mine and go on a Search Party Mission [Basic:4]. However, each Clue Icon that the Heroes find on this Mission is one of the Adventurers theyve gone in to find. After any Fights or Encounters have been dealt with when finding a Clue Icon, the Heroes should roll to see if each Adventurer is still alive (see The Third Clue Objective for more information). Any Adventurers that are still alive will travel with the Posse in the Mines as Allies until the end of the Mission (add a model to represent each Adventurer), but can still be killed. \nUse the following stats for the Adventurers: \nNo Combat actions available \nMove 4 \nHealth 4 (Def 4+) \nSanity 5 (Will 5+) \nAny Wounds or Sanity damage that affects the Heroes during Encounters, also affects the Adventurers. \nThe Heroes will need to find a total of 4 Adventurers on this Job. Any Adventurers not found before the Heroes leave the Mine are assumed to be Dead. ",
+            "fail": "For each Adventurer that is not rescued, each Hero suffers D3 Corruption Hits, as the guilt of their failure to rescue their comrades stings their pride. ",
+            "flavor": "A group of adventurers went down into a Mine to find some Dark Stone, but havent been seen in quite some time. You should probably go in after them and see what you can find of their crew. Youd want someone to do the same if it was you down there, wouldnt you? ",
+            "id": 70,
+            "keywords": [
+                "Job",
+                "Mine",
+                "Rescue"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Heroes successfully complete the Job, they gain 60 XP. For each Adventurer that the Heroes rescue alive out of the Mine, each Hero gains $50. \nFor every two Adventurers that are rescued alive, each Hero may gain either +1 Health, +1 Sanity, remove D3 Corruption, or draw a Gear card. \nIf any Adventurers dont make it out alive, read from the Failure result as well. ",
+            "time": "5 days ",
+            "title": "Party Afoul "
+        },
+        {
+            "desc": "The Posse will first need to Search Road hexes until they find a Clue Icon, at which point theyve found the ghastly apparition. To exorcise the ghost from the road, the Heroes will need to perform a All Heroes Spirit 4+ test (1 MP per attempt). For each 1 that is rolled by anybody taking the test, all Heroes in the group take 1 Horror Hit. ",
+            "fail": "The next time the Heroes enter a Mine on a Job or Mission, add a Growing Dread card to the stack at the start of the Adventure. ",
+            "flavor": "A horrific apparition has been seen with a flaming skull aloft a pitch black mare. He runs any folks off the road he finds. ",
+            "id": 71,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Ghost"
+            ],
+            "location": "Road Hex ",
+            "success": "If the Heroes are able to banish the spirit they each gain 20 XP and D3x$50 for their efforts. ",
+            "time": "7 days ",
+            "title": "Ghost Rider "
+        },
+        {
+            "desc": "When the Heroes arrive at the site where the portal is, they enter and immediately begin an Escape Mission [Basic:5], but starting in a Random Other World at the Entrance Map Tile. The portal has closed behind them as soon as they arrive and they will not be able to leave until they first find a Gate (this Gate will always lead back to the Mines), and then finish out an Escape Mission as they normally would. ",
+            "fail": "If the Job is failed, then the portal becomes wildly unstable and spews out a Void Twister. The twister goes on to wreak havoc in the Nearest Town, Destroying one Random Location before petering out. ",
+            "flavor": "A dimensional portal has appeared out of nowhere, but nothing seems to be coming out. Maybe the Posse should poke around and see whats on the other side. ",
+            "id": 72,
+            "keywords": [
+                "Job",
+                "Strange",
+                "Explore"
+            ],
+            "location": "Local Town + Random Hex Diagram D3 spaces away ",
+            "success": "While scrounging around in that Other World, each Hero draws an Artifact card from that Other World, in addition to the normal rewards for an Escape Mission. ",
+            "time": "5 days ",
+            "title": "Spatial Anomaly "
+        },
+        {
+            "desc": "The Heroes will need to travel to a Railroad hex and use up three Dynamite Side Bag Tokens to blow the tracks. After placing, the Heroes need to make a Cunning 3+ roll. If any 1s are rolled, the explosives still go off and destroy the tracks, but the Heroes are also caught in the explosion and each takes D6 Wounds (no defense). These wounds are severe and last until the end of the next Adventure. ",
+            "fail": "If the Heroes fail to finish the Job they have made somebody very angry. The next time the Heroes go out on a Mission, add a Growing Dread card to the stack at the beginning of the Mission. ",
+            "flavor": "[Not available if Law Heroes in Posse] \nSomebody doesn't want a train to make it to its final destination, its up to you and your Posse to see to it the train comes across an accident. ",
+            "id": 73,
+            "keywords": [
+                "Job",
+                "Outlaw",
+                "Train"
+            ],
+            "location": "Railroad Hex at least 3 hexes away from any Towns ",
+            "success": "If the Heroes successfully blow the track and derail the train, the Heroes each gain 50 XP and D3+1x$100. \nIn addition, the Posse will not be able to ride on the rail line at all for the next 7 days until the rail companies are able to get things sorted back out. ",
+            "time": "3 days ",
+            "title": "Sabotage! "
+        },
+        {
+            "desc": "The old outlaw set up a number of hit contracts and every few days an old enemy will be murdered unless the Posse can get to them in time. The Heroes need simply enter the next Town where a hit is about to occur before the Time Limit is up to save the person from getting killed. \nAt the beginning of the Job, the Posse has 5 days to get to the first Town. If they get to the person in time or if the Time Limit is up, roll for another Town. The Heroes have another 5 days to get to that person. Each time a person is saved or killed, the Heroes should roll a D6. If they roll under the number that have already been saved or killed so far, then that was the last person with a hit contract on them and the Job is complete. ",
+            "fail": "For each person that the gets killed as a result of their hit contract, the Heroes suffer D3 Corruption Points, ignoring Willpower. If the Heroes quit the Job early, then it is assumed that the rest of the people on the hit list are killed off (max 6 people on the list). ",
+            "flavor": "An old outlaw is not long for this world and on the verge of death, but hes settling some old vendettas before he goes. Its a race against time to get some folks out of harms way before he gets revenge. ",
+            "id": 74,
+            "keywords": [
+                "Job",
+                "Law",
+                "Rescue"
+            ],
+            "location": "Random Towns ",
+            "success": "For each person that the Heroes successfully save from their hit contract, they gain 15 XP and $25 from the grateful would-be victim. \nIf the Heroes fail to save any people or quit the Job early, read from the Failure result. ",
+            "time": "5 days* ",
+            "title": "Settling Old Scores "
+        },
+        {
+            "desc": "The Heroes will need to travel to the Mine hex and begin looking for the gang at that hex and all surrounding hexes using the Search action. When the Heroes come across their first Clue Icon, they have found the gang of outlaws. Attack - Roll for a High Human Threat at the Posses level. You may use the Capture action on the outlaws instead of killing them. See Expanded Combat for rules on Capturing. ",
+            "fail": "If the Heroes fail the Job, then some other group of real Heroes is able to kill and capture the gang of outlaws before you. You're out the reward money. ",
+            "flavor": "A gang of outlaws has been causing all sorts of ruckus around the area and people are getting fed up with it. The local Marshal has put up a bounty for this particular group of bastards. ",
+            "id": 75,
+            "keywords": [
+                "Job",
+                "Law",
+                "Bounty"
+            ],
+            "location": "Nearest Mine hex ",
+            "success": "For each Villain that is brought back in alive, each Hero gains 15 XP and $25, while each Lackey, Thug or Bandit that is brought in nets each Hero 5 XP and $15. \nFor each Villain that is killed off, each Hero gains 5 XP and $10, while each Lackey, Thug or Bandit that is killed off nets each Hero 5 XP and $5. ",
+            "time": "7 days ",
+            "title": "Bandit Bounty "
+        },
+        {
+            "desc": "The Posse will need to travel to the location of the farm and put in at least a days work out in the field. Each day any Heroes may give up their movement for the day to work the fields and make a Strength 3+ test. For every 3+ rolled, the Hero who passed makes $15. For every 1 rolled on the first day, the Hero takes D3 Wounds from a farming accident. Each day after that the number needed to suffer a farming accident goes up by 1 (day 1=1, day 2=1,2, day 3=1,2,3, etc). After the Posse leaves the farm or the Time Limit is up, the Job is over. ",
+            "fail": "There is no set Failure result for this Job. ",
+            "flavor": "Theres a local farmer looking for some strong backs to do an honest days work. Its hard work, but its a free roof over your head and some decent meals to eat. ",
+            "id": 76,
+            "keywords": [
+                "Job",
+                "Frontier",
+                "Labor"
+            ],
+            "location": "Random Hex Diagram + D3 spaces away ",
+            "success": "There is no set Reward result for this Job. ",
+            "time": "7 days ",
+            "title": "Farmhands "
+        },
+        {
+            "desc": "The Posse gains 10 Scavenge tokens, these represent the wares they need to sell. Each Scavenge token is worth $50. The Heroes may attempt to sell one of these Scavenge tokens at a Town Location by making a Cunning 4+ Test. For each success rolled on this test, the Heroes sell the Scavenge token for $25 (two successes = $50, three successes = $75, etc). If a Hero sells the Scavenge token for less than its worth, that Hero loses the difference. If a Hero sells the Scavenge token for more than its worth, they pocket the difference. ",
+            "fail": "Any Scavenge tokens that are not sold by the end of the Time Limit are removed from the Posse's inventory. Each Scavenge token is worth $50 and that is deducted from the Posse's gold for each Scavenge token removed in this way (to be split amongst the Heroes however they want). ",
+            "flavor": "Attempt to sell some wares across the region. Work on commission for all of the stuff that you sell. Whatever you dont manage to sell, you lose that much money in unsold inventory. ",
+            "id": 77,
+            "keywords": [
+                "Job",
+                "Merchant"
+            ],
+            "location": "No Location ",
+            "success": "There is no set Reward result for this Job. ",
+            "time": "14 days ",
+            "title": "Traveling Salesmen "
+        },
+        {
+            "desc": "The Scientist joins the Posse as an ally and will travel with the group as an extra model. He has the following stats: \nNo Combat actions available \nMove 4 \nHealth 4 (Def 5+) \nSanity 5 (Will 5+) \nCunning 5 \nAny Wounds or Sanity damage that affects the Heroes during Encounters, also affects the Scientist. \nWhile in any Other World, the Scientist may give up his move to collect a sample or gain some new scientific insight. The Scientist should make a Cunning 5+ test to determine whether he successful or not. The Scientist can do this up to 3 times per Adventure/Mission/Job, once per Other World Map Tile. \nYou may take on other Jobs while the Scientist travels with you. Whenever you finish a Mission with the Scientist, you gain the Reward. You may end your contract with the Scientist at any time, but if youre in the middle of a Mission at the time then the Scientist is assumed to die in the Mines and the Job is failed. \nAt the end of every Adventure/Mission/Job in which the Scientist traveled with the Posse, roll a D6. If the result is equal to or less than the number of times the Scientist has gone out with the Posse, then the Scientist himself decides he has had enough and the Job is complete. ",
+            "fail": "If the Scientist is killed while on a Mission with the Heroes, then each Hero takes Corruption Points, ignoring Willpower, for letting the squirrelly-little guy get killed while under their protection. \nOtherwise if the contract is ended with the Scientist while in Town or the Overland map, then there is no Failure result. ",
+            "flavor": "A damn-fool scientist is wanting to travel with the group and take samples of some of the things the Posse comes across. As long as he makes it back out alive, you should get a reward out of it. ",
+            "id": 78,
+            "keywords": [
+                "Job",
+                "Science",
+                "Escort"
+            ],
+            "location": "No Location ",
+            "success": "At the end of each Adventure, Mission, or Job that the Scientist has traveled with you on, the Posse gains x$100 for each success the Scientist had while collecting samples in the Other World. \nAt the end of every Adventure/Mission/Job in which the Scientist traveled with the Posse, roll a D6. If the result is equal to or less than the number of times the Scientist has gone out with the Posse, then the Scientist decides he has had enough and the Job is complete. ",
+            "time": "No Time Limit ",
+            "title": "Scientific Inquiries "
+        },
+        {
+            "desc": "Before setting out the Posse will need at least 1 Dynamite Side Bag Token. Two if you want to blow the safe open. \nThe Posse will need to perform the Search action on Railroad hexes until they find the designated meeting spot with the first Clue Icon (ignore any other results when this is found). At that point the Posse will need to follow the precise instructions as laid out by the Train Robber. \n1) Blow the Dynamite Side Bag Token on the tracks. One Hero needs to make a Cunning 3+ test. If a 1 is rolled, that Hero takes D3 Wounds, ignoring Defense. Each Hero may attempt this as long as you have Dynamite. As long as at least one Hero succeeds, the rest of the plan will continue on. \n2) Enter the train and take out the guards before they can raise the alarm. The Posse will need to make an All Heroes Agility 3+ test followed by an All Heroes Strength 4+ test. As long as at least half the Posse succeeds in these tests (rounded down), the rest of the plan continues on. \n3) Get the safe open using precision or just blow it open. To use precision, any 1 Hero will need to make a Cunning 5+ test. To blow open the safe, any 1 Hero can use a Dynamite Side Bag Token and make a Cunning 3+ test, but for each 1 that is rolled, the Posse gets $100 less for their reward. The Posse only has time to perform two attempts for either option. As long as the Posse gets at least one success, they have gotten the loot and the Job is complete. ",
+            "fail": "If the Heroes fail to get to the designated meeting place in time or if some part of the plan goes awry, causing it to fail, the Posse has failed to follow through on the bank heist, losing out on their share of the loot. \nIn addition, each Hero now gains the status Wanted! until the end of their next Adventure. Each Hero gains the keyword Outlaw. At the end of each day in Town, roll a number of dice equal to your Hero level. For each 6 rolled, gain 10 XP and you may choose to either pay a $50 bribe to stay or you must immediately end your Town Stay. ",
+            "flavor": "[Not available if Law Heroes in Posse] \nA train robber is wanting a group to back him up for a lucrative heist. He has all the angles worked out, he just needs some tough hombres to get him in and out. No casualties and youll be long gone before anybody figures out whats going on. ",
+            "id": 79,
+            "keywords": [
+                "Job",
+                "Outlaw",
+                "Train"
+            ],
+            "location": "Railroad Hex ",
+            "success": "If the Posse is successful in pulling off the Train Heist, their share of the loot comes to x$100 for the Posse, split however they want. In addition, each Hero gets 30 XP. ",
+            "time": "7 days ",
+            "title": "Train Heist! "
+        },
+        {
+            "desc": "The Merchant joins the Posse as an ally and will travel with the group as an extra model. He has the following stats: \nNo Combat actions available \nMove 4 (during Combat) \nHealth 5 (Def 4+) \nSanity 5 (Will 5+) \nAny Wounds or Sanity damage that affects the Heroes during Encounters, also affects the Merchant. \nThe Posse will need to travel from Town to Town with the Merchant (simply entering the Town hex is enough, do not need to go for a full Town Stay). At the end of each day of travel the Posse should draw an Exploration Token and follow through with any Encounters or Attacks, however ignore any other Clue/Gate/Door Icons. If the Merchant is ever KOd, he is killed and the Job is failed. The Posse may end the contract with the Merchant at any time and complete the Job, but if the Posse is in the middle of a Fight when they do this, the Merchant is killed and the Job is failed. \nAfter each Town is visited with the Merchant, roll a D6. If the number is below the number of Towns already visited with the Merchant, then the Merchant has sold out of wares and doesnt require the Posses services anymore and the Job is complete. ",
+            "fail": "If the Merchant is killed off, the Heroes lose out on any Reward they may have gained and in addition, each Hero takes D3 Corruption Points for allowing him to die on their watch. ",
+            "flavor": "A merchant traveling from Town to Town is in need of some protection with some of the higher end wares hes carrying. ",
+            "id": 81,
+            "keywords": [
+                "Job",
+                "Merchant",
+                "Escort"
+            ],
+            "location": "Local Town ",
+            "success": "For each Town that the Posse visits with the Merchant, each Hero gains 15 XP and $50. ",
+            "time": "No Time Limit ",
+            "title": "Guard Duty "
+        },
+        {
+            "desc": "The Heroes need to come into Town and bust some sense into some of these locals, but aint nobody wants people to get killed. You just need to apply a little persuasive pressure to get these drunkards to sober up. Ambush - Medium Human Threat!. These locals are drunk and wont use any Ranged attacks. If any Guns are used or any of the Human Enemies are killed, this Job is failed and it turns into a bloodbath. You may use the Capture action on the Drunkards instead of killing them. See Expanded Combat for rules on Capturing. ",
+            "fail": "Things in Town spiral out of control and some folks that was just looking to have a good time end up with their blood and entrails spilling out into the streets. Each Hero takes D6 Corruption Hits. ",
+            "flavor": "A strong concoction known as the Demon Drink is making its way around the region and getting the locals piss drunk. People want some peace and quiet to return to the town. ",
+            "id": 82,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Fight"
+            ],
+            "location": "Random Town ",
+            "success": "If the Heroes manage to knock some sense into these folks without shots being fired or folks gettin killed, each Hero earns 50 XP and $75 from some happy locals that can finally get a quiet nights sleep. ",
+            "time": "7 days ",
+            "title": "The Demon Drink "
+        },
+        {
+            "desc": "Starting from the Originating Town, youll need to travel to a Random Town and drop off an item and then travel back to the Originating Town to get your reward. ",
+            "fail": "If the Heroes fail to deliver the package the folks in the Originating Town won't care much for the Heroes anymore and will permanently increase their prices on all Purchase Items and Services by $25 for all Heroes during their Town Stays. \nNice job assholes. ",
+            "flavor": "A shop owner from another town has placed a special order and needs you to take the stuff from here to there and bring a receipt back here, easy enough? Oh yea, and they need it quick, so get going. ",
+            "id": 83,
+            "keywords": [
+                "Job",
+                "Merchant",
+                "Delivery"
+            ],
+            "location": "Local Town + Random Town ",
+            "success": "The reward is determined by the number of days it takes to reach the other Town and the number of hexes from one Town to the other (shortest distance possible, not the number of hexes traveled). \n1 day: $20 per hex \n2 days: $15 per hex \n3 days: $10 per hex \n4 days: $5 per hex \n5+ days: $1 per hex ",
+            "time": "No Time Limit ",
+            "title": "Deliverance "
+        },
+        {
+            "desc": "The Heroes will need to travel enter the Mine and hunt down the Undead Outlaw. The Heroes will start on the Mine Entrance Map Tile and all basic rules apply for this Mission, however, roll on the Human Threat Charts instead of drawing cards. When the Heroes have found the 2nd Clue Icon, they have found the Undead Outlaw. Ignore all other results on the Exploration Token and roll on the Epic Human Threat chart and add an additional Brutal Outlaw to the Fight (same stats, but change keyword Human to Undead). When all Enemies have been defeated, the Job is complete. \nIf you own the Undead Gunslinger, you can use him in place of the Brutal Outlaw for this Job. ",
+            "fail": "If the Posse fails to take out the Undead Outlaw, he goes on a crime spree in the Town nearest the Mine and shots up the place pretty good. 1 Random Town Location in that Town is Destroyed from a fire that gets started. ",
+            "flavor": "An infamous outlaw who was hanged is apparently not quite so dead as people thought. The local sheriff is wanting him brought back for another hanging. ",
+            "id": 85,
+            "keywords": [
+                "Job",
+                "Bounty"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Posse is successful in killing the Undead Outlaw (again), each Hero gains 30 XP and $100. ",
+            "time": "No Time Limit ",
+            "title": "Wanted: Dead or... Undead? "
+        },
+        {
+            "desc": "The Posse will need to travel to the Cults underground lair (the Mine) in an attempt to rescue the Girl from certain death. The Mission will begin as a Search Party Mission [Basic:4]and will obey all the same rules as if the Posse were rescuing the Farmers Daughter. However, do not draw Threat cards and instead roll on the Human Threat charts whenever Threats are called for. Each of the Humans here is aided by dark magiks and each point of Damage that they do does and additional 1 Horror Hit to the Heroes. Each Enemy in this Mission also has the keyword Demon in addition to any others. \nWhen the Heroes find the 3rd Clue on this Mission, instead of rolling to see if the Farmers Daughter is alive at the end of the Mission, they roll to see if she is still alive as soon as the Objective Room is discovered (same rules still apply as in the Mission rules). \nHowever, if the Girl is dead when the Heroes get there, then the Cultists have finished their fiendish ritual and have opened up a Void Gate to summon forth a terrible entity. One XL Monster with the keyword Demon is added to the Fight, in addition to the Epic Human Threat the Posse must face. The Mission is not complete until all Enemies are defeated. ",
+            "fail": "If the Heroes fail the Mission, each Hero takes D3 Corruption Points, ignoring Willpower, and whatever it was that these Cultists summoned escapes from the Mine and Destroys 2 Town Locations from the nearest Town before it is brought down. ",
+            "flavor": "A demonic cult has kidnapped a farmers daughter and plan to use her as a sacrifice to call forth an evil entity. The farmer is wanting the Posse to find her and bring her back home safe and sound. ",
+            "id": 86,
+            "keywords": [
+                "Job",
+                "Occult",
+                "Rescue"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Heroes successfully complete the Mission, each Hero gains 75 XP. If the Farmers Daughter was brought back alive, they also may either remove up to 3 Corruption or gain +1 Sanity. ",
+            "time": "14 days ",
+            "title": "Demonic Offering "
+        },
+        {
+            "desc": "The Heroes will need to travel to a Road hex and perform a Search action. When the Heroes find their first Clue Icon, they have found the perfect spot to set an ambush against whoever its been thats been holding up these stage coaches. \nBegin a Fight on a Large Terrain battlemap against a Medium Human Threat. The Heroes begin in the middle of the map, the Enemies start at a random edge. Each turn, add another Low Human Threat to the edge of the map (roll D6: 1=North, 2-3=East, 4=South, 56=West). Use the Depth track and make Hold Back the Darkness tests each turn. For each Enemy killed, move the Posse tracker one space forward on the Depth track (2 steps if playing with 1 or 2 heroes). Whenever the Posse tracker move from one stage to the next (steps 10 & 5), all Enemies immediately get a free attack. \nWhen the Heroes make the Hold Back the Darkness test each turn, if they roll higher than the current step that the Posse tracker is on, reinforcements stop coming and the Job is complete when all remaining Enemies are defeated. ",
+            "fail": "Each Hero is beaten up pretty badly by the gang of outlaws and they lift some gold off you while you're knocked out. Each Hero loses x$50 and rolls on the Injury Chart. ",
+            "flavor": "[Not available if Outlaw Heroes in Posse] \nA gang of hooligans has been harassing travelers on the road and its time somebody put a stop to their hijinks. A local lawman wants to catch whatever it is by sending a carriage through the area as a trap. ",
+            "id": 87,
+            "keywords": [
+                "Job",
+                "Law",
+                "Investigate"
+            ],
+            "location": "Road Hex ",
+            "success": "Each Hero gains 50 XP and $150. ",
+            "time": "No Time Limit ",
+            "title": "The Bait "
+        },
+        {
+            "desc": "The Posse will need to travel to the Mine and begin a Search Party Mission [Basic:4]. All rules will be the same except that you should only roll on the Human Threat Chart instead of drawing Threat cards. \nIf anybody in the Posse uses Guns at any point in the Mission before the Objective Room is reached, the bandits will be alerted and will automatically kill the Hostages (thought the Mission is not automatically failed at that point). The Posse may ignore Attack results on Exploration Tokens if they make a successful All Heroes Agility 4+ test each time those are drawn as they stealthily avoid a Enemy patrol. At the end of the Mission, do not roll to see if the Hostages are alive or dead, it will only be dependent on how the Posse performs during the Mission. \nIf the Darkness Marker reaches the end of the Track, the Hostages are all killed and the Mission is failed. ",
+            "fail": "If the Heroes fail the Mission, each Hero takes D6 Corruption Points, ignoring Willpower, as the loss of so many innocents weighs heavily on their souls. ",
+            "flavor": "A group of bandits is holed up with some hostages. Theyve been cornered by some Marshals, but the Marshals are afraid to escalate things by going in through the front door if it might get the hostages killed. ",
+            "id": 88,
+            "keywords": [
+                "Job",
+                "Law",
+                "Rescue"
+            ],
+            "location": "Random Mine ",
+            "success": "If the Posse is successful in completing the Mission, each Hero gains 50 XP. \nIf all the Hostages are alive at the end of the Mission, then each Hero also gains D3x$100 and gains +1 Max Grit. \nIf the Hostages are killed, each Hero takes D6 Corruption Points, ignoring Willpower, as the loss of so many innocents weighs heavily on their souls. ",
+            "time": "7 days ",
+            "title": "Hostages! "
+        },
+        {
+            "desc": "The Posse can go to any Forest hexes and perform Search actions to generate Fights. The Posse may draw a Threat card on Clue Icon results in addition to the normal Attack or Ambush results. The Posse should keep track of how many different types of Enemies they fight. The Posse may engage in as many different fights for this Job as theyd like. ",
+            "fail": "There is no set Failure result for this Job. ",
+            "flavor": "A rich businessman is wanting to go hunting for some exotic beasts and needs an escort. ",
+            "id": 89,
+            "keywords": [
+                "Job",
+                "Merchant",
+                "Escort"
+            ],
+            "location": "Forest Hex ",
+            "success": "For each different and unique type of Enemy that the Heroes fight, they each gain an additional 10 XP and $25, on top of whatever else they gain from the fights themselves. ",
+            "time": "7 days ",
+            "title": "The Hunt "
+        },
+        {
+            "desc": "Each day that the Heroes spend in Town they need to investigate what Clues they can find. At the end of each day draw an Exploration Token. If a Clue Icon is revealed, any number of Heroes may devote their next day in Town to investigating that Clue. Instead of visiting a Town Location, each Hero that is investigating must make a Cunning 5+ test and if at least half the Heroes investigating succeed on this test (rounded up), the Heroes have tracked down a lead. The Heroes must successfully track down 3 leads in this way in order to successfully find the Killer. \nUpon finding the Killer, the Heroes must then engage in a fight with a single Brutal Human Villain two levels above the Posses Threat level. ",
+            "fail": "The Heroes fail to stop the killer as the bodies pile up. Some folks get scared and close up shop, heading out to safer pastures. 2 Random Locations in this Town are now Closed (Destroyed) ",
+            "flavor": "A killer stalks the Town and each night leaves the mutilated corpse of another Lady of the Night in the middle of the town square. Despite constant patrols, no one has caught sight of this foul fiend. ",
+            "id": 91,
+            "keywords": [
+                "Job",
+                "Death",
+                "Investigate"
+            ],
+            "location": "Local Town ",
+            "success": "If the Heroes are successful in stopping the Killer, each of the Heroes is rewarded with 50 XP and D3x$50. The Hero that struck the killing blow also gets an additional $100 and gains a bonus Revive token usable only by them. ",
+            "time": "7 days ",
+            "title": "Killer on the Loose "
+        },
+        {
+            "desc": "The group must travel to the Mine and begin a Hive of Scum & Villainy Mission [HexCrawl:1] to find the artifact. However, the artifact is warping the criminal gang and each Human Enemy there also has the ability Terror (1) in addition to all their other normal abilities. \nTerror (1): A Hero starting their Activation on the same Map Tile automatically takes 1 Horror Hit. ",
+            "fail": "If the artifact is not recovered from the gang, then they go out on a rampage. The nearest Town is Destroyed. ",
+            "flavor": "Some kind of artifact has been stolen by a group of bandits and theres no telling what its done to them. ",
+            "id": 92,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Outlaw"
+            ],
+            "location": "Random Mine ",
+            "success": "If successful, each Hero gains 50 XP and the Posse finds one Random Mine Artifact. The Posse may sell it back to the science folks for twice its listed value. ",
+            "time": "14 days ",
+            "title": "The Weird, Weird West "
+        },
+        {
+            "desc": "On a large Overland battlemap or the Town battlemap, place two sets of High Level Human Threats at either end of the battlemap and place the Heroes in the center. The Posse must make an All Heroes Cunning 5+ test to see how well they can play the two gangs against each other. For each success, remove one Enemy from both of the gangs. After the test is finished, if there are any Enemies left, the Heroes fight whoever is left. All Enemies will attack the Heroes, having realized their deception they band together just long enough to take you bastards out. ",
+            "fail": "If the Heroes fail to finish off the gangs, they proceed to go on a rampage. They Destroy two Random Locations in the ensuing conflict. In addition, the Town keyword is changed to Outlaw and the Town type is changed to Outlaw Town (reroll any affected Town traits if necessary). ",
+            "flavor": "Two gangs are vying for control of this Town, you can decide between them or try to pit the two gangs against each other. Its a delicate balancing act. ",
+            "id": 94,
+            "keywords": [
+                "Job",
+                "Outlaw",
+                "Politics"
+            ],
+            "location": "Local Town ",
+            "success": "If the Heroes are successful in finishing off the two rival gangs, choose a new Type or Keyword for the Town if it was Outlaw before. \nThe citizens here are grateful for your help and reward the Heroes with $300. Each Hero also gains 50 XP. ",
+            "time": "No Time Limit ",
+            "title": "Gang Rivalry "
+        },
+        {
+            "desc": "Youll need to ride a train on the rail line to encounter the Hell Train and exorcise it from the tracks. Each time you ride on the rail line, draw an Exploration Token, but ignore all results from the Tokens apart from Clue icons. When you come across a Clue icon, you have found the Hell Train and have a chance at trying to exorcise the foul engine. \nTo defeat the Hell Train, the Posse may attempt to either perform an exorcism by making three consecutive All Heroes Spirit 5+ tests or by tossing dynamite into the Hell Train. One Hero needs to make a normal Range attack to toss the Dynamite in and each Hero only has one chance per encounter to toss Dynamite. Youll need to do a total of 10 damage to the Hell Train to destroy it. If a 1 is rolled on a Range attack roll, you have blown up your own train and derailed it. \nIf your train is derailed, each Hero takes D8 Hits and place the Posse midway between towns on a Railroad hex. That section of Railroad that the Posse is also out of service until the end of your next Adventure. ",
+            "fail": "Permanent Effect: The Posse has failed to stop the Hell Train and it continues its hauntings across the region. Train lines pull out of the area and won't run any trains on these lines, it's just not worth it to them. \nThe Heroes may not travel on the Rail Line by train for the rest of the campaign. Railroad hexes still count as Easy terrain when traveling across the overland map, but there are no passenger trains running on the tracks anymore. ",
+            "flavor": "Word is that a fiendish engine has been terrorizing the rail line, waylaying trains and causing a general ruckus. Track the train down and end its reign on the rails. The train doesnt seem appear to anyone else except for those on the trains themselves. ",
+            "id": 95,
+            "keywords": [
+                "Job",
+                "Supernatural",
+                "Train"
+            ],
+            "location": "Railroad Hex ",
+            "success": "For clearing the tracks of the Hell Train the Posse gains 35 XP and a wealthy railroad baron rewards the Posse generously with a lifetime of free travel on the rail line. For the rest of the campaign, the Heroes may travel for free along the rail line any time they travel from the town that originated this Job. ",
+            "time": "16 days ",
+            "title": "Hell Train "
+        },
+        {
+            "desc": "The Posse will need to travel along the roads around Brimstone to first track down the magicians caravan itself. The group will need to Search road hexes until they have found 2 Gate icons. Upon finding the 2nd Gate icon, disregard any encounters or attacks that occur. Instead you have tracked down the Caravan and must now try to convince the Saloon Girl to leave. \nTo convince the Saloon Girl youll need to make an All Heroes Cunning 5+ test. If this attempt fails, you can either Fail the Job or try to kidnap the Saloon Girl by force. The group will need to make an All Heroes Agility 5+ test & a single Solo Strength 4+ test to try to sneak into the Caravan at night and abduct the Saloon Girl. If either of these attempts fail, the group must fight against a High Human Threat (add +1 Saloon Girl to the Enemy group). \nIf the Saloon Girl is killed, you fail the Job. The group may attempt to Capture the Saloon Girl and must bring her back to the Originating Town to complete the Job. See Expanded Combat for rules on Capturing. ",
+            "fail": "You have failed to bring back the Saloon Girl, each Hero in the Posse takes D6 Corruption Hits for the guilt they feel. ",
+            "flavor": "A saloon girl has run off to join a harem for a traveling magician. Her friends and family think she may have been brainwashed or worse. Youll need to find the Caravan first and then talk the girl into coming back home. ",
+            "id": 96,
+            "keywords": [
+                "Job",
+                "Performer",
+                "Rescue"
+            ],
+            "location": "Road Hex ",
+            "success": "Youve brought the girl back to her friends and family, whether she wanted to or not. Each Hero gains 30 XP and $100. ",
+            "time": "No Time Limit ",
+            "title": "Harem Caravan "
+        },
+        {
+            "desc": "The Posse will need to hunt down the Bandits around the Town and take them out. To hunt the Bandits, the Heroes need to Search for 2 Clue Icons in the surrounding hexes around the Town. Upon finding the second Clue Icon, ignore whatever other results you find on the Exploration Token and immediately begin a fight against a High Human threat using a Terrain battlemap. ",
+            "fail": "Since you weren't able to get rid of them bandits, they've decided upon themselves to hold early elections and have voted the new Sheriff out of office and into an early retirement... \nThat Town descends into anarchy and has now become an Outlaw Town. ",
+            "flavor": "A newly badged sheriff is going to need some help keeping order in Town and asks for the Posse to assist in taking down the bandits that created his job opening in the first place. ",
+            "id": 97,
+            "keywords": [
+                "Job",
+                "Law",
+                "Fight"
+            ],
+            "location": "Random non-Outlaw Town ",
+            "success": "If the Bandits are found and defeated, each Hero receives 30 XP and $100 for helping the sheriff to bring law and order back to the Town and the surrounding area. ",
+            "time": "10 days ",
+            "title": "New Sheriff in Town "
+        },
+        {
+            "desc": "The Heroes must go into the Mine and successfully complete an Exploration Mission [Basic:2]to finish this Job. All rules are the same as a normal Mission (ignore the regular Failure results), except that the Heroes must make it through to at least the 10 space on the Depth Track when they encounter the Dead End Showdown for the Fountain to be encountered. Upon finding the Fountain and eliminating the last Enemy, the Heroes must still make it back to the Originating Town in time to give the dying man the miraculous healing water. ",
+            "fail": "If the Heroes don't make it back in time to save the dying man, each Hero suffers D8 Corruption Hits from the knowledge that they failed to save his life. ",
+            "flavor": "A legendary fountain is said to exist with mystical healing properties that can heal an incurable disease from a dying man. ",
+            "id": 98,
+            "keywords": [
+                "Job",
+                "Supernatural"
+            ],
+            "location": "Random Mine ",
+            "success": "Each Hero receives 25 XP and $300 for saving the dying mans life. ",
+            "time": "7 days ",
+            "title": "The Fountain "
+        },
+        {
+            "desc": "The Posse will need to travel to the ruins of the former Town of Brimstone and begin Searching the hexes there until they come across an Exploration Token with a Gate and a Clue Icon. At that point the Heroes have found the family heirloom in the wreckage that is Brimstone. All Fights that occur while searching Brimstone will be Monsters (no Humans travel around Brimstone) and draw Threat cards one level higher than the Posses level. When the Posse finds the family heirloom and returns it back to the Originating Town, then the Job is complete. ",
+            "fail": "If the Heroes fail to recover the heirloom, then the townsfolk who hired them get tired of waiting around and go out in search of the heirloom themselves. In no time at all they're savagely ripped apart by the things that infest those town ruins and die horrible deaths. If only you had followed through on your word, instead of backing out like a coward. Each Hero in the Posse takes D3+1 Corruption Points, ignoring Willpower, for backing out on the deal. ",
+            "flavor": "A refugee of Brimstone comes to you looking for help. They had an old family heirloom that they werent able to take with them when they fled town. They dont have much, but itd mean the world to them if you could get it. ",
+            "id": 99,
+            "keywords": [
+                "Job",
+                "Find"
+            ],
+            "location": "Any Brimstone hexes ",
+            "success": "If the Heroes are able to successfully complete the Job and return the heirloom to the townsfolk, then each Hero gains 50 XP and may gain their choice of either +1 Sanity or +1 Health. ",
+            "time": "No Time Limit ",
+            "title": "Brimstone "
+        }
+    ]
+}
