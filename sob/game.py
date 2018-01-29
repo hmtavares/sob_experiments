@@ -182,7 +182,7 @@ class Posse():
         mission_loc_string = self.game.location_string(self.mission_loc)
 
         job_loc_string = self.game.location_string(self.job_loc)
-        job_string = self.game.job_index[self.job_id]['title']
+        job_string = self.game.job_index[self.job_id]['title'] if self.job_id else ""
 
         return '''
 Posse:
