@@ -223,7 +223,7 @@ Select the mission location on the map
 Hex(q=-1, r=10, s=-9)
 Mission location set: Cake’s Cave [Hex(q=-1, r=10, s=-9)]
 ```
-We can show the posse to see that it is now has a mission
+We can show the posse to see that it now has a mission
 
 ```
 (Cmd) show posse
@@ -238,7 +238,7 @@ Posse:
    [None]
 ```
 
-We use the Hexcrawl rules to move to the mine and start the mission. I typically don't bother to move the posse in the application during these movements as they go pretty quick. 
+We use the Hexcrawl rules to move to the mine and start the mission. I typically don't bother to move the posse in the application during these movements as they go pretty quick. In the future the application map will calculate movement points and using the map to move will be more usefull
 
 Once we're in the mine we will be drawing scavenge cards and loot cards. You can use the application to speed these processes up a bit if you like:
 
@@ -268,7 +268,7 @@ Member 4:
    20       1   Dark Stone Shard - 1 Dark Stone
 ```
 
-You can see this quickly gets the loot card business done.
+You can see this quickly gets the loot card business done. Note that the 'Reward' column has the random results already generated. You can use these during your game or roll them up yourself if you like.
 
 The same is true when scavenging:
 
@@ -330,7 +330,7 @@ Posse:
 ```
 
 
-Once done that will be it for this session (Time for dinner!) so we'll save to file. This will remember where we ended up and what our job is for next time.
+Once we finish in town that will be it for this session (time for dinner!) so we'll save to file. This will remember where we ended up and what our job is for next time.
 
 ```(Cmd) save awesome_team.save```
 
