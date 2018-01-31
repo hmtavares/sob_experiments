@@ -217,11 +217,15 @@ class HexcrawlCommands(cmd.Cmd):
 
         Note that the CLI will not respond until a hex has been clicked.
 
-        TODO: Allow and escape key to return to the CLI without moving
-              the Posse
         TODO: Allow a mine name, town name or coordinate to be provided
               on the command line
         """
+
+        if not self.game.started:
+            print ("Start or load a game")
+            return
+
+        print("Select the new Posse location on the map")
         desthex = self.display.get_click()
         #
         # If we got a destination set it.
@@ -231,6 +235,10 @@ class HexcrawlCommands(cmd.Cmd):
             self.game.posse.location = desthex
             self.display.get_artifact('posse').set_coord(desthex)
             self.display.event_update()
+            print("Posse location set: {} [{}]".format(
+                self.game.location_string(desthex), desthex))
+        else:
+            print("No location selected")
 
     def do_show(self, line):
         """Show details of a game element
