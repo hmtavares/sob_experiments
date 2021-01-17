@@ -58,7 +58,7 @@ def is_odd(num):
 pygame.display.flip()
 input("press key to continue")
 
-exit(0)
+#exit(0)
 while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
